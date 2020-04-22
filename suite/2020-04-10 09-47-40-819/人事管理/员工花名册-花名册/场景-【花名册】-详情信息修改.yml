@@ -1,0 +1,390 @@
+-   config:
+        name: "\u573A\u666F-\u3010\u82B1\u540D\u518C\u3011-\u8BE6\u60C5\u4FE1\u606F\
+            \u4FEE\u6539"
+        request:
+            base_url: https://www.ihr360.com
+-   test:
+        extract:
+        -   message: content.message
+        -   redirectUrl: content.redirectUrl
+        name: "\u5355\u63A5\u53E3-\u767B\u5F55"
+        request:
+            json:
+                accountName: $accountName
+                loginType: PASSWORD
+                mobilePrefix: CHINA
+                password: $password
+                target: ''
+                verifyCode: null
+            method: POST
+            url: https://account.ihr360.com/ac/login
+        validate:
+        -   check: status_code
+            comparator: equals
+            expected: 200
+        -   check: $message
+            comparator: equals
+            expected: "\u8BA4\u8BC1\u767B\u5F55\u6210\u529F"
+        variables:
+        -   accountName: '18570355221'
+        -   password: '111111'
+-   test:
+        extract:
+        -   cookie_token: req_headers.cookie
+        name: "\u5355\u63A5\u53E3-\u767B\u5F55\u6388\u6743"
+        request:
+            method: GET
+            url: $redirectUrl
+        validate:
+        -   check: status_code
+            comparator: equals
+            expected: 200
+-   test:
+        extract:
+        -   staid: content.data.list.0.id
+        -   resul77: content.result
+        name: "\u5355\u63A5\u53E3-\u3010\u82B1\u540D\u518C\u3011-\u82B1\u540D\u518C\
+            \u5217\u8868\u52A0\u8F7D"
+        request:
+            headers:
+                X-XSRF-TOKEN: ${getHeadersToken($cookie_token)}
+            json:
+                fields:
+                - staffName
+                - sex
+                - departmentId
+                - departmentName
+                - mobileNo
+                - enrollInDate
+                - staffNo
+                - idCardNo
+                - idCardType
+                - contractType
+                - staffType
+                - corporationId
+                - corporationName
+                - isUseLunar
+                - birthday
+                - companySiteId
+                - companySiteName
+                - isSyncRosterAccount
+                flexSearchItems:
+                -   fieldType: EQUAL
+                    searchKey: staffStatus
+                    searchParam: IN_SERVICE
+                page: 1
+                pageSize: '10'
+            method: POST
+            url: /web/gateway/roster/aggregate/v1/staffs/search
+        validate:
+        -   check: $resul77
+            comparator: equals
+            expected: true
+        -   check: status_code
+            comparator: equals
+            expected: 200
+-   test:
+        extract:
+        -   data: content.data
+        name: "\u5355\u63A5\u53E3-\u3010\u82B1\u540D\u518C\u3011-\u8BE6\u60C5\u4FE1\
+            \u606F\u4FEE\u6539"
+        request:
+            headers:
+                X-XSRF-TOKEN: ${getHeadersToken($cookie_token)}
+            json:
+                birthday: '1978-09-11'
+                childName: '124'
+                clickCreateStaffNo: false
+                companyId: a836cfdcba714b049671b69161bfee60
+                contractBeginDate: '2017-07-06'
+                contractEndDate: '2020-07-29'
+                contractType: LABOR_CONTRACT
+                country: CN
+                createdDate: 1570695306000
+                departmentId: 2
+                enrollInDate: '2017-07-06'
+                formFlexAttributes:
+                    age:
+                        fieldName: age
+                        isMain: true
+                        type: CALCULATE
+                    birthday:
+                        fieldName: birthday
+                        isMain: true
+                        type: DATE
+                        value: '1978-09-11'
+                    bloodType:
+                        fieldName: bloodType
+                        isMain: true
+                        type: CODE_TYPE
+                    childName:
+                        fieldName: childName
+                        isMain: true
+                        type: STRING
+                        value: '124'
+                    companySiteId:
+                        fieldName: companySiteId
+                        isMain: true
+                        type: STRING
+                    contractBeginDate:
+                        fieldName: contractBeginDate
+                        isMain: true
+                        type: DATE
+                        value: '2017-07-06'
+                    contractEndDate:
+                        fieldName: contractEndDate
+                        isMain: true
+                        type: DATE
+                        value: '2020-07-29'
+                    contractType:
+                        fieldName: contractType
+                        isMain: true
+                        type: CODE_TYPE
+                        value: LABOR_CONTRACT
+                    corporationId:
+                        fieldName: corporationId
+                        isMain: true
+                        type: STRING
+                    country:
+                        fieldName: country
+                        isMain: true
+                        type: CODE_TYPE
+                        value: CN
+                    departmentId:
+                        fieldName: departmentId
+                        isMain: true
+                        type: STRING
+                        value: 2
+                    email:
+                        fieldName: email
+                        isMain: true
+                        type: STRING
+                    emergencyContactMobile:
+                        fieldName: emergencyContactMobile
+                        isMain: true
+                        type: STRING
+                    emergencyContactName:
+                        fieldName: emergencyContactName
+                        isMain: true
+                        type: STRING
+                    enrollInDate:
+                        fieldName: enrollInDate
+                        isMain: true
+                        type: DATE
+                        value: '2017-07-06'
+                    firstName:
+                        fieldName: firstName
+                        isMain: true
+                        type: STRING
+                    highestEducation:
+                        fieldName: highestEducation
+                        isMain: true
+                        type: CODE_TYPE
+                        value: UNDER_GRADUATE
+                    hukouAddress:
+                        fieldName: hukouAddress
+                        isMain: true
+                        type: STRING
+                        value: "\u4E0A\u6D77\u5E02\u957F\u5B81\u533A\u4ED9\u971E\u897F\
+                            \u8DEF1331\u5F0413\u53F7602\u5BA4"
+                    hukouType:
+                        fieldName: hukouType
+                        isMain: true
+                        type: CODE_TYPE
+                        value: TOWN
+                    idCardImageId1:
+                        fieldName: idCardImageId1
+                        isMain: true
+                        type: IMG
+                    idCardImageId2:
+                        fieldName: idCardImageId2
+                        isMain: true
+                        type: IMG
+                    idCardNo:
+                        fieldName: idCardNo
+                        isMain: true
+                        type: STRING
+                        value: '310105197809112413'
+                    idCardType:
+                        fieldName: idCardType
+                        isMain: true
+                        type: CODE_TYPE
+                        value: IDENTITY_CARD
+                    initialWorkYears:
+                        fieldName: initialWorkYears
+                        isMain: true
+                        type: DOUBLE
+                        value: null
+                    isUseLunar:
+                        fieldName: isUseLunar
+                        isMain: true
+                        type: BOOLEAN
+                        value: false
+                    jobTitleId:
+                        fieldName: jobTitleId
+                        isMain: true
+                        type: STRING
+                    lastName:
+                        fieldName: lastName
+                        isMain: true
+                        type: STRING
+                    legalName:
+                        fieldName: legalName
+                        isMain: true
+                        type: STRING
+                    livingAddress:
+                        fieldName: livingAddress
+                        isMain: true
+                        type: STRING
+                        value: "\u4E0A\u6D77\u5E02\u957F\u5B81\u533A\u4ED9\u971E\u897F\
+                            \u8DEF1331\u5F0413\u53F7602\u5BA4"
+                    marryStatus:
+                        fieldName: marryStatus
+                        isMain: true
+                        type: CODE_TYPE
+                        value: MARRIED
+                    mobileNo:
+                        fieldName: mobileNo
+                        isMain: true
+                        type: STRING
+                        value: '15895655568'
+                    nationality:
+                        fieldName: nationality
+                        isMain: true
+                        type: CODE_TYPE
+                        value: HAN
+                    nativePlace:
+                        fieldName: nativePlace
+                        isMain: true
+                        type: STRING
+                    nickName:
+                        fieldName: nickName
+                        isMain: true
+                        type: STRING
+                    nowWorkingYears:
+                        fieldName: nowWorkingYears
+                        isMain: true
+                        type: CALCULATE
+                    politicalStatus:
+                        fieldName: politicalStatus
+                        isMain: true
+                        type: CODE_TYPE
+                        value: MASSESS
+                    positionId:
+                        fieldName: positionId
+                        isMain: true
+                        type: STRING
+                        value: 13f2a851-ba12-46b0-a8ca-9da4e6651af9
+                    positionLevelId:
+                        fieldName: positionLevelId
+                        isMain: true
+                        type: STRING
+                        value: 48a27958-99e0-4b4e-be96-86aba99f67be
+                    probationEndDate:
+                        fieldName: probationEndDate
+                        isMain: true
+                        type: DATE
+                        value: '2019-12-20'
+                    probationLength:
+                        fieldName: probationLength
+                        isMain: true
+                        type: INTEGER
+                        value: 124214124
+                    qqNo:
+                        fieldName: qqNo
+                        isMain: true
+                        type: STRING
+                    sex:
+                        fieldName: sex
+                        isMain: true
+                        type: CODE_TYPE
+                        value: MALE
+                    spouseName:
+                        fieldName: spouseName
+                        isMain: true
+                        type: STRING
+                    staffImageId:
+                        fieldName: staffImageId
+                        isMain: true
+                        type: IMG
+                    staffName:
+                        fieldName: staffName
+                        isMain: true
+                        type: STRING
+                        value: "\u63A5\u53E3\u6D4B\u8BD5\u4E13\u7528\u5458\u5DE501"
+                    staffNo:
+                        fieldName: staffNo
+                        isMain: true
+                        type: STRING
+                    staffRemark:
+                        fieldName: staffRemark
+                        isMain: true
+                        type: LONG_STRING
+                        value: '214'
+                    staffStatus:
+                        fieldName: staffStatus
+                        isMain: true
+                        type: STRING
+                        value: IN_SERVICE
+                    staffType:
+                        fieldName: staffType
+                        isMain: true
+                        type: CODE_TYPE
+                        value: FULLTIME
+                    weChatNo:
+                        fieldName: weChatNo
+                        isMain: true
+                        type: STRING
+                        value: '214'
+                    workEmail:
+                        fieldName: workEmail
+                        isMain: true
+                        type: STRING
+                        value: '124124'
+                    workPhone:
+                        fieldName: workPhone
+                        isMain: true
+                        type: STRING
+                        value: '124124'
+                    workPlace:
+                        fieldName: workPlace
+                        isMain: true
+                        type: STRING
+                highestEducation: UNDER_GRADUATE
+                hukouAddress: "\u4E0A\u6D77\u5E02\u957F\u5B81\u533A\u4ED9\u971E\u897F\
+                    \u8DEF1331\u5F0413\u53F7602\u5BA4"
+                hukouType: TOWN
+                id: fc4360ff-3aa1-4a4c-80f0-c8f3a397d9b7
+                idCardNo: '310105197809112413'
+                idCardType: IDENTITY_CARD
+                initialWorkYears: null
+                isSyncRosterAccount: false
+                isUseLunar: false
+                leaveDate: ''
+                livingAddress: "\u4E0A\u6D77\u5E02\u957F\u5B81\u533A\u4ED9\u971E\u897F\
+                    \u8DEF1331\u5F0413\u53F7602\u5BA4"
+                marryStatus: MARRIED
+                mobileNo: '15895655568'
+                nationality: HAN
+                politicalStatus: MASSESS
+                positionId: 13f2a851-ba12-46b0-a8ca-9da4e6651af9
+                positionLevelId: 48a27958-99e0-4b4e-be96-86aba99f67be
+                positiveDate: null
+                probation: true
+                probationEndDate: '2019-12-20'
+                probationLength: 124214124
+                sequence: 6
+                sex: MALE
+                staffName: "\u63A5\u53E3\u6D4B\u8BD5\u4E13\u7528\u5458\u5DE501"
+                staffRemark: '214'
+                staffStatus: IN_SERVICE
+                staffType: FULLTIME
+                weChatNo: '214'
+                workEmail: '124124'
+                workPhone: '124124'
+            method: PUT
+            url: /web/gateway/roster/aggregate/staffRoster/updateStaffBaseInfo
+        validate:
+        -   check: $data
+            comparator: equals
+            expected: true

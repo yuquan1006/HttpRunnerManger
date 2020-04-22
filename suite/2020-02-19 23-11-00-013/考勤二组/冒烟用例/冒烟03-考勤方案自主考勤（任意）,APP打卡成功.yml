@@ -1,0 +1,164 @@
+-   config:
+        name: "\u5192\u70DF03-\u8003\u52E4\u65B9\u6848\u81EA\u4E3B\u8003\u52E4\uFF08\
+            \u4EFB\u610F\uFF09,APP\u6253\u5361\u6210\u529F"
+        request:
+            base_url: https://www.ihr360.com
+            headers:
+                'Content-Type ': application/json; charset=utf-8
+                appKey: com.irenshi.personneltreasure
+                appVersion: v5.6.2
+                os: Android
+                osVersion: '7.0'
+                udid: 0c8750ac-90ed-3dc9-85b0-dccb30249161
+                user-agent: ' IRENSHI_APP_AGENT'
+        variables:
+        -   accountName: '18655660012'
+        -   password: '111111'
+        -   latitude: 31.25831
+        -   longitude: 121.464507
+        -   locationName: "\u4E2D\u56FD\u4E0A\u6D77\u5E02\u95F8\u5317\u533A\u4E2D\u5174\
+                \u8DEF1568\u53F7"
+        -   wifiName: irenshi
+        -   wifiMac: f832e453e000
+        -   data: ${get_current_date()}
+-   test:
+        extract:
+        -   message: content.message
+        -   redirectUrl: content.redirectUrl
+        name: "\u5355\u63A5\u53E3-\u3010\u767B\u5F55\u3011-APP\u7AEF\u767B\u5F55"
+        request:
+            headers:
+                Content-Type: application/json;charset=UTF-8
+                appKey: com.irenshi.personneltreasure
+                appVersion: v5.8.0
+                os: Android
+                osVersion: 6.0.1
+                udid: 9e4fc1c3-0b0d-3645-8028-424375cfd0ac
+                user-agent: IRENSHI_APP_AGENT
+            json:
+                accountName: $accountName
+                loginType: PASSWORD
+                mobilePrefix: CHINA
+                password: $password
+                verifyCode: ''
+            method: POST
+            url: https://account.ihr360.com/ac/login
+        validate:
+        -   check: status_code
+            comparator: equals
+            expected: 200
+        variables:
+        -   accountName_: '17700000011'
+        -   password_: '111111'
+-   test:
+        extract:
+        -   redirectUrl1: content.redirectUrl
+        name: "\u5355\u63A5\u53E3-\u3010\u767B\u5F55\u3011-APP\u767B\u5F55\u6388\u6743\
+            01"
+        request:
+            headers:
+                Content-Type: application/json;charset=UTF-8
+                appKey: com.irenshi.personneltreasure
+                appVersion: v5.8.0
+                os: Android
+                osVersion: 6.0.1
+                udid: 9e4fc1c3-0b0d-3645-8028-424375cfd0ac
+                user-agent: IRENSHI_APP_AGENT
+            method: GET
+            url: $redirectUrl
+        validate:
+        -   check: status_code
+            comparator: equals
+            expected: 200
+-   test:
+        extract:
+        -   redirectUrl2: content.redirectUrl
+        name: "\u5355\u63A5\u53E3-\u3010\u767B\u5F55\u3011-APP\u767B\u5F55\u6388\u6743\
+            02"
+        request:
+            headers:
+                Content-Type: application/json;charset=UTF-8
+                appKey: com.irenshi.personneltreasure
+                appVersion: v5.8.0
+                os: Android
+                osVersion: 6.0.1
+                udid: 9e4fc1c3-0b0d-3645-8028-424375cfd0ac
+                user-agent: IRENSHI_APP_AGENT
+            method: GET
+            url: $redirectUrl1
+        validate:
+        -   check: status_code
+            comparator: equals
+            expected: 200
+-   test:
+        name: "\u5355\u63A5\u53E3-\u3010\u767B\u5F55\u3011-APP\u767B\u5F55\u6388\u6743\
+            03"
+        request:
+            headers:
+                Content-Type: application/json;charset=UTF-8
+                appKey: com.irenshi.personneltreasure
+                appVersion: v5.8.0
+                os: Android
+                osVersion: 6.0.1
+                udid: 9e4fc1c3-0b0d-3645-8028-424375cfd0ac
+                user-agent: IRENSHI_APP_AGENT
+            method: GET
+            url: $redirectUrl2
+        validate:
+        -   check: status_code
+            comparator: equals
+            expected: 200
+-   test:
+        extract:
+        -   result: content.result
+        -   signTime: content.data
+        name: "\u5355\u63A5\u53E3-\u3010\u8003\u52E4\u6253\u5361\u3011-APP\u6253\u5361"
+        request:
+            headers:
+                Content-Type: application/json;charset=UTF-8
+                appKey: com.irenshi.personneltreasure
+                appVersion: v5.8.0
+                os: Android
+                osVersion: 6.0.1
+                udid: 9e4fc1c3-0b0d-3645-8028-424375cfd0ac
+                user-agent: IRENSHI_APP_AGENT
+            json:
+                deviceToken: ''
+                deviceType: NORMAL
+                latitude: $latitude
+                locationName: $locationName
+                longitude: $longitude
+                phoneName: MI 5
+                signSource: APP
+                wifiMac: $wifiMac
+                wifiName: $wifiName
+            method: POST
+            url: /gateway/attendance/aggregate/attendance/api/sign/doSign
+        validate:
+        -   check: $result
+            comparator: equals
+            expected: true
+-   test:
+        extract:
+        -   result: content.data.-1.signTime
+        name: "\u5355\u63A5\u53E3-\u3010\u8003\u52E4\u6253\u5361\u3011-APP\u7AEF\u6253\
+            \u5361\u8BB0\u5F55(\u65E5\u671F)"
+        request:
+            headers:
+                Content-Type: application/json;charset=UTF-8
+                appKey: com.irenshi.personneltreasure
+                appVersion: v5.8.0
+                os: Android
+                osVersion: 6.0.1
+                udid: 9e4fc1c3-0b0d-3645-8028-424375cfd0ac
+                user-agent: IRENSHI_APP_AGENT
+            method: POST
+            params:
+                signDate: $data
+            url: /web/gateway/attendance/aggregate/attendance/api/sign/getSignTimeDetailList
+        validate:
+        -   check: ${getStrLen($result)}
+            comparator: equals
+            expected: ${getStrLen($signTime)}
+        variables:
+        -   data: ${get_current_date()}

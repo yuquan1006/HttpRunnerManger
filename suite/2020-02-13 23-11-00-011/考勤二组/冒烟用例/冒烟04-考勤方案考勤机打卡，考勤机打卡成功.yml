@@ -1,0 +1,5 @@
+-   config:
+        name: "\u5192\u70DF04-\u8003\u52E4\u65B9\u6848\u8003\u52E4\u673A\u6253\u5361\
+            \uFF0C\u8003\u52E4\u673A\u6253\u5361\u6210\u529F"
+        request:
+            base_url: https://www.ihr360.com

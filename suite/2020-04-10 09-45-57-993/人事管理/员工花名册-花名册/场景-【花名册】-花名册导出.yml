@@ -1,0 +1,207 @@
+-   config:
+        name: "\u573A\u666F-\u3010\u82B1\u540D\u518C\u3011-\u82B1\u540D\u518C\u5BFC\
+            \u51FA"
+        request:
+            base_url: https://uat.ihr360.com
+-   test:
+        extract:
+        -   message: content.message
+        -   redirectUrl: content.redirectUrl
+        name: "\u5355\u63A5\u53E3-\u767B\u5F55"
+        request:
+            json:
+                accountName: $accountName
+                loginType: PASSWORD
+                mobilePrefix: CHINA
+                password: $password
+                target: ''
+                verifyCode: null
+            method: POST
+            url: https://account.ihr360.com/ac/login
+        validate:
+        -   check: status_code
+            comparator: equals
+            expected: 200
+        -   check: $message
+            comparator: equals
+            expected: "\u8BA4\u8BC1\u767B\u5F55\u6210\u529F"
+        variables:
+        -   accountName: '18570355221'
+        -   password: '111111'
+-   test:
+        extract:
+        -   cookie_token: req_headers.cookie
+        name: "\u5355\u63A5\u53E3-\u767B\u5F55\u6388\u6743"
+        request:
+            method: GET
+            url: $redirectUrl
+        validate:
+        -   check: status_code
+            comparator: equals
+            expected: 200
+-   test:
+        extract:
+        -   companyId: content.data.content.0.companyId
+        -   canViewAddressBook: content.data.content.0.canViewAddressBook
+        name: "\u5355\u63A5\u53E3-\u3010\u82B1\u540D\u518C\u3011-\u83B7\u53D6\u516C\
+            \u53F8ID"
+        request:
+            headers:
+                X-XSRF-TOKEN: ${getHeadersToken($cookie_token)}
+            json:
+                paramType: '2'
+                rosterFlexQueryParams: []
+                rosterQueryParams:
+                    birthdayBegin: ''
+                    birthdayEnd: ''
+                    bloodType: ''
+                    childName: ''
+                    contractBeginDateBegin: ''
+                    contractBeginDateEnd: ''
+                    contractEndDateBegin: ''
+                    contractEndDateEnd: ''
+                    contractType: ''
+                    departmentId: ''
+                    email: ''
+                    emergencyContactMobile: ''
+                    emergencyContactName: ''
+                    enrollDateEnd: ''
+                    enrollDateStart: ''
+                    enrollWorkYearsBegin: ''
+                    enrollWorkYearsEnd: ''
+                    highestEducation: ''
+                    houseFundNo: ''
+                    hukouAddress: ''
+                    hukouType: ''
+                    idCardNo: ''
+                    idCardType: ''
+                    isSyncRosterAccount: ''
+                    lastWorkDayBegin: ''
+                    lastWorkDayEnd: ''
+                    leaveDate: ''
+                    leaveDateBegin: ''
+                    leaveDateEnd: ''
+                    livingAddress: ''
+                    marryStatus: ''
+                    mobileNo: ''
+                    nationality: ''
+                    nativePlace: ''
+                    nickName: ''
+                    page: 1
+                    politicalStatus: ''
+                    positionLevelName: ''
+                    positionName: ''
+                    positiveDate: ''
+                    probationEndDateBegin: ''
+                    probationEndDateEnd: ''
+                    qqNo: ''
+                    quitReason: ''
+                    quitType: ''
+                    regularSalaryBegin: ''
+                    regularSalaryEnd: ''
+                    rows: 50
+                    sex: ''
+                    sortAsc: null
+                    spouseName: ''
+                    staffName: ''
+                    staffNo: ''
+                    staffStatus: ''
+                    staffType: ''
+                    weChatNo: ''
+                    workEmail: ''
+                    workPhone: ''
+                    workPlace: ''
+                    workYearsBegin: ''
+                    workYearsEnd: ''
+            method: POST
+            url: /web/gateway/roster/api/staffRoster/findStaffRoster
+        validate:
+        -   check: $canViewAddressBook
+            comparator: equals
+            expected: true
+-   test:
+        extract:
+        -   companyId: content.data.flexMetaDataVo.companyId
+        -   displayName: content.data.flexMetaDataVo.displayName
+        name: "\u5355\u63A5\u53E3-\u3010\u82B1\u540D\u518C\u3011-\u83B7\u53D6\u5BFC\
+            \u51FA\u5B57\u6BB5"
+        request:
+            method: GET
+            url: /web/gateway/roster/api//staffRoster/getExportField?companyId=$companyId&metaDataId=tab_staff_info
+        validate:
+        -   check: $displayName
+            comparator: equals
+            expected: "\u57FA\u7840\u4FE1\u606F"
+-   test:
+        extract:
+        -   data1: content.data
+        name: "\u5355\u63A5\u53E3-\u3010\u82B1\u540D\u518C\u3011-\u5BFC\u51FA"
+        request:
+            headers:
+                X-XSRF-TOKEN: ${getHeadersToken($cookie_token)}
+            json:
+            - "\u59D3\u540D"
+            - "\u5458\u5DE5\u72B6\u6001"
+            - "\u8BC1\u4EF6\u7C7B\u578B"
+            - "\u804C\u7EA7"
+            - "\u804C\u52A1"
+            - "\u804C\u4F4D"
+            - "\u90E8\u95E8"
+            - "\u5DE5\u53F7"
+            - "\u8BC1\u4EF6\u53F7"
+            - "\u624B\u673A\u53F7\u7801"
+            - "\u5408\u540C\u7C7B\u578B"
+            - "\u5458\u5DE5\u7C7B\u578B"
+            - "\u5165\u804C\u65E5\u671F"
+            - "\u5386\u53F2\u5DE5\u9F84"
+            - "\u5408\u540C\u516C\u53F8"
+            - "\u6027\u522B"
+            - "\u751F\u65E5\u7C7B\u578B"
+            - "\u51FA\u751F\u65E5\u671F"
+            - "\u5DE5\u4F5C\u5730\u70B9"
+            - "\u8054\u7CFB\u5730\u5740"
+            - "\u56FD\u7C4D"
+            - "\u540D"
+            - "\u59D3"
+            - "\u5E74\u9F84"
+            - "\u662F\u5426\u7ED1\u5B9AAPP"
+            - "\u82B1\u540D"
+            - "\u8BC1\u4EF6\u59D3\u540D"
+            - "\u6C11\u65CF"
+            - "\u7D27\u6025\u8054\u7CFB\u4EBA\u59D3\u540D"
+            - "\u7D27\u6025\u8054\u7CFB\u4EBA\u7535\u8BDD"
+            - "\u5B69\u5B50\u59D3\u540D"
+            - QQ
+            - "\u5FAE\u4FE1"
+            - "\u4E2A\u4EBA\u90AE\u7BB1"
+            - "\u5907\u6CE8"
+            - "\u5DE5\u8D44\u5361\u5F00\u6237\u94F6\u884C1"
+            - "\u5DE5\u8D44\u5361\u5206\u652F\u884C1"
+            - "\u5DE5\u8D44\u5361\u94F6\u884C\u8D26\u53F71"
+            - "\u5DE5\u8D44\u5361\u5F00\u6237\u540D1"
+            - "\u5DE5\u8D44\u5361\u5F00\u6237\u94F6\u884C2"
+            - "\u5DE5\u8D44\u5361\u5206\u652F\u884C2"
+            - "\u5DE5\u8D44\u5361\u94F6\u884C\u8D26\u53F72"
+            - "\u5DE5\u8D44\u5361\u5F00\u6237\u540D2"
+            - "\u793E\u4FDD\u65B9\u6848\u540D\u79F0"
+            - "\u793E\u4FDD\u8D26\u53F7"
+            - "\u793E\u4FDD\u7533\u62A5\u57FA\u6570"
+            - "\u793E\u4FDD\u8D77\u59CB\u7F34\u7EB3\u6708"
+            - "\u793E\u4FDD\u6700\u540E\u7F34\u7EB3\u6708"
+            - "\u516C\u79EF\u91D1\u65B9\u6848\u540D\u79F0"
+            - "\u516C\u79EF\u91D1\u8D26\u53F7"
+            - "\u8865\u5145\u516C\u79EF\u91D1\u8D26\u53F7"
+            - "\u516C\u79EF\u91D1\u7533\u62A5\u57FA\u6570"
+            - "\u516C\u79EF\u91D1\u8D77\u59CB\u7F34\u7EB3\u6708"
+            - "\u516C\u79EF\u91D1\u6700\u540E\u7F34\u7EB3\u6708"
+            - "\u5DE5\u65F6\u7C7B\u578B"
+            - "\u7EB3\u7A0E\u5730\u533A"
+            - "\u4E2A\u7A0E\u6263\u7F34\u4E49\u52A1\u4EBA"
+            - "\u7EB3\u7A0E\u4EBA\u8EAB\u4EFD"
+            - "\u5F53\u5E74\u5DF2\u514D\u7A0E\u989D"
+            method: POST
+            url: /web/gateway/roster/api/staffRoster/saveExportField?companyId=$companyId&metaDataId=tab_staff_inf
+        validate:
+        -   check: $data1
+            comparator: equals
+            expected: true

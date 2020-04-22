@@ -1,0 +1,232 @@
+-   config:
+        name: "\u5192\u70DF07-\u5916\u52E4\u6253\u5361\uFF08\u65E0\u9700\u5BA1\u6279\
+            \uFF09\uFF0CAPP\u5916\u52E4\u6253\u5361\u6210\u529F"
+        request:
+            base_url: https://www.ihr360.com
+        variables:
+        -   accountName: '18655660013'
+        -   password: '111111'
+        -   latitude: 31.25831
+        -   longitude: 121.464507
+        -   locationName: "\u5916\u52E4\u4E2D\u56FD\u4E0A\u6D77\u5E02\u95F8\u5317\u533A\
+                \u4E2D\u5174\u8DEF1568\u53F7"
+        -   wifiName: irenshi
+        -   wifiMac: f832e453e000
+        -   data: ${get_current_date()}
+        -   a: '[]'
+        -   assigneeList: ${get_evelData($a)}
+        -   b_accountName: '18655660011'
+        -   b_password: '111111'
+        -   outSignApprove: false
+-   test:
+        extract:
+        -   message: content.message
+        -   redirectUrl: content.redirectUrl
+        name: "\u5355\u63A5\u53E3-\u3010\u767B\u5F55\u3011-B\u7AEF\u767B\u5F55"
+        request:
+            headers:
+                content-type: application/json; charset=utf-8
+            json:
+                accountName: $b_accountName
+                loginType: PASSWORD
+                mobilePrefix: CHINA
+                password: $b_password
+                target: ''
+                verifyCode: null
+            method: POST
+            url: https://account.ihr360.com/ac/login
+        validate:
+        -   check: status_code
+            comparator: equals
+            expected: 200
+        -   check: $message
+            comparator: equals
+            expected: "\u8BA4\u8BC1\u767B\u5F55\u6210\u529F"
+        variables:
+        -   accountName_: '13339954178'
+        -   password_: '111111'
+-   test:
+        extract:
+        -   cookie_token: req_headers.cookie
+        name: "\u5355\u63A5\u53E3-\u3010\u767B\u5F55\u3011-B\u7AEF\u767B\u5F55\u6388\
+            \u6743"
+        request:
+            method: GET
+            url: $redirectUrl
+        validate:
+        -   check: status_code
+            comparator: equals
+            expected: 200
+-   test:
+        name: "\u5355\u63A5\u53E3-\u3010\u65F6\u95F4\u8BBE\u7F6E\u3011-B\u7AEF\u4FEE\
+            \u6539\u8003\u52E4\u89C4\u5219"
+        request:
+            headers:
+                X-XSRF-TOKEN: ${getHeadersToken($cookie_token)}
+            json:
+                appealInTime: false
+                attendanceCalculationUnit: '1'
+                exemptionEntityList: []
+                frozenFrom: LAST_MONTH
+                includeOvertimeData: false
+                matchSignRecord: false
+                maxAppealLimit: 0
+                maxAppealType: CLOSE
+                missingRule: COUNT_AS_ZERO
+                nightEndTime: ''
+                nightRestEndTime: ''
+                nightRestStartTime: ''
+                nightStartTime: ''
+                outSignApprove: $outSignApprove
+                restShiftCountType: ZERO
+                signOutRemind: false
+                staffBasicInfoList: []
+            method: POST
+            url: /web/gateway/attendance/api/schedule/settings/save
+        validate:
+        -   check: status_code
+            comparator: equals
+            expected: 200
+        variables:
+        -   name: test_06
+-   test:
+        extract:
+        -   message: content.message
+        -   redirectUrl: content.redirectUrl
+        name: "\u5355\u63A5\u53E3-\u3010\u767B\u5F55\u3011-APP\u7AEF\u767B\u5F55"
+        request:
+            headers:
+                Content-Type: application/json;charset=UTF-8
+                appKey: com.irenshi.personneltreasure
+                appVersion: v5.8.0
+                os: Android
+                osVersion: 6.0.1
+                udid: 9e4fc1c3-0b0d-3645-8028-424375cfd0ac
+                user-agent: IRENSHI_APP_AGENT
+            json:
+                accountName: $accountName
+                loginType: PASSWORD
+                mobilePrefix: CHINA
+                password: $password
+                verifyCode: ''
+            method: POST
+            url: https://account.ihr360.com/ac/login
+        validate:
+        -   check: status_code
+            comparator: equals
+            expected: 200
+        variables:
+        -   accountName_: '17700000011'
+        -   password_: '111111'
+-   test:
+        extract:
+        -   redirectUrl1: content.redirectUrl
+        name: "\u5355\u63A5\u53E3-\u3010\u767B\u5F55\u3011-APP\u767B\u5F55\u6388\u6743\
+            01"
+        request:
+            headers:
+                Content-Type: application/json;charset=UTF-8
+                appKey: com.irenshi.personneltreasure
+                appVersion: v5.8.0
+                os: Android
+                osVersion: 6.0.1
+                udid: 9e4fc1c3-0b0d-3645-8028-424375cfd0ac
+                user-agent: IRENSHI_APP_AGENT
+            method: GET
+            url: $redirectUrl
+        validate:
+        -   check: status_code
+            comparator: equals
+            expected: 200
+-   test:
+        extract:
+        -   redirectUrl2: content.redirectUrl
+        name: "\u5355\u63A5\u53E3-\u3010\u767B\u5F55\u3011-APP\u767B\u5F55\u6388\u6743\
+            02"
+        request:
+            headers:
+                Content-Type: application/json;charset=UTF-8
+                appKey: com.irenshi.personneltreasure
+                appVersion: v5.8.0
+                os: Android
+                osVersion: 6.0.1
+                udid: 9e4fc1c3-0b0d-3645-8028-424375cfd0ac
+                user-agent: IRENSHI_APP_AGENT
+            method: GET
+            url: $redirectUrl1
+        validate:
+        -   check: status_code
+            comparator: equals
+            expected: 200
+-   test:
+        name: "\u5355\u63A5\u53E3-\u3010\u767B\u5F55\u3011-APP\u767B\u5F55\u6388\u6743\
+            03"
+        request:
+            headers:
+                Content-Type: application/json;charset=UTF-8
+                appKey: com.irenshi.personneltreasure
+                appVersion: v5.8.0
+                os: Android
+                osVersion: 6.0.1
+                udid: 9e4fc1c3-0b0d-3645-8028-424375cfd0ac
+                user-agent: IRENSHI_APP_AGENT
+            method: GET
+            url: $redirectUrl2
+        validate:
+        -   check: status_code
+            comparator: equals
+            expected: 200
+-   test:
+        extract:
+        -   signTime: content.sign.time
+        name: "\u5355\u63A5\u53E3-\u3010\u8003\u52E4\u6253\u5361\u3011-APP\u5916\u52E4\
+            \u6253\u5361\u7533\u8BF7"
+        request:
+            headers:
+                Content-Type: application/json;charset=UTF-8
+                appKey: com.irenshi.personneltreasure
+                appVersion: v5.8.0
+                os: Android
+                osVersion: 6.0.1
+                udid: 9e4fc1c3-0b0d-3645-8028-424375cfd0ac
+                user-agent: IRENSHI_APP_AGENT
+            json:
+                assigneeList: $assigneeList
+                carbonCopyIdList: []
+                dataSources: APP
+                description: "\u5916\u52E4\u6253\u5361"
+                imgIdList: []
+                isFixedApprovalProcess: false
+                location:
+                    latitude: $latitude
+                    locationName: $locationName
+                    longitude: $longitude
+                signDate: $date
+            method: POST
+            url: /gateway/api/attendance/out/signin/h5
+        variables:
+        -   date: ${get_timestamp()}
+-   test:
+        extract:
+        -   result: content.data.-1.signTime
+        name: "\u5355\u63A5\u53E3-\u3010\u8003\u52E4\u6253\u5361\u3011-APP\u7AEF\u6253\
+            \u5361\u8BB0\u5F55(\u65E5\u671F)"
+        request:
+            headers:
+                Content-Type: application/json;charset=UTF-8
+                appKey: com.irenshi.personneltreasure
+                appVersion: v5.8.0
+                os: Android
+                osVersion: 6.0.1
+                udid: 9e4fc1c3-0b0d-3645-8028-424375cfd0ac
+                user-agent: IRENSHI_APP_AGENT
+            method: POST
+            params:
+                signDate: $data
+            url: /web/gateway/attendance/aggregate/attendance/api/sign/getSignTimeDetailList
+        validate:
+        -   check: ${getStrLen($result)}
+            comparator: equals
+            expected: ${getStrLen($signTime)}
+        variables:
+        -   data: ${get_current_date()}
