@@ -489,3 +489,14 @@ def statistics_report_timeOut(time_ms=300.00):
 
     return totalCaseNameList
 
+def callDingTalkRobot(name,text):
+    # --- 钉钉机器人
+    import requests
+    url = 'https://oapi.dingtalk.com/robot/send?access_token=07633a4a9b6f5bddd87604ffe67021125e00d62d0eba6844cd793ad6fa9d3ce9'
+    headers = {'Content-Type': 'application/json'}
+    content = "通知内容：{}执行失败\n".format(name)
+    content += text
+    payload = {"msgtype": "text", "isAtAll": True, "text": {"content": content}}
+    response = requests.post(url,headers=headers,json=payload)
+    if "ok" in response.text:print("钉钉机器人调用成功：{}".format(response.text))
+    else:print("钉钉机器人调用失败：{}".format(response.text))

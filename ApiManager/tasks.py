@@ -10,7 +10,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from ApiManager.models import ProjectInfo
 from ApiManager.utils.common import timestamp_to_datetime
 from ApiManager.utils.emails import send_email_reports
-from ApiManager.utils.operation import add_test_reports,statistics_report_timeOut
+from ApiManager.utils.operation import add_test_reports,statistics_report_timeOut, callDingTalkRobot
 from ApiManager.utils.runner import run_by_project, run_by_module, run_by_suite
 from ApiManager.utils.testcase import get_time_stamp
 from httprunner import HttpRunner, logger
@@ -146,7 +146,10 @@ def suite_hrun(name, base_url, suite, receiver):
         bodyText = "{}定时任务执行错误用例如下：<br>&emsp; {} <br> 请套件相关维护人员及时确认！！！".format(name, '<br> &emsp;'.join(FailName))
         send_email_reports(receiver,report_path,name=name,bodyText=bodyText,status=status)
         os.remove(report_path)
-        return ""
+        # 调用dingding机器人发送失败通知
+        bodyText = "{}定时任务执行失败用例如下:\n {}\n如需了解更多内容，请关注邮箱中邮件！".format(name, '\n '.join(FailName))
+        # print(name, bodyText)
+        callDingTalkRobot(name, bodyText)
 
     # 处理接口响应时长超时，发送告警邮件
     timeOut_result = statistics_report_timeOut()
