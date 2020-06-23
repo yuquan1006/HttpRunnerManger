@@ -27,7 +27,7 @@ SECRET_KEY = '=w+1if4no=o&6!la#5j)3wsu%k@$)6bf+@3=i0h!5)h9h)$*s7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True # 自定义404页面
+DEBUG = False # 自定义404页面
 
 ALLOWED_HOSTS = ['*']
 
@@ -124,9 +124,6 @@ if DEBUG:
             'PORT': '3306',  # 监听端口 默认3306即可
         }
     }
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),  # 静态文件额外目录
-    )
 else:
     DATABASES = {
         'default': {
@@ -138,9 +135,10 @@ else:
             'PORT': '3306',  # 监听端口 默认3306即可
         }
     }
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "/static/"), ]
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
