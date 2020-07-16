@@ -58,11 +58,11 @@ run_server(){
    echo "启动nginx"
    uwsgi --ini /home/york/HttpRunnerManger/uwsgi.ini
    echo "启动uwsgi"
-   nohup python3 manage.py celery worker --loglevel=info  >/var/log/httprunnermanger_worker.out 2>&1 & # 启动worker 后台启动
+   nohup python3 manage.py celery worker --loglevel=info  >/var/log/httprunnermanger_worker.log 2>&1 & # 启动worker 后台启动
    echo "启动celery"
-   nohup python3 manage.py celery beat --loglevel=info >/var/log/httprunnermanger_worker1.out 2>&1 &              # 启动定时任务监听器
+   nohup python3 manage.py celery beat --loglevel=info >/var/log/httprunnermanger_worker1.log 2>&1 &              # 启动定时任务监听器
    echo "启动beat"
-   nohup celery flower --broker=amqp://user:user123@localhost:5672// >/var/log/httprunnermanger_worker2.out 2>&1 &    # 启动任务监控后台。
+   nohup celery flower --broker=amqp://user:user123@localhost:5672// >/var/log/httprunnermanger_worker2.log 2>&1 &    # 启动任务监控后台。
    echo "启动flower"
 
 }
