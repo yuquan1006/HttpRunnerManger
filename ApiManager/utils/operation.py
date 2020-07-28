@@ -464,37 +464,38 @@ def add_test_reports(runner, report_name=None):
     return report_path,test_reports_obj.id
 
 
-def statistics_report_timeOut(time_ms=300.00):
+def statistics_report_timeOut(html_doc, time_ms=300.00):
     """统计报告中是否存在接口超时请求
-    html_doc:html的测试报告
+    html_doc:html报告路径
     time_ms：超时判定的毫米
     :return：totalCaseNameList 组装后的超时用例集合列表： [ 用例：冒烟18-排班分组-全部人员更新排班表成功 下 [单接口-【排班管理】-B端更新全部员工排班分组接口, 响应时间:4634.45 ms, 用例状态:pass], 用例：xxx]
             signleTotal  超时用例列表：[单接口-【排班管理】-B端更新全部员工排班分组接口,x2,x3]
     """
-    test_report = TestReports.objects.last() #获取表中最新一条记录对象
-    html_doc = test_report.reports
-    soup = BeautifulSoup(html_doc, "lxml")
-    totalCaseNameList = list()
-    # # 创建CSS选择器
-    result = soup.select("ul#test-collection>li>div.test-content")  # 获取测试集合节点
-    for site in result:  # 获取单个用例的位置
-        totalCaseName = site.select("div.test-attributes>div>span:nth-child(1)")
-        caseTotal = "用例：{} 下 ".format(totalCaseName[0].get_text())
-        signleTotal = []
-        signleSuiteCase = site.select("ul.node-list>li")
-        for s in signleSuiteCase:
-            signleCase = ""
-            caseName = s.select("div>div.node-name")
-            responseTime = s.select("div>span.node-duration")
-            responseResult = s.select("div>span.test-status")
-            if "登录" in caseName[0].get_text(): continue # 去除登录接口的校验
+    with open(html_doc, 'rb') as f:
+        soup = BeautifulSoup(f.read(), "lxml")
+        totalCaseNameList = list()
+        # # 创建CSS选择器
+        result = soup.select("ul#test-collection>li>div.test-content")  # 获取测试集合节点
+        for site in result:  # 获取单个用例的位置
+            totalCaseName = site.select("div.test-attributes>div>span:nth-child(1)")
+            caseTotal = "用例：{} 下 ".format(totalCaseName[0].get_text())
+            signleTotal = []
+            signleSuiteCase = site.select("ul.node-list>li")
+            for s in signleSuiteCase:
+                signleCase = ""
+                caseName = s.select("div>div.node-name")
+                responseTime = s.select("div>span.node-duration")
+                responseResult = s.select("div>span.test-status")
+                if "登录" in caseName[0].get_text(): continue # 去除登录接口的校验
 
-            if float(responseTime[0].get_text()[15:].replace("ms", "")) >= time_ms:
-                caseTotal += "[{}接口, 响应时间:{}, 用例状态:{}]".format(caseName[0].get_text(),responseTime[0].get_text()[15:],responseResult[0].get_text())
-                signleCase +="{}接口".format(caseName[0].get_text())
-                signleTotal.append(signleCase)
-        if caseTotal.endswith("]"):
-            totalCaseNameList.append(caseTotal)
+                if float(responseTime[0].get_text()[15:].replace("ms", "")) >= time_ms:
+                    caseTotal += "[{}接口, 响应时间:{}, 用例状态:{}]".format(caseName[0].get_text(),responseTime[0].get_text()[15:],responseResult[0].get_text())
+                    signleCase +="{}接口".format(caseName[0].get_text())
+                    signleTotal.append(signleCase)
+            if caseTotal.endswith("]"):
+                totalCaseNameList.append(caseTotal)
+    #print("组装超时用例集列表", totalCaseNameList)
+    print("单个超时用例列表", signleTotal)
     return totalCaseNameList,signleTotal
 
 def callDingTalkRobot(name,text):
@@ -559,7 +560,7 @@ def createrZentaoBug(suite,caseList=[],report_id=0):
             if "绩效" in project_name:
                 module,assignedTo = "232","Daniel.Hu"
             elif "薪资" in project_name or "薪税通" in project_name or "福利管理" in project_name:
-                module,assignedTo = "231","david.wei"
+                module,assignedTo = "231","richey.liu"
             elif "组织" in project_name:
                 module,assignedTo = "465","Frank.Li"
             elif "人事" in project_name:

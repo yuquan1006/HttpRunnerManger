@@ -154,14 +154,15 @@ def suite_hrun(name, base_url, suite, receiver):
         bodyText = "{}定时任务执行失败用例如下:\n {}\n如需了解更多内容，请关注邮箱中邮件！".format(name, '\n '.join(FailName))
         # print(name, bodyText)
         callDingTalkRobot(name, bodyText)
+        return ""
 
     # 处理接口响应时长超时，发送告警邮件
-    timeOut_result = statistics_report_timeOut()[0]
-    if timeOut_result:
+    timeOut_result = statistics_report_timeOut(report_path)
+    if timeOut_result[0]:
         status = "【告警】"
-        bodyText = "{}定时任务执行接口时长告警用例如下：<br>&emsp; {} <br> ".format(name, '<br> &emsp;'.join(timeOut_result))
+        bodyText = "{}定时任务执行接口时长告警用例如下：<br>&emsp; {} <br> ".format(name, '<br> &emsp;'.join(timeOut_result[0]))
         # 创建bug
-        createrZentaoBug(suite[0], caseList=statistics_report_timeOut()[1], report_id=report_id)
+        createrZentaoBug(suite[0], caseList=timeOut_result[1], report_id=report_id)
         send_email_reports(receiver, report_path, name=name, bodyText=bodyText, status=status)
          
     if receiver != '':
