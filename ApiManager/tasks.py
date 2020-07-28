@@ -7,10 +7,10 @@ import shutil
 from celery import shared_task
 from django.core.exceptions import ObjectDoesNotExist
 
-from ApiManager.models import ProjectInfo
+from ApiManager.models import ProjectInfo, TestReports
 from ApiManager.utils.common import timestamp_to_datetime
 from ApiManager.utils.emails import send_email_reports
-from ApiManager.utils.operation import add_test_reports,statistics_report_timeOut, callDingTalkRobot
+from ApiManager.utils.operation import add_test_reports,statistics_report_timeOut, callDingTalkRobot,createrZentaoBug
 from ApiManager.utils.runner import run_by_project, run_by_module, run_by_suite
 from ApiManager.utils.testcase import get_time_stamp
 from httprunner import HttpRunner, logger
@@ -33,7 +33,7 @@ def main_hrun(testset_path, report_name):
     shutil.rmtree(testset_path)
 
     runner.summary = timestamp_to_datetime(runner.summary)
-    report_path = add_test_reports(runner, report_name=report_name)
+    report_path = add_test_reports(runner, report_name=report_name)[0]
     os.remove(report_path)
 
 
@@ -61,7 +61,7 @@ def project_hrun(name, base_url, project, receiver):
     shutil.rmtree(testcase_dir_path)
 
     runner.summary = timestamp_to_datetime(runner.summary)
-    report_path = add_test_reports(runner, report_name=name)
+    report_path = add_test_reports(runner, report_name=name)[0]
 
     if receiver != '':
         send_email_reports(receiver, report_path, name=name)
@@ -97,7 +97,7 @@ def module_hrun(name, base_url, module, receiver):
 
     shutil.rmtree(testcase_dir_path)
     runner.summary = timestamp_to_datetime(runner.summary)
-    report_path = add_test_reports(runner, report_name=name)
+    report_path = add_test_reports(runner, report_name=name)[0]
 
     if receiver != '':
         send_email_reports(receiver, report_path, name=name)
@@ -134,7 +134,11 @@ def suite_hrun(name, base_url, suite, receiver):
     shutil.rmtree(testcase_dir_path)
 
     runner.summary = timestamp_to_datetime(runner.summary)
-    report_path = add_test_reports(runner, report_name=name)
+    # report_path = add_test_reports(runner, report_name=name)
+    report_result = add_test_reports(runner, report_name=name)
+    report_path, report_id = report_result[0], report_result[1]
+
+
     # 处理报告结果失败，发送失败主题邮件
     if not runner.summary.get('success',None):
         FailName = []
@@ -152,12 +156,14 @@ def suite_hrun(name, base_url, suite, receiver):
         callDingTalkRobot(name, bodyText)
 
     # 处理接口响应时长超时，发送告警邮件
-    timeOut_result = statistics_report_timeOut()
+    timeOut_result = statistics_report_timeOut()[0]
     if timeOut_result:
         status = "【告警】"
         bodyText = "{}定时任务执行接口时长告警用例如下：<br>&emsp; {} <br> ".format(name, '<br> &emsp;'.join(timeOut_result))
+        # 创建bug
+        createrZentaoBug(suite[0], caseList=statistics_report_timeOut()[1], report_id=report_id)
         send_email_reports(receiver, report_path, name=name, bodyText=bodyText, status=status)
-    
+         
     if receiver != '':
         send_email_reports(receiver, report_path, name=name)
     os.remove(report_path)
