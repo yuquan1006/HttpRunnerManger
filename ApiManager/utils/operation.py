@@ -474,12 +474,12 @@ def statistics_report_timeOut(html_doc, time_ms=300.00):
     with open(html_doc, 'rb') as f:
         soup = BeautifulSoup(f.read(), "lxml")
         totalCaseNameList = list()
+        signleTotal = list()
         # # 创建CSS选择器
         result = soup.select("ul#test-collection>li>div.test-content")  # 获取测试集合节点
         for site in result:  # 获取单个用例的位置
             totalCaseName = site.select("div.test-attributes>div>span:nth-child(1)")
             caseTotal = "用例：{} 下 ".format(totalCaseName[0].get_text())
-            signleTotal = []
             signleSuiteCase = site.select("ul.node-list>li")
             for s in signleSuiteCase:
                 signleCase = ""
@@ -494,9 +494,9 @@ def statistics_report_timeOut(html_doc, time_ms=300.00):
                     signleTotal.append(signleCase)
             if caseTotal.endswith("]"):
                 totalCaseNameList.append(caseTotal)
-    #print("组装超时用例集列表", totalCaseNameList)
+    print("组装超时用例集列表", totalCaseNameList)
     print("单个超时用例列表", signleTotal)
-    return totalCaseNameList,signleTotal
+    return totalCaseNameList,list(set(signleTotal))
 
 def callDingTalkRobot(name,text):
     # --- 钉钉机器人
@@ -524,10 +524,10 @@ def queryZentaoBug(sql):
     finally:
         cur.close()
         con.close()
-    print(result)
+    #print(result)
     return result
 
-def createrZentaoBug(suite,caseList=[],report_id=0):
+def createrZentaoBug(suite,caseList,report_id=0):
     """
     创建禅道bug
     :param suite: 平台套件id列表
@@ -542,7 +542,7 @@ def createrZentaoBug(suite,caseList=[],report_id=0):
     password = hashlib.md5((hashlib.md5("Admin@123".encode()).hexdigest() + rand).encode())
     response = s.post("https://zentao.ihr360.com/zentao/user-login.html",data={"account": "api.Report", "password": password.hexdigest(), "verifyRand": rand}, headers={"Content-Type": "application/x-www-form-urlencoded"}, verify=False)
     # 获取禅道迭代（单）接口性能优化下bug-title列表
-    caseAll =[i.get("title") for i in queryZentaoBug("select title from zt_bug where project=265")]
+    caseAll =[i.get("title") for i in queryZentaoBug("select title from zt_bug where project=265 and status!='closed'")]
     # print("caseList：%s"%caseList)
     # 获取套件关联项目，根据项目设置禅道指派给/模块
     obj = TestSuite.objects.get(id=int(suite[0]))
@@ -558,7 +558,7 @@ def createrZentaoBug(suite,caseList=[],report_id=0):
             title = case
             module, assignedTo = "240", "Damon.Shi"
             if "绩效" in project_name:
-                module,assignedTo = "232","Daniel.Hu"
+                module,assignedTo = "232","vic.zhao"
             elif "薪资" in project_name or "薪税通" in project_name or "福利管理" in project_name:
                 module,assignedTo = "231","richey.liu"
             elif "组织" in project_name:
@@ -566,7 +566,7 @@ def createrZentaoBug(suite,caseList=[],report_id=0):
             elif "人事" in project_name:
                 module,assignedTo = "229","Frank.Li"
             elif "考勤" in project_name:
-                module,assignedTo = "230","Daniel.Hu"
+                module,assignedTo = "230","jerry.xiao"
             elif "openAPI" in project_name:
                 module,assignedTo = "292","david.wei"
             elif "审批中心" in project_name:
@@ -575,5 +575,5 @@ def createrZentaoBug(suite,caseList=[],report_id=0):
         params = {"product": (None, "3"), "module": (None, module), "project": (None, "265"),"assignedTo": (None, assignedTo),"deadline": (None, ""), "type": (None, "codeerror"), "os": (None, "PROD"), "browser": (None, "all"),"title": (None, title), "severity": (None, "3"), "pri": (None, "2"),"steps": (None, "<p>{}      接口平台报告地址：http://192.168.1.196/api/view_report/{}/</p>".format(title,report_id)),"story": (None, ""), "keywords": (None, "内部QA"), "uid": str(random.randint(1,100000))}
         response = s.post("https://zentao.ihr360.com/zentao/bug-create-3-0-moduleID=0.html",files=params)
         if response.status_code == 200:
-            print("创建用例成功")
+            print("创建用例成功%s"%case)
 
