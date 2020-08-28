@@ -1,0 +1,528 @@
+2020-08-19 17:24:13,019 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/element/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+ModuleNotFoundError: No module named 'admin'
+2020-08-19 17:24:14,578 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/css/font-awesome.css
+2020-08-19 17:24:14,578 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/css/animate.css
+2020-08-19 17:24:14,582 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/css/bootstrap.min.css
+2020-08-19 17:24:14,590 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/css/style.css
+2020-08-19 17:24:14,603 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/js/jquery.min.js
+2020-08-19 17:24:14,606 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/js/bootstrap.min.js
+2020-08-19 17:24:14,705 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/favicon.ico
+2020-08-19 17:24:55,147 [HttpRunnerManager:60] [views:login] [INFO]- guest 登录失败, 请检查用户名或者密码
+2020-08-19 17:27:13,208 [HttpRunnerManager:60] [views:login] [INFO]- Charles 登录失败, 请检查用户名或者密码
+2020-08-19 17:27:23,192 [HttpRunnerManager:60] [views:login] [INFO]- Charles 登录失败, 请检查用户名或者密码
+2020-08-19 17:28:24,433 [HttpRunnerManager:60] [views:login] [INFO]- charles 登录失败, 请检查用户名或者密码
+2020-08-19 17:29:03,032 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/element/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+ModuleNotFoundError: No module named 'admin'
+2020-08-19 17:29:03,059 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/css/bootstrap.min.css
+2020-08-19 17:29:03,060 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/css/font-awesome.css
+2020-08-19 17:29:03,067 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/css/animate.css
+2020-08-19 17:29:03,071 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/css/style.css
+2020-08-19 17:29:03,075 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/js/jquery.min.js
+2020-08-19 17:29:03,076 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/js/bootstrap.min.js
+2020-08-19 17:29:06,086 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:29:06,088 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:29:06,089 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:29:12,424 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:29:12,427 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:29:12,427 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:29:36,517 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:29:36,519 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:29:36,519 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:29:48,032 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:29:48,034 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:29:48,035 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:29:51,040 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:29:51,040 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:29:51,040 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:30:17,623 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:30:17,623 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:30:17,624 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:30:30,280 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:30:30,281 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:30:30,281 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:30:38,440 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:30:38,441 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:30:38,443 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:35:10,833 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:35:10,835 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:35:10,836 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:36:10,187 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/dashboard.css
+2020-08-19 17:36:10,190 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:36:10,195 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:36:27,855 [HttpRunnerManager:60] [views:login] [INFO]- charles 登录失败, 请检查用户名或者密码
+2020-08-19 17:36:53,229 [HttpRunnerManager:55] [views:login] [INFO]- charles 登录成功
+2020-08-19 17:43:40,646 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/assets/js/worker-json.js
+2020-08-19 17:44:59,678 [HttpRunnerManager:66] [operation:add_project_data] [INFO]- 项目添加成功：{'project_name': 'test', 'responsible_name': 'Charles', 'test_user': 'Charles', 'dev_user': 'cc', 'publish_app': '22', 'simple_desc': '', 'other_desc': ''}
+2020-08-19 17:45:19,333 [HttpRunnerManager:114] [operation:add_module_data] [INFO]- 模块添加成功：{'module_name': 'APP端', 'test_user': 'Charles、Alice', 'simple_desc': '2222', 'other_desc': '', 'belong_project': <ProjectInfo: ProjectInfo object (23)>}
+2020-08-19 17:45:51,363 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/assets/js/worker-json.js
+2020-08-19 17:46:18,223 [HttpRunnerManager:158] [operation:add_case_data] [INFO]- 001test用例添加成功: {'test': {'request': {'url': 'https://account.ihr360.com/ac/login', 'method': 'POST', 'json': {'accountName': '15850595605', 'target': '', 'password': '111111', 'loginType': 'PASSWORD', 'verifyCode': None, 'mobilePrefix': 'CHINA'}, 'headers': {'Content-Type': ''}}, 'name': '001test'}}
+2020-08-19 17:46:22,197 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/assets/js/worker-json.js
+2020-08-19 17:46:39,246 [HttpRunnerManager:167] [operation:add_case_data] [INFO]- 001test用例更新成功: {'test': {'request': {'url': 'https://account.ihr360.com/ac/login', 'method': 'POST', 'json': {'accountName': '15850595605', 'target': '', 'password': '111111', 'loginType': 'PASSWORD', 'verifyCode': None, 'mobilePrefix': 'CHINA'}, 'headers': {'Content-Type': ''}}, 'name': '001test', 'validate': [{'comparator': 'equals', 'check': 'status_code', 'expected': 200}]}}
+2020-08-19 17:46:43,028 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 17:46:43,064 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 17:46:43,065 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 17:46:43,067 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 17:46:43,068 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 17:46:43,071 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 17:46:43,072 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 17:46:43,120 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/favicon.ico
+2020-08-19 17:47:11,663 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 17:47:11,694 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 17:47:11,695 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 17:47:11,696 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 17:47:11,697 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 17:47:11,698 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 17:47:11,699 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 17:48:04,577 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 17:48:04,614 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 17:48:04,615 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 17:48:04,615 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 17:48:04,616 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 17:48:04,617 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 17:48:04,619 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 17:49:04,873 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 17:49:04,898 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 17:49:04,899 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 17:49:04,900 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 17:49:04,901 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 17:49:04,902 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 17:49:04,903 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 17:56:51,032 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 17:56:51,075 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 17:56:51,078 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 17:56:51,078 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 17:56:51,081 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 17:56:51,083 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 17:56:51,087 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 18:02:02,641 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 18:02:02,678 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 18:02:02,679 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 18:02:02,679 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 18:02:02,680 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 18:02:02,680 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 18:02:02,680 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 18:43:04,905 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 18:43:04,934 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 18:43:04,935 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 18:43:04,936 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 18:43:04,939 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 18:43:04,940 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 18:43:04,944 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 18:44:01,756 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 18:44:01,790 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 18:44:01,792 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 18:44:01,794 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 18:44:01,797 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 18:44:01,799 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 18:44:01,800 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 18:51:13,577 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 18:51:13,603 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 18:51:13,604 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 18:51:13,609 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 18:51:13,611 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 18:51:13,613 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 18:51:13,616 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 18:52:28,997 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 18:52:29,039 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 18:52:29,041 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 18:52:29,048 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 18:52:29,050 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 18:52:29,052 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 18:52:29,053 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 09:32:12,655 [HttpRunnerManager:60] [views:login] [INFO]- admin 登录失败, 请检查用户名或者密码
+2020-08-20 09:32:19,443 [HttpRunnerManager:60] [views:login] [INFO]- charles 登录失败, 请检查用户名或者密码
+2020-08-20 09:32:32,444 [HttpRunnerManager:55] [views:login] [INFO]- charles 登录成功
+2020-08-20 09:32:57,820 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 09:32:57,842 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-20 09:32:57,846 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-20 09:32:57,849 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-20 09:32:57,851 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-20 09:32:57,854 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-20 09:32:57,857 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 09:33:04,140 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 09:33:04,175 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-20 09:33:04,179 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-20 09:33:04,184 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-20 09:33:04,190 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-20 09:33:04,191 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-20 09:33:04,193 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 09:37:05,931 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 09:37:05,956 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-20 09:37:05,960 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-20 09:37:05,969 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-20 09:37:05,971 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-20 09:37:05,982 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-20 09:37:05,987 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 10:59:58,699 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 10:59:58,740 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-20 10:59:58,741 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-20 10:59:58,742 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-20 10:59:58,743 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-20 10:59:58,744 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 10:59:58,745 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-20 10:59:58,753 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 11:01:33,115 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 11:01:33,155 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-20 11:01:33,157 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-20 11:01:33,158 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-20 11:01:33,159 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-20 11:01:33,160 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-20 11:01:33,160 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 11:02:31,909 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_batch_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 254, in run_batch_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 11:02:31,939 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_batch_test/css/bootstrap.min.css
+2020-08-20 11:02:31,940 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_batch_test/css/font-awesome.css
+2020-08-20 11:02:31,942 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_batch_test/css/animate.css
+2020-08-20 11:02:31,943 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_batch_test/css/style.css
+2020-08-20 11:02:31,944 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_batch_test/js/jquery.min.js
+2020-08-20 11:02:31,944 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_batch_test/js/bootstrap.min.js
+2020-08-20 11:02:31,964 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_batch_test/favicon.ico
+2020-08-20 11:10:25,078 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 11:10:25,098 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-20 11:10:25,100 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-20 11:10:25,104 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-20 11:10:25,106 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-20 11:10:25,109 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-20 11:10:25,111 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 11:10:31,044 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 11:10:31,080 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-20 11:10:31,082 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-20 11:10:31,083 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-20 11:10:31,084 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-20 11:10:31,085 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 11:10:31,086 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-20 11:10:31,095 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 11:11:58,006 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/assets/js/worker-json.js
+2020-08-20 11:12:03,414 [HttpRunnerManager:167] [operation:add_case_data] [INFO]- 001test用例更新成功: {'test': {'request': {'url': 'https://account.ihr360.com/ac/login', 'method': 'POST', 'json': {'accountName': '15850595605', 'target': '', 'password': '111111', 'loginType': 'PASSWORD', 'verifyCode': None, 'mobilePrefix': 'CHINA'}, 'headers': {'Content-Type': ''}}, 'name': '001test', 'validate': [{'comparator': 'equals', 'check': 'status_code', 'expected': 200}]}}
+2020-08-20 11:12:23,884 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 11:12:23,908 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-20 11:12:23,911 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-20 11:12:23,911 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-20 11:12:23,912 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 11:12:23,914 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-20 11:12:23,915 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-20 11:12:23,937 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 14:20:54,862 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/testcase/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+ModuleNotFoundError: No module named 'admin'
+2020-08-20 14:20:54,925 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/testcase/css/font-awesome.css
+2020-08-20 14:20:54,926 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/testcase/css/bootstrap.min.css
+2020-08-20 14:20:54,933 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/testcase/css/animate.css
+2020-08-20 14:20:54,936 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/testcase/css/style.css
+2020-08-20 14:20:54,938 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/testcase/js/jquery.min.js
+2020-08-20 14:20:54,940 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/testcase/js/bootstrap.min.js
+2020-08-20 14:20:55,033 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/testcase/favicon.ico
+2020-08-20 14:34:27,373 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/element/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+ModuleNotFoundError: No module named 'admin'
+2020-08-20 15:01:50,021 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/assets/js/worker-json.js
+2020-08-20 15:02:00,485 [HttpRunnerManager:167] [operation:add_case_data] [INFO]- 001test用例更新成功: {'test': {'request': {'url': 'https://account.ihr360.com/ac/login', 'method': 'POST', 'json': {'accountName': '15850595605', 'target': '', 'password': '111111', 'loginType': 'PASSWORD', 'verifyCode': None, 'mobilePrefix': 'CHINA'}, 'headers': {'Content-Type': ''}}, 'name': '001test', 'validate': [{'comparator': 'equals', 'check': 'status_code', 'expected': 405}]}}
+2020-08-20 15:16:08,443 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/assets/js/worker-json.js
+2020-08-20 15:16:14,632 [HttpRunnerManager:167] [operation:add_case_data] [INFO]- 001test用例更新成功: {'test': {'request': {'url': 'https://account.ihr360.com/ac/login', 'method': 'POST', 'json': {'accountName': '15850595605', 'target': '', 'password': '111111', 'loginType': 'PASSWORD', 'verifyCode': None, 'mobilePrefix': 'CHINA'}, 'headers': {'Content-Type': ''}}, 'name': '001test', 'validate': [{'comparator': 'equals', 'check': 'status_code', 'expected': 415}]}}
+2020-08-20 16:31:46,216 [HttpRunnerManager:60] [views:login] [INFO]- charles 登录失败, 请检查用户名或者密码
+2020-08-20 16:31:53,449 [HttpRunnerManager:55] [views:login] [INFO]- charles 登录成功
+2020-08-21 09:30:22,769 [HttpRunnerManager:60] [views:login] [INFO]- charles 登录失败, 请检查用户名或者密码
+2020-08-21 10:24:13,009 [HttpRunnerManager:55] [views:login] [INFO]- charles 登录成功
+2020-08-21 10:31:53,449 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/assets/js/worker-json.js
+2020-08-21 10:32:04,792 [HttpRunnerManager:167] [operation:add_case_data] [INFO]- 单接口--测试用例更新成功: {'test': {'request': {'url': 'https://account.ihr360.com/ac/login', 'method': 'POST', 'json': {'accountName': '15850595605', 'target': '', 'password': '111111', 'loginType': 'PASSWORD', 'verifyCode': None, 'mobilePrefix': 'CHINA'}, 'headers': {'Content-Type': ''}}, 'name': '单接口--测试', 'validate': [{'comparator': 'equals', 'check': 'status_code', 'expected': 415}]}}
+2020-08-21 10:37:53,611 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/assets/js/worker-json.js
+2020-08-21 10:38:05,054 [HttpRunnerManager:167] [operation:add_case_data] [INFO]- 单接口--test用例更新成功: {'test': {'request': {'url': 'https://account.ihr360.com/ac/login', 'method': 'POST', 'json': {'accountName': '15850595605', 'target': '', 'password': '111111', 'loginType': 'PASSWORD', 'verifyCode': None, 'mobilePrefix': 'CHINA'}, 'headers': {'Content-Type': ''}}, 'name': '单接口--test', 'validate': [{'comparator': 'equals', 'check': 'status_code', 'expected': 415}]}}

@@ -1,0 +1,1217 @@
+{\rtf1}2020-08-19 17:24:13,006 [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/element HTTP/1.1" 301 0
+2020-08-19 17:24:13,019 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/element/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+ModuleNotFoundError: No module named 'admin'
+2020-08-19 17:24:13,022 [django.server:154] [basehttp:log_message] [ERROR]- "GET /admin/element/ HTTP/1.1" 500 1081
+2020-08-19 17:24:14,578 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/css/font-awesome.css
+2020-08-19 17:24:14,578 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/css/animate.css
+2020-08-19 17:24:14,582 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/css/bootstrap.min.css
+2020-08-19 17:24:14,590 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/element/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-19 17:24:14,590 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/css/style.css
+2020-08-19 17:24:14,603 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/element/css/animate.css HTTP/1.1" 404 1387
+2020-08-19 17:24:14,603 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/js/jquery.min.js
+2020-08-19 17:24:14,604 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/element/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 17:24:14,606 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/js/bootstrap.min.js
+2020-08-19 17:24:14,614 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/element/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-19 17:24:14,618 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/element/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-19 17:24:14,625 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/element/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 17:24:14,705 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/favicon.ico
+2020-08-19 17:24:14,706 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/element/favicon.ico HTTP/1.1" 404 1387
+2020-08-19 17:24:40,655 [django.server:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+2020-08-19 17:24:40,688 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/login/ HTTP/1.1" 200 3862
+2020-08-19 17:24:40,711 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/iconfont/style.css HTTP/1.1" 200 1722
+2020-08-19 17:24:40,725 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/img/main_bg.png HTTP/1.1" 200 2801
+2020-08-19 17:24:40,729 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/img/bg.jpg HTTP/1.1" 200 135990
+2020-08-19 17:24:40,837 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/iconfont/fonts/icomoon.ttf?u4m6fy HTTP/1.1" 200 6900
+2020-08-19 17:24:55,155 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/login/ HTTP/1.1" 200 3862
+2020-08-19 17:27:13,220 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/login/ HTTP/1.1" 200 3862
+2020-08-19 17:27:23,200 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/login/ HTTP/1.1" 200 3862
+2020-08-19 17:28:24,444 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/login/ HTTP/1.1" 200 3862
+2020-08-19 17:29:03,032 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/element/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+ModuleNotFoundError: No module named 'admin'
+2020-08-19 17:29:03,035 [django.server:154] [basehttp:log_message] [ERROR]- "GET /admin/element/ HTTP/1.1" 500 1081
+2020-08-19 17:29:03,059 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/css/bootstrap.min.css
+2020-08-19 17:29:03,060 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/css/font-awesome.css
+2020-08-19 17:29:03,062 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/element/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 17:29:03,062 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/element/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-19 17:29:03,067 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/css/animate.css
+2020-08-19 17:29:03,071 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/css/style.css
+2020-08-19 17:29:03,072 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/element/css/animate.css HTTP/1.1" 404 1387
+2020-08-19 17:29:03,075 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/js/jquery.min.js
+2020-08-19 17:29:03,076 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/element/js/bootstrap.min.js
+2020-08-19 17:29:03,077 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/element/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-19 17:29:03,080 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/element/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-19 17:29:03,082 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/element/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 17:29:06,034 [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+2020-08-19 17:29:06,063 [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1838
+2020-08-19 17:29:06,086 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:29:06,088 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:29:06,089 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/base.css HTTP/1.1" 404 1387
+2020-08-19 17:29:06,089 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:29:06,089 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/responsive.css HTTP/1.1" 404 1387
+2020-08-19 17:29:06,090 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/login.css HTTP/1.1" 404 1387
+2020-08-19 17:29:12,401 [django.server:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1970
+2020-08-19 17:29:12,424 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:29:12,424 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/base.css HTTP/1.1" 404 1387
+2020-08-19 17:29:12,427 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:29:12,427 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:29:12,428 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/login.css HTTP/1.1" 404 1387
+2020-08-19 17:29:12,430 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/responsive.css HTTP/1.1" 404 1387
+2020-08-19 17:29:36,500 [django.server:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1971
+2020-08-19 17:29:36,517 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:29:36,519 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:29:36,519 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:29:36,520 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/login.css HTTP/1.1" 404 1387
+2020-08-19 17:29:36,520 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/base.css HTTP/1.1" 404 1387
+2020-08-19 17:29:36,520 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/responsive.css HTTP/1.1" 404 1387
+2020-08-19 17:29:48,013 [django.server:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1971
+2020-08-19 17:29:48,032 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:29:48,033 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/base.css HTTP/1.1" 404 1387
+2020-08-19 17:29:48,034 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:29:48,035 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:29:48,036 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/login.css HTTP/1.1" 404 1387
+2020-08-19 17:29:48,036 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/responsive.css HTTP/1.1" 404 1387
+2020-08-19 17:29:51,007 [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 302 0
+2020-08-19 17:29:51,017 [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1838
+2020-08-19 17:29:51,040 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:29:51,040 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:29:51,040 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:29:51,041 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/responsive.css HTTP/1.1" 404 1387
+2020-08-19 17:29:51,042 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/base.css HTTP/1.1" 404 1387
+2020-08-19 17:29:51,042 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/login.css HTTP/1.1" 404 1387
+2020-08-19 17:30:17,600 [django.server:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1970
+2020-08-19 17:30:17,623 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:30:17,623 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:30:17,624 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:30:17,624 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/base.css HTTP/1.1" 404 1387
+2020-08-19 17:30:17,625 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/responsive.css HTTP/1.1" 404 1387
+2020-08-19 17:30:17,627 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/login.css HTTP/1.1" 404 1387
+2020-08-19 17:30:30,259 [django.server:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1972
+2020-08-19 17:30:30,280 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:30:30,281 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:30:30,281 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:30:30,283 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/base.css HTTP/1.1" 404 1387
+2020-08-19 17:30:30,284 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/responsive.css HTTP/1.1" 404 1387
+2020-08-19 17:30:30,285 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/login.css HTTP/1.1" 404 1387
+2020-08-19 17:30:38,420 [django.server:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1972
+2020-08-19 17:30:38,440 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:30:38,441 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:30:38,442 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/base.css HTTP/1.1" 404 1387
+2020-08-19 17:30:38,443 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:30:38,444 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/login.css HTTP/1.1" 404 1387
+2020-08-19 17:30:38,444 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/responsive.css HTTP/1.1" 404 1387
+2020-08-19 17:35:10,806 [django.server:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1970
+2020-08-19 17:35:10,833 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:35:10,836 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/base.css HTTP/1.1" 404 1387
+2020-08-19 17:35:10,835 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/login.css
+2020-08-19 17:35:10,836 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:35:10,838 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/login.css HTTP/1.1" 404 1387
+2020-08-19 17:35:10,840 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/responsive.css HTTP/1.1" 404 1387
+2020-08-19 17:36:10,120 [django.server:154] [basehttp:log_message] [INFO]- "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+2020-08-19 17:36:10,147 [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/ HTTP/1.1" 200 8180
+2020-08-19 17:36:10,187 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/dashboard.css
+2020-08-19 17:36:10,190 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/dashboard.css HTTP/1.1" 404 1387
+2020-08-19 17:36:10,190 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/base.css
+2020-08-19 17:36:10,195 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/admin/css/responsive.css
+2020-08-19 17:36:10,196 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/base.css HTTP/1.1" 404 1387
+2020-08-19 17:36:10,200 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/admin/css/responsive.css HTTP/1.1" 404 1387
+2020-08-19 17:36:21,526 [django.server:154] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 302 0
+2020-08-19 17:36:21,529 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/login/ HTTP/1.1" 200 3862
+2020-08-19 17:36:27,867 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/login/ HTTP/1.1" 200 3862
+2020-08-19 17:36:53,236 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/login/ HTTP/1.1" 302 0
+2020-08-19 17:36:53,294 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/index/ HTTP/1.1" 200 18083
+2020-08-19 17:36:53,325 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/css/common.css HTTP/1.1" 200 1077
+2020-08-19 17:36:53,331 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/css/select2.css HTTP/1.1" 200 18137
+2020-08-19 17:36:53,334 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/css/admin.css HTTP/1.1" 200 20853
+2020-08-19 17:36:53,343 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/commons.js HTTP/1.1" 200 13636
+2020-08-19 17:36:53,343 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/app.js HTTP/1.1" 200 21264
+2020-08-19 17:36:53,372 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/ext-language_tools.js HTTP/1.1" 200 51638
+2020-08-19 17:36:53,375 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/select2.js HTTP/1.1" 200 152056
+2020-08-19 17:36:53,381 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/ace.js HTTP/1.1" 200 354523
+2020-08-19 17:36:53,402 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/echarts.min.js HTTP/1.1" 200 751784
+2020-08-19 17:37:33,191 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_case/ HTTP/1.1" 200 34615
+2020-08-19 17:37:35,664 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 22466
+2020-08-19 17:37:35,875 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 17:37:55,328 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 22466
+2020-08-19 17:37:55,479 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 17:42:17,021 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_case/ HTTP/1.1" 200 34615
+2020-08-19 17:43:40,524 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/theme-github.js HTTP/1.1" 200 2223
+2020-08-19 17:43:40,527 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/mode-json.js HTTP/1.1" 200 8682
+2020-08-19 17:43:40,604 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/snippets/text.js HTTP/1.1" 200 127
+2020-08-19 17:43:40,646 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/assets/js/worker-json.js
+2020-08-19 17:43:40,647 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/assets/js/worker-json.js HTTP/1.1" 404 1387
+2020-08-19 17:43:40,647 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/snippets/json.js HTTP/1.1" 200 127
+2020-08-19 17:44:23,244 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 15
+2020-08-19 17:44:27,432 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_case/ HTTP/1.1" 200 34615
+2020-08-19 17:44:30,043 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_module/ HTTP/1.1" 200 16732
+2020-08-19 17:44:32,529 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/project_list/1/ HTTP/1.1" 200 26952
+2020-08-19 17:44:34,208 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_project/ HTTP/1.1" 200 18177
+2020-08-19 17:44:47,927 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_project/ HTTP/1.1" 200 21
+2020-08-19 17:44:53,282 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_project/ HTTP/1.1" 200 24
+2020-08-19 17:44:59,680 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_project/ HTTP/1.1" 200 20
+2020-08-19 17:44:59,711 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/project_list/1/ HTTP/1.1" 200 29945
+2020-08-19 17:45:08,075 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/project_list/1/ HTTP/1.1" 200 29945
+2020-08-19 17:45:10,714 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_module/ HTTP/1.1" 200 16836
+2020-08-19 17:45:19,335 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_module/ HTTP/1.1" 200 19
+2020-08-19 17:45:19,392 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/module_list/1/ HTTP/1.1" 200 28794
+2020-08-19 17:45:38,263 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_case/ HTTP/1.1" 200 34927
+2020-08-19 17:45:51,363 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/assets/js/worker-json.js
+2020-08-19 17:45:51,365 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/assets/js/worker-json.js HTTP/1.1" 404 1387
+2020-08-19 17:46:15,755 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 11
+2020-08-19 17:46:18,225 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 17
+2020-08-19 17:46:18,251 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25508
+2020-08-19 17:46:18,429 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 17:46:21,944 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/edit_case/2421/ HTTP/1.1" 200 37677
+2020-08-19 17:46:22,197 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/assets/js/worker-json.js
+2020-08-19 17:46:22,201 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/assets/js/worker-json.js HTTP/1.1" 404 1387
+2020-08-19 17:46:39,255 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/edit_case/ HTTP/1.1" 200 17
+2020-08-19 17:46:39,284 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25508
+2020-08-19 17:46:39,455 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 17:46:43,028 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 17:46:43,031 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-19 17:46:43,064 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 17:46:43,065 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 17:46:43,067 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 17:46:43,068 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 17:46:43,071 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 17:46:43,073 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 17:46:43,072 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 17:46:43,075 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-19 17:46:43,076 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-19 17:46:43,088 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-19 17:46:43,088 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-19 17:46:43,089 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 17:46:43,120 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/favicon.ico
+2020-08-19 17:46:43,121 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/favicon.ico HTTP/1.1" 404 1387
+2020-08-19 17:47:02,145 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/index/ HTTP/1.1" 200 18083
+2020-08-19 17:47:05,743 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25508
+2020-08-19 17:47:06,034 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 17:47:11,663 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 17:47:11,665 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-19 17:47:11,694 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 17:47:11,695 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 17:47:11,696 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 17:47:11,697 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 17:47:11,698 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 17:47:11,699 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 17:47:11,700 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 17:47:11,700 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-19 17:47:11,702 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-19 17:47:11,706 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-19 17:47:11,707 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-19 17:47:11,708 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 17:47:13,494 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 17:47:17,095 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/env_list/1/ HTTP/1.1" 200 18442
+2020-08-19 17:47:30,836 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/env_set/ HTTP/1.1" 200 24
+2020-08-19 17:47:58,167 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/env_set/ HTTP/1.1" 200 2
+2020-08-19 17:47:58,210 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/env_list/1/ HTTP/1.1" 200 20293
+2020-08-19 17:48:00,947 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-19 17:48:01,111 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 17:48:04,577 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 17:48:04,579 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-19 17:48:04,614 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 17:48:04,615 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 17:48:04,615 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 17:48:04,616 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 17:48:04,617 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 17:48:04,619 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 17:48:04,623 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 17:48:04,625 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-19 17:48:04,625 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-19 17:48:04,628 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-19 17:48:04,629 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-19 17:48:04,630 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 17:48:07,686 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 17:49:04,873 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 17:49:04,878 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-19 17:49:04,898 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 17:49:04,899 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 17:49:04,900 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 17:49:04,901 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 17:49:04,902 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 17:49:04,903 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 17:49:04,905 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 17:49:04,908 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-19 17:49:04,910 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-19 17:49:04,911 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-19 17:49:04,911 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-19 17:49:04,911 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 17:49:09,010 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 17:51:16,660 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-19 17:51:16,836 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 17:51:17,537 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-19 17:51:17,693 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 17:56:51,032 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 17:56:51,036 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-19 17:56:51,075 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 17:56:51,078 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 17:56:51,081 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-19 17:56:51,078 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 17:56:51,084 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 17:56:51,081 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 17:56:51,083 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 17:56:51,088 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-19 17:56:51,087 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 17:56:51,088 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-19 17:56:51,089 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-19 17:56:51,091 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 17:56:53,212 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/index/ HTTP/1.1" 200 18083
+2020-08-19 17:56:56,739 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-19 17:56:56,905 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 18:02:02,641 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 18:02:02,644 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-19 18:02:02,678 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 18:02:02,679 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 18:02:02,681 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 18:02:02,679 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 18:02:02,680 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 18:02:02,680 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 18:02:02,680 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 18:02:02,683 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-19 18:02:02,684 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-19 18:02:02,684 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-19 18:02:02,686 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-19 18:02:02,688 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 18:02:04,551 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 18:43:00,872 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-19 18:43:01,115 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 18:43:04,905 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 18:43:04,908 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-19 18:43:04,934 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 18:43:04,935 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 18:43:04,936 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 18:43:04,939 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 18:43:04,941 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 18:43:04,940 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 18:43:04,943 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-19 18:43:04,944 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 18:43:04,946 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-19 18:43:04,946 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-19 18:43:04,948 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-19 18:43:04,950 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 18:43:06,559 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 18:43:56,177 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-19 18:43:56,356 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 18:44:01,756 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 18:44:01,757 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-19 18:44:01,790 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 18:44:01,791 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 18:44:01,792 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 18:44:01,799 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-19 18:44:01,794 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 18:44:01,797 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 18:44:01,799 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 18:44:01,802 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-19 18:44:01,800 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 18:44:01,804 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-19 18:44:01,804 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-19 18:44:01,806 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 18:44:04,370 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 18:51:10,032 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-19 18:51:10,200 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 18:51:13,577 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 18:51:13,579 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-19 18:51:13,603 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 18:51:13,604 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 18:51:13,605 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-19 18:51:13,607 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 18:51:13,609 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 18:51:13,611 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 18:51:13,613 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 18:51:13,615 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-19 18:51:13,615 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-19 18:51:13,619 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-19 18:51:13,616 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 18:51:13,621 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 18:51:15,534 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-19 18:52:28,997 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-19 18:52:29,003 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-19 18:52:29,039 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-19 18:52:29,041 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-19 18:52:29,042 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 18:52:29,042 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-19 18:52:29,048 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-19 18:52:29,050 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-19 18:52:29,052 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-19 18:52:29,053 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-19 18:52:29,054 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-19 18:52:29,054 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-19 18:52:29,055 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-19 18:52:29,057 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-20 09:32:11,059 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/run_test/ HTTP/1.1" 302 0
+2020-08-20 09:32:11,065 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/login/ HTTP/1.1" 200 3862
+2020-08-20 09:32:11,083 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/iconfont/style.css HTTP/1.1" 304 0
+2020-08-20 09:32:11,111 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/img/main_bg.png HTTP/1.1" 304 0
+2020-08-20 09:32:11,112 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/img/bg.jpg HTTP/1.1" 304 0
+2020-08-20 09:32:11,117 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/iconfont/fonts/icomoon.ttf?u4m6fy HTTP/1.1" 304 0
+2020-08-20 09:32:12,664 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/login/ HTTP/1.1" 200 3862
+2020-08-20 09:32:19,456 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/login/ HTTP/1.1" 200 3862
+2020-08-20 09:32:32,449 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/login/ HTTP/1.1" 302 0
+2020-08-20 09:32:32,549 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/index/ HTTP/1.1" 200 18083
+2020-08-20 09:32:32,574 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/css/common.css HTTP/1.1" 304 0
+2020-08-20 09:32:32,575 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/css/admin.css HTTP/1.1" 304 0
+2020-08-20 09:32:32,576 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/css/select2.css HTTP/1.1" 304 0
+2020-08-20 09:32:32,587 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/ext-language_tools.js HTTP/1.1" 304 0
+2020-08-20 09:32:32,587 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/ace.js HTTP/1.1" 304 0
+2020-08-20 09:32:32,588 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/app.js HTTP/1.1" 304 0
+2020-08-20 09:32:32,599 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/commons.js HTTP/1.1" 304 0
+2020-08-20 09:32:32,603 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/echarts.min.js HTTP/1.1" 304 0
+2020-08-20 09:32:32,606 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/select2.js HTTP/1.1" 304 0
+2020-08-20 09:32:51,819 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-20 09:32:52,067 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 09:32:57,820 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 09:32:57,825 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-20 09:32:57,842 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-20 09:32:57,843 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 09:32:57,846 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-20 09:32:57,850 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-20 09:32:57,849 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-20 09:32:57,851 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-20 09:32:57,854 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-20 09:32:57,857 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 09:32:57,858 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-20 09:32:57,858 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-20 09:32:57,859 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-20 09:32:57,859 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 09:33:00,356 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 09:33:04,140 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 09:33:04,143 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-20 09:33:04,175 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-20 09:33:04,179 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-20 09:33:04,181 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 09:33:04,183 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-20 09:33:04,184 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-20 09:33:04,185 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-20 09:33:04,190 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-20 09:33:04,191 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-20 09:33:04,193 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 09:33:04,194 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-20 09:33:04,195 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-20 09:33:04,195 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 09:33:05,757 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 09:37:05,931 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 09:37:05,935 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-20 09:37:05,956 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-20 09:37:05,957 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 09:37:05,960 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-20 09:37:05,967 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-20 09:37:05,969 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-20 09:37:05,971 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-20 09:37:05,982 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-20 09:37:05,983 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-20 09:37:05,983 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-20 09:37:05,984 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-20 09:37:05,987 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 09:37:05,991 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 10:59:51,683 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/index/ HTTP/1.1" 200 18083
+2020-08-20 10:59:55,180 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-20 10:59:55,358 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 10:59:58,699 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 10:59:58,703 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-20 10:59:58,740 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-20 10:59:58,741 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-20 10:59:58,742 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-20 10:59:58,742 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-20 10:59:58,743 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 10:59:58,744 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-20 10:59:58,743 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-20 10:59:58,744 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 10:59:58,746 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 10:59:58,745 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-20 10:59:58,746 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-20 10:59:58,748 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-20 10:59:58,753 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 10:59:58,755 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 11:00:00,323 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 11:01:33,115 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 11:01:33,118 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-20 11:01:33,155 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-20 11:01:33,157 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-20 11:01:33,158 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-20 11:01:33,159 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-20 11:01:33,160 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-20 11:01:33,161 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-20 11:01:33,160 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 11:01:33,162 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-20 11:01:33,162 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 11:01:33,163 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-20 11:01:33,163 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-20 11:01:33,164 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 11:01:50,044 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/index/ HTTP/1.1" 200 18083
+2020-08-20 11:02:25,279 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-20 11:02:25,446 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 11:02:31,909 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_batch_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 254, in run_batch_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 11:02:31,911 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_batch_test/ HTTP/1.1" 500 1081
+2020-08-20 11:02:31,939 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_batch_test/css/bootstrap.min.css
+2020-08-20 11:02:31,940 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_batch_test/css/font-awesome.css
+2020-08-20 11:02:31,942 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_batch_test/css/animate.css
+2020-08-20 11:02:31,943 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_batch_test/css/style.css
+2020-08-20 11:02:31,944 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_batch_test/js/jquery.min.js
+2020-08-20 11:02:31,944 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_batch_test/js/bootstrap.min.js
+2020-08-20 11:02:31,947 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_batch_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 11:02:31,947 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_batch_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-20 11:02:31,948 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_batch_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-20 11:02:31,950 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_batch_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-20 11:02:31,951 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_batch_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-20 11:02:31,952 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_batch_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 11:02:31,964 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_batch_test/favicon.ico
+2020-08-20 11:02:31,965 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_batch_test/favicon.ico HTTP/1.1" 404 1387
+2020-08-20 11:02:34,328 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/index/ HTTP/1.1" 200 18083
+2020-08-20 11:10:19,705 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/config_list/1/ HTTP/1.1" 200 19920
+2020-08-20 11:10:19,892 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 11:10:21,529 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-20 11:10:21,699 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 11:10:25,078 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 11:10:25,080 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-20 11:10:25,098 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-20 11:10:25,100 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-20 11:10:25,102 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 11:10:25,104 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-20 11:10:25,107 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-20 11:10:25,106 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-20 11:10:25,107 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-20 11:10:25,108 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-20 11:10:25,109 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-20 11:10:25,111 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 11:10:25,112 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-20 11:10:25,115 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 11:10:26,701 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 11:10:31,044 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 11:10:31,046 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-20 11:10:31,080 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-20 11:10:31,082 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-20 11:10:31,083 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-20 11:10:31,087 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 11:10:31,087 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-20 11:10:31,084 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-20 11:10:31,085 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 11:10:31,086 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-20 11:10:31,088 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-20 11:10:31,088 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-20 11:10:31,089 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 11:10:31,090 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-20 11:10:31,095 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 11:10:31,096 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 11:11:49,588 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/index/ HTTP/1.1" 200 18083
+2020-08-20 11:11:54,650 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-20 11:11:54,807 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 11:11:57,764 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/edit_case/2421/ HTTP/1.1" 200 42222
+2020-08-20 11:11:57,894 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/theme-github.js HTTP/1.1" 304 0
+2020-08-20 11:11:57,894 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/mode-json.js HTTP/1.1" 304 0
+2020-08-20 11:11:57,908 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/snippets/text.js HTTP/1.1" 304 0
+2020-08-20 11:11:58,000 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/snippets/json.js HTTP/1.1" 304 0
+2020-08-20 11:11:58,006 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/assets/js/worker-json.js
+2020-08-20 11:11:58,006 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/assets/js/worker-json.js HTTP/1.1" 404 1387
+2020-08-20 11:12:03,415 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/edit_case/ HTTP/1.1" 200 17
+2020-08-20 11:12:03,441 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-20 11:12:03,585 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 11:12:23,884 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /api/run_test/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 15, in process
+    result = fun(request, index) if index else fun(request)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 39, in wrapper
+    return func(request, *args, **kwargs)
+  File "E:\logs\HMrunner\ApiManager\views.py", line 216, in run_test
+    runner = HttpRunner(**kwargs)
+TypeError: object() takes no parameters
+2020-08-20 11:12:23,887 [django.server:154] [basehttp:log_message] [ERROR]- "POST /api/run_test/ HTTP/1.1" 500 1081
+2020-08-20 11:12:23,908 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/bootstrap.min.css
+2020-08-20 11:12:23,911 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/style.css
+2020-08-20 11:12:23,911 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/jquery.min.js
+2020-08-20 11:12:23,912 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 11:12:23,914 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/animate.css
+2020-08-20 11:12:23,915 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 11:12:23,915 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/css/font-awesome.css
+2020-08-20 11:12:23,916 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-20 11:12:23,918 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-20 11:12:23,918 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 11:12:23,921 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/animate.css HTTP/1.1" 404 1387
+2020-08-20 11:12:23,933 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-20 11:12:23,937 [django.request:228] [log:log_response] [WARNING]- Not Found: /api/run_test/js/bootstrap.min.js
+2020-08-20 11:12:23,940 [django.server:154] [basehttp:log_message] [WARNING]- "GET /api/run_test/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 11:12:25,605 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 11:14:46,314 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/run_test/ HTTP/1.1" 200 44015
+2020-08-20 11:14:46,376 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/css/extent.css HTTP/1.1" 200 117753
+2020-08-20 11:14:46,384 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/extent.js HTTP/1.1" 200 350842
+2020-08-20 11:15:47,918 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 11:22:34,932 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 17175
+2020-08-20 11:22:38,976 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-20 11:22:39,159 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 11:22:47,568 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/run_test/ HTTP/1.1" 200 43984
+2020-08-20 11:22:57,993 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 11:25:38,621 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 17175
+2020-08-20 11:25:40,563 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_task/ HTTP/1.1" 200 19772
+2020-08-20 11:25:51,966 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_task/ HTTP/1.1" 200 0
+2020-08-20 11:25:57,292 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/suite_list/1/ HTTP/1.1" 200 23783
+2020-08-20 11:26:01,555 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 17175
+2020-08-20 11:26:03,090 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_task/ HTTP/1.1" 200 19772
+2020-08-20 11:26:08,545 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_task/ HTTP/1.1" 200 11
+2020-08-20 11:26:28,603 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_task/ HTTP/1.1" 200 24
+2020-08-20 11:26:43,099 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_task/ HTTP/1.1" 200 20
+2020-08-20 11:26:43,142 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19712
+2020-08-20 11:26:53,264 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-20 11:26:53,441 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 11:26:58,824 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19712
+2020-08-20 11:27:09,232 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 11:27:09,277 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 17175
+2020-08-20 11:27:10,351 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_task/ HTTP/1.1" 200 19772
+2020-08-20 11:27:14,550 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/suite_list/1/ HTTP/1.1" 200 23783
+2020-08-20 11:27:15,986 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_suite/ HTTP/1.1" 200 18449
+2020-08-20 11:27:17,513 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 11
+2020-08-20 11:27:18,271 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 13
+2020-08-20 11:27:24,784 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_suite/ HTTP/1.1" 200 18
+2020-08-20 11:27:24,834 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/suite_list/1/ HTTP/1.1" 200 27599
+2020-08-20 11:27:27,314 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 17175
+2020-08-20 11:27:28,595 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_task/ HTTP/1.1" 200 19772
+2020-08-20 11:27:35,555 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_task/ HTTP/1.1" 200 8
+2020-08-20 11:29:04,552 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_task/ HTTP/1.1" 200 20
+2020-08-20 11:29:04,600 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:29:47,663 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 11:29:51,728 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 11:29:57,359 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:31:16,588 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:31:25,983 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:31:27,279 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:31:27,569 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_task/ HTTP/1.1" 200 19772
+2020-08-20 11:31:38,810 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:32:28,455 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:32:30,605 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 11:32:32,071 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 11:32:33,034 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 11:32:33,396 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 11:32:33,826 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 11:33:39,029 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:33:53,575 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 11:33:56,641 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:34:43,335 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:34:46,278 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 11:34:51,716 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:40:00,808 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:40:01,361 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:40:01,687 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:40:01,984 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:40:03,630 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 11:41:20,916 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 11:41:21,998 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 11:41:22,308 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 11:41:23,042 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 11:41:26,048 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:41:30,269 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 11:41:30,305 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:41:32,038 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 11:41:32,079 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 11:42:20,683 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_task/ HTTP/1.1" 200 19772
+2020-08-20 11:43:08,033 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_task/ HTTP/1.1" 200 8
+2020-08-20 11:43:10,355 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_task/ HTTP/1.1" 200 20
+2020-08-20 11:43:10,410 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 22265
+2020-08-20 11:43:28,162 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 22265
+2020-08-20 11:43:29,821 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 12:19:52,279 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 12:19:55,074 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 22265
+2020-08-20 13:33:48,183 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 22265
+2020-08-20 13:33:48,216 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/css/common.css HTTP/1.1" 304 0
+2020-08-20 13:33:48,217 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/css/select2.css HTTP/1.1" 304 0
+2020-08-20 13:33:48,219 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/ace.js HTTP/1.1" 304 0
+2020-08-20 13:33:48,220 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/css/admin.css HTTP/1.1" 304 0
+2020-08-20 13:33:48,223 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/ext-language_tools.js HTTP/1.1" 304 0
+2020-08-20 13:33:48,223 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/app.js HTTP/1.1" 304 0
+2020-08-20 13:33:48,225 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/commons.js HTTP/1.1" 304 0
+2020-08-20 13:33:48,227 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/select2.js HTTP/1.1" 304 0
+2020-08-20 13:33:50,556 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 13:39:59,132 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 22265
+2020-08-20 13:40:59,291 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_task/ HTTP/1.1" 200 19772
+2020-08-20 13:41:06,642 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_task/ HTTP/1.1" 200 8
+2020-08-20 13:41:22,085 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_task/ HTTP/1.1" 200 33
+2020-08-20 13:41:29,682 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_task/ HTTP/1.1" 200 33
+2020-08-20 13:41:45,609 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_task/ HTTP/1.1" 200 33
+2020-08-20 13:41:52,503 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_task/ HTTP/1.1" 200 20
+2020-08-20 13:41:52,549 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 24808
+2020-08-20 13:43:31,597 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 24808
+2020-08-20 13:43:34,954 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 13:43:46,196 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 14:17:47,694 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 24808
+2020-08-20 14:20:54,856 [django.server:154] [basehttp:log_message] [INFO]- "GET /admin/testcase HTTP/1.1" 301 0
+2020-08-20 14:20:54,862 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/testcase/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+ModuleNotFoundError: No module named 'admin'
+2020-08-20 14:20:54,865 [django.server:154] [basehttp:log_message] [ERROR]- "GET /admin/testcase/ HTTP/1.1" 500 1081
+2020-08-20 14:20:54,925 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/testcase/css/font-awesome.css
+2020-08-20 14:20:54,926 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/testcase/css/bootstrap.min.css
+2020-08-20 14:20:54,931 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/testcase/css/font-awesome.css?v=4.4.0 HTTP/1.1" 404 1387
+2020-08-20 14:20:54,933 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/testcase/css/animate.css
+2020-08-20 14:20:54,936 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/testcase/css/style.css
+2020-08-20 14:20:54,938 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/testcase/js/jquery.min.js
+2020-08-20 14:20:54,940 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/testcase/js/bootstrap.min.js
+2020-08-20 14:20:54,942 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/testcase/css/bootstrap.min.css?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 14:20:54,945 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/testcase/css/animate.css HTTP/1.1" 404 1387
+2020-08-20 14:20:54,947 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/testcase/css/style.css?v=4.1.0 HTTP/1.1" 404 1387
+2020-08-20 14:20:54,948 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/testcase/js/jquery.min.js?v=2.1.4 HTTP/1.1" 404 1387
+2020-08-20 14:20:54,950 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/testcase/js/bootstrap.min.js?v=3.3.6 HTTP/1.1" 404 1387
+2020-08-20 14:20:55,033 [django.request:228] [log:log_response] [WARNING]- Not Found: /admin/testcase/favicon.ico
+2020-08-20 14:20:55,035 [django.server:154] [basehttp:log_message] [WARNING]- "GET /admin/testcase/favicon.ico HTTP/1.1" 404 1387
+2020-08-20 14:21:11,633 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 24808
+2020-08-20 14:21:13,575 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 14:21:14,177 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 14:21:14,439 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 14:21:14,648 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 14:21:14,903 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 14:21:15,480 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 14:21:15,734 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 14:21:15,910 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 14:21:16,085 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 14:21:16,275 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 14:21:16,421 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 14:34:27,373 [django.request:228] [log:log_response] [ERROR]- Internal Server Error: /admin/element/
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 126, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\django\core\handlers\base.py", line 124, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\logs\HMrunner\HttpRunnerManager\activator.py", line 10, in process
+    app = __import__("%s.views" % app)
+ModuleNotFoundError: No module named 'admin'
+2020-08-20 14:34:27,376 [django.server:154] [basehttp:log_message] [ERROR]- "GET /admin/element/ HTTP/1.1" 500 1081
+2020-08-20 14:42:15,653 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 14:42:18,515 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 24808
+2020-08-20 14:42:28,309 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_task/ HTTP/1.1" 200 19772
+2020-08-20 14:44:17,959 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 14:44:18,004 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 22265
+2020-08-20 14:44:19,014 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_task/ HTTP/1.1" 200 19772
+2020-08-20 14:44:25,021 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_task/ HTTP/1.1" 200 8
+2020-08-20 14:45:11,135 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_task/ HTTP/1.1" 200 20
+2020-08-20 14:45:11,176 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 24792
+2020-08-20 14:58:16,387 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 24792
+2020-08-20 14:59:42,859 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 24792
+2020-08-20 14:59:45,807 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 15:01:16,359 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 24792
+2020-08-20 15:01:37,335 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 15:01:37,377 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 22241
+2020-08-20 15:01:39,823 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 15:01:39,869 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 15:01:42,788 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 15:01:42,824 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 17175
+2020-08-20 15:01:45,955 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-20 15:01:46,115 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 15:01:49,790 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/edit_case/2421/ HTTP/1.1" 200 42222
+2020-08-20 15:01:50,021 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/assets/js/worker-json.js
+2020-08-20 15:01:50,022 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/assets/js/worker-json.js HTTP/1.1" 404 1387
+2020-08-20 15:02:00,487 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/edit_case/ HTTP/1.1" 200 17
+2020-08-20 15:02:00,514 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-20 15:02:00,705 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 15:02:03,489 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 17175
+2020-08-20 15:02:05,281 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/add_task/ HTTP/1.1" 200 19772
+2020-08-20 15:02:14,180 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_task/ HTTP/1.1" 200 8
+2020-08-20 15:02:37,607 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_task/ HTTP/1.1" 200 20
+2020-08-20 15:02:37,649 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 15:03:48,561 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 15:03:51,003 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 15:10:37,135 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 15:10:37,961 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 15:10:40,815 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 15:10:40,851 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 15:10:42,703 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 15:10:42,747 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 15:13:58,867 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 16952
+2020-08-20 15:14:03,901 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 15:14:05,871 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 15:14:05,910 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 15:15:52,182 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 18641
+2020-08-20 15:15:55,052 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/view_report/4370 HTTP/1.1" 301 0
+2020-08-20 15:15:55,072 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/view_report/4370/ HTTP/1.1" 200 507831
+2020-08-20 15:16:05,591 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-20 15:16:05,763 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 15:16:08,145 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/edit_case/2421/ HTTP/1.1" 200 42222
+2020-08-20 15:16:08,443 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/assets/js/worker-json.js
+2020-08-20 15:16:08,447 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/assets/js/worker-json.js HTTP/1.1" 404 1387
+2020-08-20 15:16:14,634 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/edit_case/ HTTP/1.1" 200 17
+2020-08-20 15:16:14,663 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-20 15:16:14,905 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 15:16:19,158 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/run_test/ HTTP/1.1" 200 42650
+2020-08-20 15:16:32,344 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 15:16:54,029 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 15:16:55,395 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 15:16:55,441 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 15:16:59,516 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 20330
+2020-08-20 15:17:02,948 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/view_report/4371 HTTP/1.1" 301 0
+2020-08-20 15:17:02,967 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/view_report/4371/ HTTP/1.1" 200 507831
+2020-08-20 16:18:17,089 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:18:18,982 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 16:18:19,033 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:18:53,511 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:18:56,420 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 20330
+2020-08-20 16:20:24,115 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:20:33,839 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-20 16:20:34,013 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 16:20:38,286 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/run_test/ HTTP/1.1" 200 42650
+2020-08-20 16:20:38,323 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/css/extent.css HTTP/1.1" 304 0
+2020-08-20 16:20:38,326 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/extent.js HTTP/1.1" 304 0
+2020-08-20 16:20:40,710 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-20 16:20:43,268 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:21:06,023 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 25412
+2020-08-20 16:21:13,266 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:21:16,047 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 16:21:16,087 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:21:18,183 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 16:21:18,220 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:21:54,779 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 25412
+2020-08-20 16:21:56,707 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/view_report/4374 HTTP/1.1" 301 0
+2020-08-20 16:21:56,724 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/view_report/4374/ HTTP/1.1" 200 506486
+2020-08-20 16:30:46,923 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:30:48,802 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 16:30:48,849 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:31:24,269 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 27106
+2020-08-20 16:31:29,784 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 302 0
+2020-08-20 16:31:29,792 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/login/ HTTP/1.1" 200 3862
+2020-08-20 16:31:33,624 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 302 0
+2020-08-20 16:31:33,628 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/login/ HTTP/1.1" 200 3862
+2020-08-20 16:31:40,068 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 302 0
+2020-08-20 16:31:40,075 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/login/ HTTP/1.1" 200 3862
+2020-08-20 16:31:40,104 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/iconfont/style.css HTTP/1.1" 304 0
+2020-08-20 16:31:40,126 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/img/bg.jpg HTTP/1.1" 304 0
+2020-08-20 16:31:40,132 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/img/main_bg.png HTTP/1.1" 304 0
+2020-08-20 16:31:40,139 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/iconfont/fonts/icomoon.ttf?u4m6fy HTTP/1.1" 304 0
+2020-08-20 16:31:46,223 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/login/ HTTP/1.1" 200 3862
+2020-08-20 16:31:53,460 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/login/ HTTP/1.1" 302 0
+2020-08-20 16:31:53,576 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/index/ HTTP/1.1" 200 18085
+2020-08-20 16:31:53,618 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/echarts.min.js HTTP/1.1" 304 0
+2020-08-20 16:31:56,122 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:32:00,007 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 16:32:00,052 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:32:03,103 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 16:32:03,144 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:33:57,931 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 16:33:57,987 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:34:04,943 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 30494
+2020-08-20 16:34:08,598 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/view_report/4377 HTTP/1.1" 301 0
+2020-08-20 16:34:08,612 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/view_report/4377/ HTTP/1.1" 200 506486
+2020-08-20 16:34:14,077 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 16:34:14,119 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:37:58,516 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 16:37:58,567 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:38:03,711 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:38:07,484 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 16:38:07,528 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:40:00,222 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 16:40:00,288 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:40:04,114 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:40:04,916 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:40:05,592 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:40:06,304 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:40:07,072 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:40:07,733 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:40:08,527 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:40:09,266 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:40:11,283 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:40:12,082 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:40:13,807 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:40:14,515 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:40:15,212 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:40:15,876 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:40:31,229 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:40:32,772 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:40:47,777 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 16:40:47,820 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:40:50,430 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:40:51,044 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 32189
+2020-08-20 16:41:06,129 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 2
+2020-08-20 16:41:06,192 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 30499
+2020-08-20 16:41:06,736 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 2
+2020-08-20 16:41:06,787 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 28810
+2020-08-20 16:41:07,460 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 2
+2020-08-20 16:41:07,514 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 27121
+2020-08-20 16:41:07,929 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 2
+2020-08-20 16:41:07,970 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 25427
+2020-08-20 16:41:09,559 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 2
+2020-08-20 16:41:09,601 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 23733
+2020-08-20 16:41:10,102 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 2
+2020-08-20 16:41:10,134 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 22039
+2020-08-20 16:41:10,751 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 2
+2020-08-20 16:41:10,779 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 20345
+2020-08-20 16:41:11,444 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 2
+2020-08-20 16:41:11,469 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 18651
+2020-08-20 16:41:12,174 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 2
+2020-08-20 16:41:12,194 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 16957
+2020-08-20 16:41:12,733 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 2
+2020-08-20 16:41:12,746 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 16:41:15,361 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:41:17,529 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 16:41:17,571 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:41:33,704 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 16:42:07,911 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 16957
+2020-08-20 16:42:12,441 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 16:42:12,482 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:57:45,037 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:57:47,426 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 16957
+2020-08-20 16:57:49,072 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/report_list/1/ HTTP/1.1" 200 2
+2020-08-20 16:57:49,110 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 16:57:54,482 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 16:57:54,526 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-20 16:57:57,154 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 16:57:57,896 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 16:57:58,464 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 16:57:59,017 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 16:57:59,574 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 15089
+2020-08-20 16:58:01,380 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 16957
+2020-08-20 16:58:03,766 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-20 16:58:03,812 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 09:30:15,611 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 302 0
+2020-08-21 09:30:15,648 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/login/ HTTP/1.1" 200 3862
+2020-08-21 09:30:22,777 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/login/ HTTP/1.1" 200 3862
+2020-08-21 09:30:22,814 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/iconfont/style.css HTTP/1.1" 200 1722
+2020-08-21 09:30:22,832 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/img/main_bg.png HTTP/1.1" 200 2801
+2020-08-21 09:30:22,833 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/iconfont/fonts/icomoon.ttf?u4m6fy HTTP/1.1" 200 6900
+2020-08-21 09:30:22,836 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/img/bg.jpg HTTP/1.1" 200 135990
+2020-08-21 10:24:13,017 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/login/ HTTP/1.1" 302 0
+2020-08-21 10:24:13,150 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/index/ HTTP/1.1" 200 18085
+2020-08-21 10:24:13,202 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/css/admin.css HTTP/1.1" 200 20853
+2020-08-21 10:24:13,203 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/css/common.css HTTP/1.1" 200 1077
+2020-08-21 10:24:13,215 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/commons.js HTTP/1.1" 200 13636
+2020-08-21 10:24:13,247 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/app.js HTTP/1.1" 200 21264
+2020-08-21 10:24:13,250 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/ext-language_tools.js HTTP/1.1" 200 51638
+2020-08-21 10:24:13,252 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/select2.js HTTP/1.1" 200 152056
+2020-08-21 10:24:13,262 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/ace.js HTTP/1.1" 200 354523
+2020-08-21 10:24:13,266 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/css/select2.css HTTP/1.1" 200 18137
+2020-08-21 10:24:13,305 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/echarts.min.js HTTP/1.1" 200 751784
+2020-08-21 10:24:16,300 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:24:24,315 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-21 10:24:24,358 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:24:34,599 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-21 10:24:34,644 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:24:56,631 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 16957
+2020-08-21 10:24:59,938 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/view_report/4380 HTTP/1.1" 301 0
+2020-08-21 10:24:59,955 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/view_report/4380/ HTTP/1.1" 200 506486
+2020-08-21 10:25:18,713 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:25:20,248 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-21 10:25:20,296 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:25:37,029 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:26:13,885 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-21 10:26:13,939 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:29:04,151 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:29:05,767 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-21 10:29:05,811 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:29:53,961 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:30:20,822 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-21 10:30:20,863 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:31:49,977 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25614
+2020-08-21 10:31:50,174 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-21 10:31:53,047 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/edit_case/2421/ HTTP/1.1" 200 42222
+2020-08-21 10:31:53,246 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/theme-github.js HTTP/1.1" 200 2223
+2020-08-21 10:31:53,246 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/mode-json.js HTTP/1.1" 200 8682
+2020-08-21 10:31:53,352 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/snippets/text.js HTTP/1.1" 200 127
+2020-08-21 10:31:53,449 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/assets/js/worker-json.js
+2020-08-21 10:31:53,449 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/assets/js/worker-json.js HTTP/1.1" 404 1387
+2020-08-21 10:31:53,451 [django.server:154] [basehttp:log_message] [INFO]- "GET /static/assets/js/snippets/json.js HTTP/1.1" 200 127
+2020-08-21 10:32:04,795 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/edit_case/ HTTP/1.1" 200 17
+2020-08-21 10:32:04,827 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25624
+2020-08-21 10:32:05,006 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-21 10:32:07,141 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:32:10,535 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/suite_list/1/ HTTP/1.1" 200 27609
+2020-08-21 10:32:13,867 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/edit_suite/58/ HTTP/1.1" 200 18883
+2020-08-21 10:32:30,658 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:32:32,848 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-21 10:32:32,888 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:33:06,137 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-21 10:33:06,180 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:37:32,980 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-21 10:37:33,038 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:37:44,029 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-21 10:37:44,068 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:37:50,702 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25624
+2020-08-21 10:37:50,872 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-21 10:37:53,363 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/edit_case/2421/ HTTP/1.1" 200 42232
+2020-08-21 10:37:53,611 [django.request:228] [log:log_response] [WARNING]- Not Found: /static/assets/js/worker-json.js
+2020-08-21 10:37:53,615 [django.server:154] [basehttp:log_message] [WARNING]- "GET /static/assets/js/worker-json.js HTTP/1.1" 404 1387
+2020-08-21 10:38:05,060 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/edit_case/ HTTP/1.1" 200 17
+2020-08-21 10:38:05,088 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/test_list/1/ HTTP/1.1" 200 25622
+2020-08-21 10:38:05,299 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/add_case/ HTTP/1.1" 200 0
+2020-08-21 10:38:11,299 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-21 10:38:11,343 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:39:11,736 [django.server:154] [basehttp:log_message] [INFO]- "POST /api/periodictask/1/ HTTP/1.1" 200 2
+2020-08-21 10:39:11,780 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/periodictask/1/ HTTP/1.1" 200 19714
+2020-08-21 10:46:33,819 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/view_report/4384/ HTTP/1.1" 200 506614
+2020-08-21 10:53:48,748 [django.server:154] [basehttp:log_message] [INFO]- "GET /api/report_list/1/ HTTP/1.1" 200 23733

@@ -475,6 +475,7 @@ def statistics_report_timeOut(html_doc, time_ms=300.00):
         soup = BeautifulSoup(f.read(), "lxml")
         totalCaseNameList = list()
         signleTotal = list()
+        signleUrl = list()
         # # 创建CSS选择器
         result = soup.select("ul#test-collection>li>div.test-content")  # 获取测试集合节点
         for site in result:  # 获取单个用例的位置
@@ -483,20 +484,24 @@ def statistics_report_timeOut(html_doc, time_ms=300.00):
             signleSuiteCase = site.select("ul.node-list>li")
             for s in signleSuiteCase:
                 signleCase = ""
+                signleurl = ""
                 caseName = s.select("div>div.node-name")
                 responseTime = s.select("div>span.node-duration")
                 responseResult = s.select("div>span.test-status")
+                responseUrl = s.select("tbody > tr:nth-child(1)>td.step-details")
                 if "登录" in caseName[0].get_text(): continue # 去除登录接口的校验
 
                 if float(responseTime[0].get_text()[15:].replace("ms", "")) >= time_ms:
                     caseTotal += "[{}接口, 响应时间:{}, 用例状态:{}]".format(caseName[0].get_text(),responseTime[0].get_text()[15:],responseResult[0].get_text())
                     signleCase +="{}接口".format(caseName[0].get_text())
+                    signleurl  +="接口地址：{}".format(responseUrl[0].get_text())
+                    signleUrl.append(signleurl)
                     signleTotal.append(signleCase)
             if caseTotal.endswith("]"):
                 totalCaseNameList.append(caseTotal)
     print("组装超时用例集列表", totalCaseNameList)
     print("单个超时用例列表", signleTotal)
-    return totalCaseNameList,list(set(signleTotal))
+    return totalCaseNameList,dict(zip(signleTotal,signleUrl))
 
 def callDingTalkRobot(name,text):
     # --- 钉钉机器人
@@ -515,7 +520,7 @@ def queryZentaoBug(sql):
     try:
         con = pymysql.connect(**config)
         con.autocommit(1)
-        con.select_db("zentao")
+        con.select_db("zentao") 
         cur = con.cursor()
         cur.execute(sql)
         result = cur.fetchall()
@@ -527,7 +532,7 @@ def queryZentaoBug(sql):
     #print(result)
     return result
 
-def createrZentaoBug(suite,caseList,report_id=0):
+def createrZentaoBug(suite,caseDict,report_id=0):
     """
     创建禅道bug
     :param suite: 平台套件id列表
@@ -548,7 +553,9 @@ def createrZentaoBug(suite,caseList,report_id=0):
     obj = TestSuite.objects.get(id=int(suite[0]))
     project = obj.belong_project
     project_name = project.project_name
+    caseList= caseDict.keys()
     for case in caseList:
+        apiurl= caseDict[case]
         case += ",请求超时(大于300ms)" # 完善格式和bug对比
         # title重复就跳过
         if case in caseAll:
@@ -572,7 +579,7 @@ def createrZentaoBug(suite,caseList,report_id=0):
             elif "审批中心" in project_name:
                 module,assignedTo = "377","Jack.Zhao"
         # 创建禅道bug
-        params = {"product": (None, "3"), "module": (None, module), "project": (None, "265"),"assignedTo": (None, assignedTo),"deadline": (None, ""), "type": (None, "codeerror"), "os": (None, "PROD"), "browser": (None, "all"),"title": (None, title), "severity": (None, "3"), "pri": (None, "2"),"steps": (None, "<p>{}      接口平台报告地址：http://192.168.1.196/api/view_report/{}/</p>".format(title,report_id)),"story": (None, ""), "keywords": (None, "内部QA"), "uid": str(random.randint(1,100000))}
+        params = {"product": (None, "3"), "module": (None, module), "project": (None, "265"),"assignedTo": (None, assignedTo),"deadline": (None, ""), "type": (None, "codeerror"), "os": (None, "PROD"), "browser": (None, "all"),"title": (None, title), "severity": (None, "3"), "pri": (None, "2"),"steps": (None, "<p>{}      接口平台报告地址：http://192.168.1.196/api/view_report/{}/ </p><p>{}</p>".format(title,report_id,apiurl)),"story": (None, ""), "keywords": (None, "内部QA"), "uid": str(random.randint(1,100000))}
         response = s.post("https://zentao.ihr360.com/zentao/bug-create-3-0-moduleID=0.html",files=params)
         if response.status_code == 200:
             print("创建用例成功%s"%case)
