@@ -146,7 +146,7 @@
             <form id="pro_filter" method="post" action="/api/module_list/1/">
                 <ul>
                     <li style="padding-top: 5px">
-                        <select name="project" class="am-input-zm am-input-xm"
+                        <select name="project" class="selectpicker show-tick form-control" data-width="190px"
                                 onchange="auto_load('#pro_filter', '/api/add_case/', '#module', 'module')">
                             <option value="{{ info.belong_project }}"
                                     selected>{{ info.belong_project }}</option>
@@ -164,12 +164,12 @@
                     </li>
 
                     <li style="padding-top: 5px">
-                        <select name="module" class=" am-input-zm am-input-xm" id="module">
+                        <select name="module" class="selectpicker show-tick form-control" data-width="190px" id="module">
                             <option selected value="{{ info.belong_module }}">{{ info.belong_module }}</option>
                         </select>
                     </li>
                     <li style="padding-top: 5px"><input value="{{ info.user }}" type="text" name="user"
-                                                        class="am-input-sm am-input-xm"
+                                                        class="filter-box"
                                                         placeholder="测试人员"/></li>
                     <li>
                         <button style="padding-top: 5px; margin-top: 9px"

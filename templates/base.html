@@ -31,11 +31,35 @@
    {# <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ext-language_tools.js"></script>#}
     <script src="{% static 'assets/js/ace.js' %}"></script>
     <script src="{% static '/assets/js/ext-language_tools.js' %}" type="text/javascript" charset="utf-8"></script>
-    <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 
     <script src="{% static 'assets/js/app.js' %}"></script>
     <script src="{% static 'assets/js/commons.js' %}"></script>
     <script src={% static 'assets/js/select2.js' %}></script>
+
+{# 导入bootstrap-select库#}
+    <script src="{% static 'assets/js/bootstrap-select.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap-select.min.css' %}" />
+{#输入框样式#}
+    <style>
+.filter-box {
+            width: 190px;
+            height: 34px;
+            background-color: #ffffff;
+            border: solid 1px #dcdcdc;
+            font-family: Roboto;
+            font-size: 10px;
+            font-weight: 10px;
+            font-style: normal;
+            font-stretch: normal;
+            letter-spacing: normal;
+            text-align: left;
+            color: #3d3d3d;
+            padding-left: 8px;
+            border-color: #dcdcdc;
+            -webkit-appearance: none;
+}
+    </style>
 
 
 </head>

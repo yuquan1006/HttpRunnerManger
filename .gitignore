@@ -1,0 +1,19 @@
+*.pyc
+__pycache__
+.idea/
+ApiManager/__pycache__/
+datas/
+ApiManager/logic/__pycache__/
+ApiManager/migrations/__pycache__/
+HttpRunnerManager/__pycache__/
+httprunner/__pycache__/
+pyunitreport/__pycache__/
+BeautifulReport/__pycache__/
+Test Report.html
+ApiManager/templatetags/*.pyc
+suite/
+reports/
+*.out
+*.pid
+logs/
+ApiManager/utils/__pycache__/

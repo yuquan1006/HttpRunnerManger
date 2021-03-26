@@ -4,7 +4,8 @@ from django.core.exceptions import ObjectDoesNotExist
 
 from ApiManager.models import TestCaseInfo, ModuleInfo, ProjectInfo, DebugTalk, TestSuite
 from ApiManager.utils.testcase import dump_python_file, dump_yaml_file
-
+import logging
+logger = logging.getLogger('HttpRunnerManager')
 
 def run_by_single(index, base_url, path):
     """
@@ -13,21 +14,20 @@ def run_by_single(index, base_url, path):
     :param base_url: str：环境地址
     :return: dict
     """
+    # 问题四：config['request']['base_url']-> config[‘base_url’]
     config = {
         'config': {
             'name': '',
-            'request': {
-                'base_url': base_url
-            }
+            'base_url': base_url
         }
     }
     testcase_list = []
 
     testcase_list.append(config)
-
     try:
         obj = TestCaseInfo.objects.get(id=index)
     except ObjectDoesNotExist:
+        logger.error("测试用例(id:{})在数据库中未找到".format(index))
         return testcase_list
 
     include = eval(obj.include)
@@ -60,7 +60,9 @@ def run_by_single(index, base_url, path):
             if isinstance(test_info, dict):
                 config_id = test_info.pop('config')[0]
                 config_request = eval(TestCaseInfo.objects.get(id=config_id).request)
-                config_request.get('config').get('request').setdefault('base_url', base_url)
+                # 问题四：设置base_url到config['request']['base_url'] - > 设置base_url到config['base_url']
+                # config_request.get('config').get('request').setdefault('base_url', base_url)
+                config_request.get('config').setdefault('base_url', base_url)
                 config_request['config']['name'] = name
                 testcase_list[0] = config_request
             else:
@@ -68,12 +70,14 @@ def run_by_single(index, base_url, path):
                 pre_request = eval(TestCaseInfo.objects.get(id=id).request)
                 testcase_list.append(pre_request)
 
-        except ObjectDoesNotExist:
+        except ObjectDoesNotExist as e:
+            logger.error("用例转化成yaml文件错误(用例id:{}) :{}".format(id, e))
             return testcase_list
 
     if request['test']['request']['url'] != '':
         testcase_list.append(request)
 
+    logger.debug("数据库存储测试用例转成测试用例列表: {}".format(testcase_list))
     dump_yaml_file(os.path.join(testcase_dir_path, name + '.yml'), testcase_list)
 
 

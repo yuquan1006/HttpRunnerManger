@@ -218,11 +218,7 @@ def get_referenced_idList(Model):
     for i in test_referenced:
         referenced_list = eval(i.include)
         for j in referenced_list:
-            # print(j)
             if isinstance(j, list) and len(j) > 0:
-                # print("yes")
                 referenced_idSet.add(j[0])
-                # print(j[0])
-    #print("集合：", referenced_idSet)
     referenced_idList = list(referenced_idSet)
     return referenced_idList

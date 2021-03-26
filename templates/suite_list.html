@@ -113,7 +113,7 @@
             <form id="pro_filter" method="post" action="/api/suite_list/1/">
                 <ul>
                     <li style="padding-top: 5px">
-                        <select name="project" class="am-input-zm am-input-xm">
+                        <select name="project" class="selectpicker show-tick form-control" data-width="190px">
                             <option value="{{ info.belong_project }}"
                                     selected>{{ info.belong_project }}</option>
 
@@ -130,7 +130,7 @@
                         </select>
                     </li>
                     <li style="padding-top: 5px"><input value="{{ info.name }}" type="text" name="name"
-                                                        class=" am-input-sm am-input-xm"
+                                                        class="filter-box"
                                                         placeholder="套件名称"/></li>
                     <li>
                         <button class="am-btn am-radius am-btn-xs am-btn-success"

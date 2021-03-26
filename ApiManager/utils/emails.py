@@ -27,7 +27,7 @@ def send_email_reports(receiver, html_report_path,name="",subject="接口自动�
     att["Content-Type"] = "application/octet-stream"
     att["Content-Disposition"] = "attachment;filename = TestReports.html"
 
-    body = MIMEText("{}，请查收，谢谢！".format(bodyText), _subtype='html', _charset='gb2312')
+    body = MIMEText("{} \n 请查收！".format(bodyText), _subtype='html', _charset='gb2312')
 
     msg = MIMEMultipart('related')
     msg['Subject'] = subject

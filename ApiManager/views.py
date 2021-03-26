@@ -24,8 +24,9 @@ from ApiManager.utils.pagination import get_pager_info,get_referenced_idList
 from ApiManager.utils.runner import run_by_batch, run_test_by_type
 from ApiManager.utils.task_opt import delete_task, change_task_status
 from ApiManager.utils.testcase import get_time_stamp
-from httprunner import HttpRunner
-
+# 问题一
+# from httprunner import HttpRunner
+from httprunner.api import HttpRunner
 logger = logging.getLogger('HttpRunnerManager')
 
 # Create your views here.
@@ -211,7 +212,7 @@ def run_test(request):
     """
 
     kwargs = {
-        "failfast": False,
+        "failfast": False
     }
     runner = HttpRunner(**kwargs)
 
@@ -232,12 +233,14 @@ def run_test(request):
         base_url = request.POST.get('env_name')
         type = request.POST.get('type', 'test')
 
-        run_test_by_type(id, base_url, testcase_dir_path, type)
-        runner.run(testcase_dir_path)
+        run_test_by_type(id, base_url, testcase_dir_path, type) # 将测试用例写入测试路径的yaml文件
+        # runner.run(testcase_dir_path)
+        summary = runner.run(testcase_dir_path)       # 加载yaml文件，执行测试用例 返回测试数据集合
         shutil.rmtree(testcase_dir_path)
-        runner.summary = timestamp_to_datetime(runner.summary, type=False)
-
-        return render_to_response('report_template.html', runner.summary)
+        # runner.summary = timestamp_to_datetime(runner.summary, type=False)
+        # summary = timestamp_to_datetime(summary, type=False)
+        # return render_to_response('report_template.html', runner.summary)
+        return render_to_response('extent-theme-template.html', summary)
 
 
 @login_check
@@ -274,12 +277,15 @@ def run_batch_test(request):
         else:
             run_by_batch(test_list, base_url, testcase_dir_path)
 
-        runner.run(testcase_dir_path)
+        # runner.run(testcase_dir_path)
+        summary = runner.run(testcase_dir_path)
 
         shutil.rmtree(testcase_dir_path)
-        runner.summary = timestamp_to_datetime(runner.summary,type=False)
+        # runner.summary = timestamp_to_datetime(runner.summary,type=False)
+        # summary = timestamp_to_datetime(summary,type=False)
 
-        return render_to_response('report_template.html', runner.summary)
+        # return render_to_response('report_template.html', runner.summary)
+        return render_to_response('extent-theme-template.html', summary)
 
 
 @login_check

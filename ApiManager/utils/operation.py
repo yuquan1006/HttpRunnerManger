@@ -8,11 +8,11 @@ import pymysql
 from bs4 import BeautifulSoup
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import DataError
+from httprunner import report
 
 from ApiManager import separator
 from ApiManager.models import ProjectInfo, ModuleInfo, TestCaseInfo, UserInfo, EnvInfo, TestReports, DebugTalk, \
     TestSuite
-
 
 logger = logging.getLogger('HttpRunnerManager')
 
@@ -441,12 +441,16 @@ def add_test_reports(runner, report_name=None):
     :return:
     """
     time_stamp = int(runner.summary["time"]["start_at"])
+
     runner.summary['time']['start_datetime'] = datetime.datetime.fromtimestamp(time_stamp).strftime('%Y-%m-%d %H:%M:%S')
+
     report_name = report_name if report_name else runner.summary['time']['start_datetime']
     runner.summary['html_report_name'] = report_name
 
     report_path = os.path.join(os.getcwd(), "reports{}{}.html".format(separator, int(runner.summary['time']['start_at'])))
-    runner.gen_html_report(html_report_template=os.path.join(os.getcwd(), "templates{}extent_report_template.html".format(separator)))
+    # v2中runner没有gen_html_report方法了，改为report.gen_html_report，模板换成v2改进版（改进v2模板的不符合jinja2语法的部分）
+    # runner.gen_html_report(html_report_template=os.path.join(os.getcwd(), "templates{}extent_report_template.html".format(separator)))
+    report_path = report.gen_html_report(runner.summary, report_template=os.path.join(os.getcwd(), "templates{}extent-theme-template-report.html".format(separator)))
 
     with open(report_path, encoding='utf-8') as stream:
         reports = stream.read()
@@ -454,57 +458,86 @@ def add_test_reports(runner, report_name=None):
     test_reports = {
         'report_name': report_name,
         'status': runner.summary.get('success'),
-        'successes': runner.summary.get('stat').get('successes'),
-        'testsRun': runner.summary.get('stat').get('testsRun'),
+        # v2中summary无summary[stat][sucess]和summary[stat][testsRun]数据结构了
+        # 'successes': runner.summary.get('stat').get('successes'),
+        # 'testsRun': runner.summary.get('stat').get('testsRun'),
+        'successes': runner.summary.get('stat').get('teststeps').get('successes'),
+        'testsRun': runner.summary.get('stat').get('teststeps').get('total'),
         'start_at': runner.summary['time']['start_datetime'],
         'reports': reports
     }
-
     test_reports_obj = TestReports.objects.create(**test_reports)
     return report_path,test_reports_obj.id
 
 
-def statistics_report_timeOut(html_doc, time_ms=300.00):
-    """统计报告中是否存在接口超时请求
-    html_doc:html报告路径
-    time_ms：超时判定的毫米
-    :return：totalCaseNameList 组装后的超时用例集合列表： [ 用例：冒烟18-排班分组-全部人员更新排班表成功 下 [单接口-【排班管理】-B端更新全部员工排班分组接口, 响应时间:4634.45 ms, 用例状态:pass], 用例：xxx]
-            signleTotal  超时用例列表：[单接口-【排班管理】-B端更新全部员工排班分组接口,x2,x3]
-    """
-    with open(html_doc, 'rb') as f:
-        soup = BeautifulSoup(f.read(), "lxml")
-        totalCaseNameList = list()
-        signleTotal = list()
-        signleUrl = list()
-        # # 创建CSS选择器
-        result = soup.select("ul#test-collection>li>div.test-content")  # 获取测试集合节点
-        for site in result:  # 获取单个用例的位置
-            totalCaseName = site.select("div.test-attributes>div>span:nth-child(1)")
-            caseTotal = "用例：{} 下 ".format(totalCaseName[0].get_text())
-            signleSuiteCase = site.select("ul.node-list>li")
-            for s in signleSuiteCase:
-                signleCase = ""
-                signleurl = ""
-                caseName = s.select("div>div.node-name")
-                responseTime = s.select("div>span.node-duration")
-                responseResult = s.select("div>span.test-status")
-                responseUrl = s.select("tbody > tr:nth-child(1)>td.step-details")
-                if "登录" in caseName[0].get_text(): continue # 去除登录接口的校验
-                try:
-                    if float(responseTime[0].get_text()[15:].replace("ms", "")) >= time_ms:
-                        caseTotal += "[{}接口, 响应时间:{}, 用例状态:{}]".format(caseName[0].get_text(),responseTime[0].get_text()[15:],responseResult[0].get_text())
-                        signleCase +="{}接口".format(caseName[0].get_text())
-                        signleurl  +="接口地址：{}".format(responseUrl[0].get_text())
-                        signleUrl.append(signleurl)
-                        signleTotal.append(signleCase)
-                except:
-                    print("%s转化失败，跳过"%responseTime[0].get_text()[15:].replace("ms", ""))    
-                    continue
-            if caseTotal.endswith("]"):
-                totalCaseNameList.append(caseTotal)
-    print("组装超时用例集列表", totalCaseNameList)
-    print("单个超时用例列表", signleTotal)
-    return totalCaseNameList,dict(zip(signleTotal,signleUrl))
+# def statistics_report_timeOut(html_doc, time_ms=300.00):
+#     """统计报告中是否存在接口超时请求
+#     html_doc:html报告路径
+#     time_ms：超时判定的毫米
+#     :return：totalCaseNameList 组装后的超时用例集合列表： [ 用例：冒烟18-排班分组-全部人员更新排班表成功 下 [单接口-【排班管理】-B端更新全部员工排班分组接口, 响应时间:4634.45 ms, 用例状态:pass], 用例：xxx]
+#             signleTotal  超时用例列表：[单接口-【排班管理】-B端更新全部员工排班分组接口,x2,x3]
+#     """
+#     with open(html_doc, 'rb') as f:
+#         soup = BeautifulSoup(f.read(), "lxml")
+#         totalCaseNameList = list()
+#         signleTotal = list()
+#         signleUrl = list()
+#         # # 创建CSS选择器
+#         result = soup.select("ul#test-collection>li>div.test-content")  # 获取测试集合节点
+#         for site in result:  # 获取单个用例的位置
+#             totalCaseName = site.select("div.test-attributes>div>span:nth-child(1)")
+#             caseTotal = "用例：{} 下 ".format(totalCaseName[0].get_text())
+#             signleSuiteCase = site.select("ul.node-list>li")
+#             for s in signleSuiteCase:
+#                 signleCase = ""
+#                 signleurl = ""
+#                 caseName = s.select("div>div.node-name")
+#                 responseTime = s.select("div>span.node-duration")
+#                 responseResult = s.select("div>span.test-status")
+#                 responseUrl = s.select("tbody > tr:nth-child(1)>td.step-details")
+#                 if "登录" in caseName[0].get_text(): continue # 去除登录接口的校验
+#
+#                 if float(responseTime[0].get_text()[15:].replace("ms", "")) >= time_ms:
+#                     caseTotal += "[{}接口, 响应时间:{}, 用例状态:{}]".format(caseName[0].get_text(),responseTime[0].get_text()[15:],responseResult[0].get_text())
+#                     signleCase +="{}接口".format(caseName[0].get_text())
+#                     signleurl  +="接口地址：{}".format(responseUrl[0].get_text())
+#                     signleUrl.append(signleurl)
+#                     signleTotal.append(signleCase)
+#             if caseTotal.endswith("]"):
+#                 totalCaseNameList.append(caseTotal)
+#     return totalCaseNameList,dict(zip(signleTotal,signleUrl))
+
+
+def statistics_summary_timeOut(summary, time_ms=300.00):
+    """从测试数据集合中获取超时接口并返回超时接口列表 [{'name': '冒烟03-考勤方案自主考勤（任意）,APP打卡成功', 'single_caseName': '单接口-【考勤打卡】-APP端打卡记录(日期)', 'single_url': 'https://beta.ihr360.com/web/gateway/attendance/aggregate/attendance/api/sign/getSignTimeDetailList?signDate=2021-03-23', 'response_time': '450.34'},{..},{..}]"""
+    result = summary['details']  # 获取测试集合节点 [{},{}]
+    totalCaseDataList = list()
+    for i in result:  # 获取单个用例的位置
+        caseName = i.get('name')
+        caseList = i.get('records')
+        for case in caseList:
+            single_caseName = case.get('name')
+            single_url = case.get('meta_datas').get('data')[0].get('request').get('url')
+            caseResponseTime = case.get('response_time')
+            if "登录" not in single_caseName:
+                if float(caseResponseTime) > time_ms:
+                    tmp_dict = dict()
+                    tmp_dict['name'] = caseName
+                    tmp_dict['single_caseName'] = single_caseName
+                    tmp_dict['single_url'] = single_url
+                    tmp_dict['response_time'] = caseResponseTime
+                    totalCaseDataList.append(tmp_dict)
+    return totalCaseDataList
+
+
+def write_htmlTable(dataList):
+    tmp_str = ""
+    # 添加表格头
+    tmp_str = '<table border="0.5">  <h3><font color = "red"></h3>  <th>业务场景</th><th>具体超时接口</th><th>接口Url</th><th>响应时长</th> '
+    # 添加每列数据
+    for data in dataList:
+        tmp_str += "<tr><td>{0}</td> <td>{1}</td><td>{2}</td><td>{3}</td>".format(data.get('name'),data.get('single_caseName'),data.get('single_url'),data.get('response_time'))
+    return tmp_str
 
 def callDingTalkRobot(name,text):
     # --- 钉钉机器人
@@ -515,8 +548,8 @@ def callDingTalkRobot(name,text):
     content += text
     payload = {"msgtype": "text", "isAtAll": True, "text": {"content": content}}
     response = requests.post(url,headers=headers,json=payload)
-    if "ok" in response.text:print("钉钉机器人调用成功：{}".format(response.text))
-    else:print("钉钉机器人调用失败：{}".format(response.text))
+    if "ok" in response.text:logger.info("钉钉机器人调用成功：{}".format(response.text))
+    else:logger.error("钉钉机器人调用失败：{}".format(response.text))
 
 def queryZentaoBug(sql):
     config = {'host': '192.168.1.172','port': 3306,'user': 'zentao','passwd': 'zentaodba2015','charset': 'utf8','cursorclass': pymysql.cursors.DictCursor}
@@ -528,14 +561,13 @@ def queryZentaoBug(sql):
         cur.execute(sql)
         result = cur.fetchall()
     except BaseException as e:
-        print("程序异常:%s"%e)
+        logger.error("程序异常:%s"%e)
     finally:
         cur.close()
         con.close()
-    #print(result)
     return result
 
-def createrZentaoBug(suite,caseDict,report_id=0):
+def createrZentaoBug(suite,caseList,report_id=0):
     """
     创建禅道bug
     :param suite: 平台套件id列表
@@ -551,21 +583,20 @@ def createrZentaoBug(suite,caseDict,report_id=0):
     response = s.post("https://zentao.ihr360.com/zentao/user-login.html",data={"account": "api.Report", "password": password.hexdigest(), "verifyRand": rand}, headers={"Content-Type": "application/x-www-form-urlencoded"}, verify=False)
     # 获取禅道迭代（单）接口性能优化下bug-title列表
     caseAll =[i.get("title") for i in queryZentaoBug("select title from zt_bug where project=265 and status!='closed'")]
-    # print("caseList：%s"%caseList)
     # 获取套件关联项目，根据项目设置禅道指派给/模块
     obj = TestSuite.objects.get(id=int(suite[0]))
     project = obj.belong_project
     project_name = project.project_name
-    caseList= caseDict.keys()
+
     for case in caseList:
-        apiurl= caseDict[case]
-        case += ",请求超时(大于300ms)" # 完善格式和bug对比
+        case_title = case.get('single_caseName')
+        apiurl= case.get("single_url")
+        case_title += ",请求超时(大于300ms)" # 完善格式和bug对比
         # title重复就跳过
-        if case in caseAll:
-            print("准备跳过：%s"%case)
+        if case_title in caseAll:
             continue
         else:
-            title = case
+            title = case_title
             module, assignedTo = "240", "Damon.Shi"
             if "绩效" in project_name:
                 module,assignedTo = "232","vic.zhao"
@@ -574,7 +605,7 @@ def createrZentaoBug(suite,caseDict,report_id=0):
             elif "组织" in project_name:
                 module,assignedTo = "465","Frank.Li"
             elif "人事" in project_name:
-                module,assignedTo = "229","nick.zhang"
+                module,assignedTo = "229","Frank.Li"
             elif "考勤" in project_name:
                 module,assignedTo = "230","jerry.xiao"
             elif "openAPI" in project_name:
@@ -585,5 +616,5 @@ def createrZentaoBug(suite,caseDict,report_id=0):
         params = {"product": (None, "3"), "module": (None, module), "project": (None, "265"),"assignedTo": (None, assignedTo),"deadline": (None, ""), "type": (None, "codeerror"), "os": (None, "PROD"), "browser": (None, "all"),"title": (None, title), "severity": (None, "3"), "pri": (None, "2"),"steps": (None, "<p>{}      接口平台报告地址：http://192.168.1.196/api/view_report/{}/</p><p>{}</p>".format(title,report_id,apiurl)),"story": (None, ""), "keywords": (None, "内部QA"), "uid": str(random.randint(1,100000))}
         response = s.post("https://zentao.ihr360.com/zentao/bug-create-3-0-moduleID=0.html",files=params)
         if response.status_code == 200:
-            print("创建用例成功%s"%case)
+            logger.info("创建用例成功%s"%case_title)
 

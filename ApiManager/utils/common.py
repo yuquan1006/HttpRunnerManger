@@ -78,7 +78,8 @@ def key_value_list(keyword, **kwargs):
                         msg = type_change(type, val)
                         if msg == 'exception':
                             return tips
-                        value['expected'] = msg
+                    # 问题二 value['expected'] = msg
+                        value['expect'] = msg
                     elif keyword == 'extract':
                         value[key] = val
                     elif keyword == 'variables':
@@ -270,7 +271,7 @@ def case_info_logic(type=True, **kwargs):
 
         request_data = test.get('request').pop('request_data')
         data_type = test.get('request').pop('type')
-        if request_data!={} and data_type:   # 修改if request_data and data_type 为if request_data != {} and data_type 兼容type=json且数据为False情况
+        if request_data != {} and data_type:   # 修改if request_data and data_type 为if request_data != {} and data_type 兼容type=json且数据为False情况
             if data_type == 'json':
                 test.get('request').setdefault(data_type, request_data)
             else:

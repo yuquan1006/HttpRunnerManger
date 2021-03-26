@@ -93,6 +93,7 @@ class ModuleInfoManager(models.Manager):
 
 class TestCaseInfoManager(models.Manager):
     def insert_case(self, belong_module, **kwargs):
+        print("--*-*-*-*-*-*-*-*-*-*-*-*-*-*-", kwargs)
         case_info = kwargs.get('test').pop('case_info')
         self.create(name=kwargs.get('test').get('name'), belong_project=case_info.pop('project'),
                     belong_module=belong_module,

@@ -11,6 +11,9 @@ function show_module(module_info, id) {
     }
     a.prepend("<option value='请选择' selected>请选择</option>");
 
+    $("#module").selectpicker('refresh');
+    $("#module").selectpicker('render');
+
 }
 
 function show_case(case_info, id) {
@@ -24,6 +27,7 @@ function show_case(case_info, id) {
         }
     }
     a.prepend("<option value='请选择' selected>请选择</option>");
+
 
 }
 

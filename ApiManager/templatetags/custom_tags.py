@@ -45,10 +45,8 @@ def id_del(value):
 @register.filter(name='isInclude')
 def isInclude(value,id):
     if str(id) in value:
-        #print("该用例被引用")
         return True
     else:
-        #print("该用例没有被引用")
         return False
 
 @register.filter(name='convert_eval_url')
@@ -59,10 +57,8 @@ def convert_eval_url(value):
     :return: the value which had been eval
     """
     try:
-        # print(eval(value))
         dicts = eval(value)
         url = dicts['test']['request']['url']
-        # print(url)
     except BaseException as e:
         url = None
     return url

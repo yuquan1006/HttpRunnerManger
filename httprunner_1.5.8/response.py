@@ -210,7 +210,7 @@ class ResponseObject(object):
 
         return value
 
-    def extract_response(self, extractors,context=""):
+    def extract_response(self, extractors, context=""):
         """ extract value from requests.Response and store in OrderedDict.
         @param (list) extractors
             [

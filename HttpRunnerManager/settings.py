@@ -113,14 +113,39 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+# 196数据库
+# if DEBUG:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.mysql',
+#             'NAME': 'httprunner',  # 新建数据库名
+#             'USER': 'root',  # 数据库登录名
+#             'PASSWORD': '12345678',  # 数据库登录密码
+#             'HOST': '192.168.1.196',  # 数据库所在服务器ip地址
+#             'PORT': '3306',  # 监听端口 默认3306即可
+#         }
+#     }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.mysql',
+#             'NAME': 'httprunner',  # 新建数据库名
+#             'USER': 'root',  # 数据库登录名
+#             'PASSWORD': '12345678',  # 数据库登录密码
+#             'HOST': '127.0.0.1',  # 数据库所在服务器ip地址
+#             'PORT': '3306',  # 监听端口 默认3306即可
+#         }
+#     }
+
+# 本地调试数据库
 if DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'httprunner',  # 新建数据库名
-            'USER': 'root',  # 数据库登录名
-            'PASSWORD': '12345678',  # 数据库登录密码
-            'HOST': '192.168.1.196',  # 数据库所在服务器ip地址
+            'USER': 'york',  # 数据库登录名
+            'PASSWORD': '123456',  # 数据库登录密码
+            'HOST': '127.0.0.1',  # 数据库所在服务器ip地址
             'PORT': '3306',  # 监听端口 默认3306即可
         }
     }
@@ -129,8 +154,8 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'httprunner',  # 新建数据库名
-            'USER': 'root',  # 数据库登录名
-            'PASSWORD': '12345678',  # 数据库登录密码
+            'USER': 'york',  # 数据库登录名
+            'PASSWORD': '123456',  # 数据库登录密码
             'HOST': '127.0.0.1',  # 数据库所在服务器ip地址
             'PORT': '3306',  # 监听端口 默认3306即可
         }
