@@ -113,7 +113,7 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-196数据库
+# 196数据库
 if DEBUG:
     DATABASES = {
         'default': {
