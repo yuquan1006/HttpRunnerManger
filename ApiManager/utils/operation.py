@@ -490,13 +490,16 @@ def statistics_report_timeOut(html_doc, time_ms=300.00):
                 responseResult = s.select("div>span.test-status")
                 responseUrl = s.select("tbody > tr:nth-child(1)>td.step-details")
                 if "登录" in caseName[0].get_text(): continue # 去除登录接口的校验
-
-                if float(responseTime[0].get_text()[15:].replace("ms", "")) >= time_ms:
-                    caseTotal += "[{}接口, 响应时间:{}, 用例状态:{}]".format(caseName[0].get_text(),responseTime[0].get_text()[15:],responseResult[0].get_text())
-                    signleCase +="{}接口".format(caseName[0].get_text())
-                    signleurl  +="接口地址：{}".format(responseUrl[0].get_text())
-                    signleUrl.append(signleurl)
-                    signleTotal.append(signleCase)
+                try:
+                    if float(responseTime[0].get_text()[15:].replace("ms", "")) >= time_ms:
+                        caseTotal += "[{}接口, 响应时间:{}, 用例状态:{}]".format(caseName[0].get_text(),responseTime[0].get_text()[15:],responseResult[0].get_text())
+                        signleCase +="{}接口".format(caseName[0].get_text())
+                        signleurl  +="接口地址：{}".format(responseUrl[0].get_text())
+                        signleUrl.append(signleurl)
+                        signleTotal.append(signleCase)
+                except:
+                    print("%s转化失败，跳过"%responseTime[0].get_text()[15:].replace("ms", ""))    
+                    continue
             if caseTotal.endswith("]"):
                 totalCaseNameList.append(caseTotal)
     print("组装超时用例集列表", totalCaseNameList)
@@ -571,7 +574,7 @@ def createrZentaoBug(suite,caseDict,report_id=0):
             elif "组织" in project_name:
                 module,assignedTo = "465","Frank.Li"
             elif "人事" in project_name:
-                module,assignedTo = "229","Frank.Li"
+                module,assignedTo = "229","nick.zhang"
             elif "考勤" in project_name:
                 module,assignedTo = "230","jerry.xiao"
             elif "openAPI" in project_name:

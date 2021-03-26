@@ -162,7 +162,7 @@ def suite_hrun(name, base_url, suite, receiver):
         status = "【告警】"
         bodyText = "{}定时任务执行接口时长告警用例如下：<br>&emsp; {} <br> ".format(name, '<br> &emsp;'.join(timeOut_result[0]))
         # 创建bug
-        createrZentaoBug(suite[0], timeOut_result[1], report_id=report_id)
+        #createrZentaoBug(suite[0], timeOut_result[1], report_id=report_id)
         send_email_reports(receiver, report_path, name=name, bodyText=bodyText, status=status)
          
     if receiver != '':
