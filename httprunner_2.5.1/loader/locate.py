@@ -61,6 +61,7 @@ def locate_debugtalk_py(start_path):
     except exceptions.FileNotFound as e:
         print("debugtalk文件没有找到:{}".format(e))
         debugtalk_path = None
+    print("记录debugtalk文件路径:{}".format(debugtalk_path))
     return debugtalk_path
 
 

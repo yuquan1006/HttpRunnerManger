@@ -59,8 +59,11 @@ class ResponseObject(object):
         :param field:  Jsonpath expression, e.g. 1)$.code   2) $..items.*.id
         :return:       A list that extracted from json repsonse example.    1) [200]   2) [1, 2]
         """
-        result = jsonpath.jsonpath(self.parsed_body(), field)
+        # result = jsonpath.jsonpath(self.parsed_body(), field)
+        result = jsonpath.jsonpath(self.json, field)
         if result:
+            if len(result) == 1:
+                return result[0]
             return result
         else:
             raise exceptions.ExtractFailure("\tjsonpath {} get nothing\n".format(field))
