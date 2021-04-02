@@ -236,7 +236,7 @@ def run_test(request):
         run_test_by_type(id, base_url, testcase_dir_path, type) # 将测试用例写入测试路径的yaml文件
         # runner.run(testcase_dir_path)
         summary = runner.run(testcase_dir_path)       # 加载yaml文件，执行测试用例 返回测试数据集合
-        # shutil.rmtree(testcase_dir_path)
+        shutil.rmtree(testcase_dir_path)
         # runner.summary = timestamp_to_datetime(runner.summary, type=False)
         # summary = timestamp_to_datetime(summary, type=False)
         # return render_to_response('report_template.html', runner.summary)

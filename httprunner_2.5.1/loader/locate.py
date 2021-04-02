@@ -101,7 +101,8 @@ def init_project_working_directory(test_path):
         project_working_directory = os.getcwd()
 
     # add PWD to sys.path
-    sys.path.insert(0, project_working_directory)
+    # sys.path.insert(0, project_working_directory)
+    sys.path.insert(0, os.path.dirname(os.path.dirname(project_working_directory)))
     return debugtalk_path, project_working_directory
 
 

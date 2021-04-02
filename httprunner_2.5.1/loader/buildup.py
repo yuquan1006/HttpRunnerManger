@@ -13,7 +13,7 @@ tests_def_mapping = {
 }
 
 
-def load_debugtalk_functions():
+def load_debugtalk_functions(path):
     """ load project debugtalk.py module functions
         debugtalk.py should be located in project working directory.
 
@@ -26,7 +26,12 @@ def load_debugtalk_functions():
 
     """
     # load debugtalk.py module
-    imported_module = importlib.import_module("debugtalk")
+    path_start1 = os.path.split(path)[-1]
+    path_start = os.path.split(os.path.split(path)[0])[-1]
+    import_module_name = "{0}.{1}.debugtalk".format(path_start, path_start1)
+    imported_module = importlib.import_module(import_module_name)
+    # imported_module = importlib.import_module("debugtalk")
+    print("---------------> mport-module: {}".format(imported_module))
     return load_module_functions(imported_module)
 
 
@@ -410,7 +415,7 @@ def load_project_data(test_path, dot_env_path=None):
 
     if debugtalk_path:
         # load debugtalk.py functions
-        debugtalk_functions = load_debugtalk_functions()
+        debugtalk_functions = load_debugtalk_functions(project_working_directory)
     else:
         debugtalk_functions = {}
 

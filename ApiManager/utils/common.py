@@ -208,6 +208,8 @@ def project_info_logic(type=True, **kwargs):
     """
     if kwargs.get('project_name') is '':
         return '项目名称不能为空'
+    if kwargs.get('project_name').find('.') != -1:
+        return "项目名称不能包含. "
     if kwargs.get('responsible_name') is '':
         return '负责人不能为空'
     if kwargs.get('test_user') is '':

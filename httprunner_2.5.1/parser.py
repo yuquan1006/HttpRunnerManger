@@ -1242,7 +1242,7 @@ def _parse_testcase(testcase, project_mapping, session_variables_set=None):
             "teststeps": prepared_testcase_tests
         }
     except (exceptions.MyBaseFailure, exceptions.MyBaseError) as e:
-        print("解析测试用例失败，可能原因如下: {}".format(e))
+        print("解析{0}测试用例失败，可能原因如下: {1}".format(testcase.get('config').get('name'), e))
         testcase_type = testcase["type"]
         testcase_path = testcase.get("path")
 
