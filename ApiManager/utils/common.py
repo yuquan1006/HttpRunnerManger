@@ -276,7 +276,7 @@ def case_info_logic(type=True, **kwargs):
         if data_type:   # 修改if request_data and data_type 为if request_data != {} and data_type 兼容type=json且数据为False情况 二次修改 只留if data_type判断，增加json为{}情况的数据入库
             if data_type == 'json':
                 test.get('request').setdefault(data_type, request_data)
-            else:
+            elif data_type != 'json' and request_data:
                 data_dict = key_value_dict('data', **request_data)
                 if not isinstance(data_dict, dict):
                     return data_dict
