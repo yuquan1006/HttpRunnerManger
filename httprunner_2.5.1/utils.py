@@ -111,8 +111,8 @@ def query_json(json_content, query, delimiter='.'):
     """
     raise_flag = False
     response_body = u"response body: {}\n".format(json_content)
-    print(json_content)
-    print(query)
+    # print(json_content)
+    print("用例提取:{}".format(query))
     try:
         for key in query.split(delimiter):
             if isinstance(json_content, (list, basestring)):

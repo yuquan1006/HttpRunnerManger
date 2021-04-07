@@ -582,13 +582,14 @@ def createrZentaoBug(suite,caseList,report_id=0):
     password = hashlib.md5((hashlib.md5("Admin@123".encode()).hexdigest() + rand).encode())
     response = s.post("https://zentao.ihr360.com/zentao/user-login.html",data={"account": "api.Report", "password": password.hexdigest(), "verifyRand": rand}, headers={"Content-Type": "application/x-www-form-urlencoded"}, verify=False)
     # 获取禅道迭代（单）接口性能优化下bug-title列表
-    caseAll =[i.get("title") for i in queryZentaoBug("select title from zt_bug where project=265 and status!='closed'")]
+    # caseAll =[i.get("title") for i in queryZentaoBug("select title from zt_bug where project=265 and status!='closed'")]
     # 获取套件关联项目，根据项目设置禅道指派给/模块
     obj = TestSuite.objects.get(id=int(suite[0]))
     project = obj.belong_project
     project_name = project.project_name
 
     for case in caseList:
+        caseAll = [i.get("title") for i in queryZentaoBug("select title from zt_bug where project=265 and status!='closed'")]
         case_title = case.get('single_caseName')
         apiurl= case.get("single_url")
         case_title += ",请求超时(大于300ms)" # 完善格式和bug对比
