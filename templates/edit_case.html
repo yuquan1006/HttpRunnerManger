@@ -393,18 +393,27 @@
                                         <option selected>data</option>
                                         <option>json</option>
                                         <option>params</option>
+                                        <option>upload</option>
                                     {% elif 'json' in request.request.keys %}
                                         <option selected>json</option>
                                         <option>data</option>
                                         <option>params</option>
+                                        <option>upload</option>
                                     {% elif 'params' in request.request.keys %}
                                         <option selected>params</option>
                                         <option>data</option>
                                         <option>json</option>
+                                        <option>upload</option>
+                                    {% elif 'upload' in request.request.keys %}
+                                        <option selected>upload</option>
+                                        <option>data</option>
+                                        <option>json</option>
+                                        <option>params</option>
                                     {% else %}
                                         <option>data</option>
                                         <option>json</option>
                                         <option>params</option>
+                                        <option>upload</option>
 
                                     {% endif %}
                                 </select>
@@ -479,6 +488,43 @@
                                         {% endfor %}
                                     {% elif 'params' in request.request.keys %}
                                         {% for key, value in request.request.params.items %}
+                                            <tr>
+                                                <td><input type="checkbox" name="data"
+                                                           style="width:55px">
+                                                </td>
+                                                <td><input type="text" name='test[][key]' value="{{ key }}"
+                                                           style="width:100%; border: none"></td>
+                                                <td><select name='test[][type]'
+                                                            class='form-control'
+                                                            style='height: 25px; font-size: 15px; padding-top: 0px; padding-left: 0px; border: none'>
+                                                    {% if value|data_type == 'str' %}
+                                                        <option>string</option>
+                                                        <option>int</option>
+                                                        <option>float</option>
+                                                        <option>boolean</option>
+                                                    {% elif value|data_type == 'int' %}
+                                                        <option>int</option>
+                                                        <option>string</option>
+                                                        <option>float</option>
+                                                        <option>boolean</option>
+                                                    {% elif value|data_type == 'float' %}
+                                                        <option>float</option>
+                                                        <option>string</option>
+                                                        <option>int</option>
+                                                        <option>boolean</option>
+                                                    {% elif value|data_type == 'bool' %}
+                                                        <option>boolean</option>
+                                                        <option>string</option>
+                                                        <option>int</option>
+                                                        <option>float</option>
+                                                    {% endif %}
+                                                </select></td>
+                                                <td><input type="text" name='test[][value]' value="{{ value }}"
+                                                           style="width:100%; border: none"></td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% elif 'upload' in request.request.keys %}
+                                        {% for key, value in request.request.upload.items %}
                                             <tr>
                                                 <td><input type="checkbox" name="data"
                                                            style="width:55px">
@@ -867,4 +913,5 @@
     $("#belong_case_id").select2({ placeholder:'请选择', allowClear:true})
     </script>
 {% endblock %}
+
 

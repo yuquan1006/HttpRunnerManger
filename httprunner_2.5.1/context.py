@@ -36,6 +36,8 @@ class SessionContext(object):
         """
         variables_mapping = variables_mapping or {}
         variables_mapping = utils.ensure_mapping_format(variables_mapping)
+        if "m_encoder" in self.session_variables_mapping.keys(): # 增加判断，如果全局配置变量存在m_encoder，就删除掉
+            self.session_variables_mapping.pop("m_encoder")
         variables_mapping.update(self.session_variables_mapping)
         parsed_variables_mapping = parser.parse_variables_mapping(variables_mapping)
 
