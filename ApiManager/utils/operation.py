@@ -5,7 +5,6 @@ import requests
 import re, hashlib
 import random
 import pymysql
-from bs4 import BeautifulSoup
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import DataError
 from httprunner import report
