@@ -41,12 +41,13 @@ run_server(){
 
    # /usr/local/nginx/sbin/nginx  # 启动nginx
    echo "开始执行脚本"
-
+   rm /HttpRunnerManager/celerybeat.pid
+   echo "删除celerybeat.pid"
    nohup python manage.py celery worker --loglevel=info  >/var/log/httprunnermanger_worker.log 2>&1 & # 启动worker 后台启动
    echo "启动celery"
    nohup python manage.py celery beat --loglevel=info >/var/log/httprunnermanger_worker1.log 2>&1 &              # 启动定时任务监听器
    echo "启动beat"
-   nohup celery flower --broker=amqp://user:user123@localhost:5672// >/var/log/httprunnermanger_worker2.log 2>&1 &    # 启动任务监控后台。
+   nohup celery flower --broker=amqp://user:user123@rabbitmq:5672// >/var/log/httprunnermanger_worker2.log 2>&1 &    # 启动任务监控后台。
    echo "启动flower"
    echo "启动uwsgi"
    uwsgi --ini /HttpRunnerManager/uwsgi.ini
