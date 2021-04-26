@@ -19,18 +19,21 @@ from ApiManager.utils.common import module_info_logic, project_info_logic, case_
     set_filter_session, get_ajax_msg, register_info_logic, task_logic, load_modules, upload_file_logic, \
     init_filter_session, get_total_values, timestamp_to_datetime
 from ApiManager.utils.operation import env_data_logic, del_module_data, del_project_data, del_test_data, copy_test_data, \
-    del_report_data, add_suite_data, copy_suite_data, del_suite_data, edit_suite_data, add_test_reports
-from ApiManager.utils.pagination import get_pager_info,get_referenced_idList
+    del_report_data, add_suite_data, copy_suite_data, del_suite_data, edit_suite_data, add_test_reports, \
+    get_project_module_nodes, convert_eval_url
+from ApiManager.utils.pagination import get_pager_info, get_referenced_idList
 from ApiManager.utils.runner import run_by_batch, run_test_by_type
 from ApiManager.utils.task_opt import delete_task, change_task_status
 from ApiManager.utils.testcase import get_time_stamp
 # 问题一
 # from httprunner import HttpRunner
 from httprunner.api import HttpRunner
+from django.core import serializers
+
 logger = logging.getLogger('HttpRunnerManager')
 
-# Create your views here.
 
+# Create your views here.
 
 
 def login_check(func):
@@ -233,9 +236,9 @@ def run_test(request):
         base_url = request.POST.get('env_name')
         type = request.POST.get('type', 'test')
 
-        run_test_by_type(id, base_url, testcase_dir_path, type) # 将测试用例写入测试路径的yaml文件
+        run_test_by_type(id, base_url, testcase_dir_path, type)  # 将测试用例写入测试路径的yaml文件
         # runner.run(testcase_dir_path)
-        summary = runner.run(testcase_dir_path)       # 加载yaml文件，执行测试用例 返回测试数据集合
+        summary = runner.run(testcase_dir_path)  # 加载yaml文件，执行测试用例 返回测试数据集合
         shutil.rmtree(testcase_dir_path)
         # runner.summary = timestamp_to_datetime(runner.summary, type=False)
         # summary = timestamp_to_datetime(summary, type=False)
@@ -365,23 +368,38 @@ def test_list(request, id):
     account = request.session["now_account"]
     if request.is_ajax():
         test_info = json.loads(request.body.decode('utf-8'))
-
         if test_info.get('mode') == 'del':
             msg = del_test_data(test_info.pop('id'))
-        elif test_info.get('mode') == 'copy':
+            return HttpResponse(get_ajax_msg(msg, 'ok'))
+        if test_info.get('mode') == 'copy':
             msg = copy_test_data(test_info.get('data').pop('index'), test_info.get('data').pop('name'))
-        return HttpResponse(get_ajax_msg(msg, 'ok'))
+            return HttpResponse(get_ajax_msg(msg, 'ok'))
+
+        # 新增ajax(查询用例)逻辑处理
+        filter_query = set_filter_session(request)
+        test_list = get_pager_info(
+            TestCaseInfo, filter_query, '/api/test_list/', id)
+        result_list = list()
+        results = serializers.serialize('json', test_list[1], ensure_ascii=False)  # 数据库对象转化json
+        result = [result.get('fields') for result in json.loads(results)]  # 提取数据库字段
+        testcase_id = [i.get('pk') for i in json.loads(results)]
+        for num, i in enumerate(result):  # 将id字段添加到字段中
+            i['id'] = testcase_id[num]
+            i['url'] = convert_eval_url(i.get('request'))
+            i['belong_module_name'] = ModuleInfo.objects.get_module_name(i.get('belong_module'),
+                                                                         type=False).module_name
+        result_list.append(result)
+        result_list.append(str(test_list[0]))
+        return JsonResponse(result_list, safe=False)
 
     else:
         filter_query = set_filter_session(request)
         test_list = get_pager_info(
             TestCaseInfo, filter_query, '/api/test_list/', id)
         # 获取被引用用例id列表
-        referenced_idList = get_referenced_idList(TestCaseInfo)
         manage_info = {
             'account': account,
             'test': test_list[1],
-            'id_list': referenced_idList, # 新增被引用list
             'page_list': test_list[0],
             'info': filter_query,
             'env': EnvInfo.objects.all().order_by('-create_time'),
@@ -444,7 +462,7 @@ def edit_case(request, id=None):
         tmp_str = request['test']['request']['data']
         if isinstance(tmp_str, str):
             request['test']['request'].pop('data')
-            request['test']['request']['data'] = {tmp_str:'FilesOnly'} 
+            request['test']['request']['data'] = {tmp_str: 'FilesOnly'}
     manage_info = {
         'account': account,
         'info': test_info[0],
@@ -521,7 +539,7 @@ def env_list(request, id):
         return render_to_response('env_list.html', manage_info)
 
 
-#@login_check
+# @login_check
 def report_list(request, id):
     """
     报告列表
@@ -537,12 +555,12 @@ def report_list(request, id):
             msg = del_report_data(report_info.pop('id'))
         return HttpResponse(get_ajax_msg(msg, 'ok'))
     else:
-        #filter_query = set_filter_session(request)
+        # filter_query = set_filter_session(request)
         filter_query = {'user': '', 'name': '', 'belong_project': 'All', 'belong_module': '请选择', 'report_name': ''}
         report_list = get_pager_info(
             TestReports, filter_query, '/api/report_list/', id)
         manage_info = {
-            'account': request.session.get("now_account","Test"),
+            'account': request.session.get("now_account", "Test"),
             'report': report_list[1],
             'page_list': report_list[0],
             'info': filter_query
@@ -550,7 +568,7 @@ def report_list(request, id):
         return render_to_response('report_list.html', manage_info)
 
 
-#@login_check
+# @login_check
 def view_report(request, id):
     """
     查看报告
@@ -665,7 +683,7 @@ def get_project_info(request):
         return HttpResponse(msg)
 
 
-#@login_check
+# @login_check
 def download_report(request, id):
     if request.method == 'GET':
 
@@ -817,4 +835,11 @@ def echo(request):
             client.close()
 
 
-
+def getTreeNodes(request):
+    """
+    获取项目-模块 树节点数据
+    :param request:
+    :return: [{},{},{}]
+    """
+    if request.is_ajax():
+        return JsonResponse(get_project_module_nodes(request), safe=False)

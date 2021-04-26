@@ -455,19 +455,22 @@ def set_filter_session(request):
     :param request:
     :return:
     """
-    if 'user' in request.POST.keys():
-        request.session['user'] = request.POST.get('user')
-    if 'name' in request.POST.keys():
-        request.session['name'] = request.POST.get('name')
-    if 'project' in request.POST.keys():
-        request.session['project'] = request.POST.get('project')
-    if 'module' in request.POST.keys():
+    # ajax 请求数据为 request.POST = [{"project":"irenshi"}] 固增加判断
+    request_data = json.loads(list(request.POST)[0]) if len(list(request.POST)) == 1 else request.POST
+    if 'user' in request_data.keys():
+        request.session['user'] = request_data.get('user')
+    if 'name' in request_data.keys():
+        request.session['name'] = request_data.get('name')
+    if 'project' in request_data.keys():
+        request.session['project'] = request_data.get('project')
+
+    if 'module' in request_data.keys():
         try:
-            request.session['module'] = ModuleInfo.objects.get(id=request.POST.get('module')).module_name
+            request.session['module'] = ModuleInfo.objects.get(id=request_data.get('module')).module_name
         except Exception:
-            request.session['module'] = request.POST.get('module')
-    if 'report_name' in request.POST.keys():
-        request.session['report_name'] = request.POST.get('report_name')
+            request.session['module'] = request_data.get('module')
+    if 'report_name' in request_data.keys():
+        request.session['report_name'] = request_data.get('report_name')
 
     filter_query = {
         'user': request.session['user'],
@@ -476,7 +479,6 @@ def set_filter_session(request):
         'belong_module': request.session['module'],
         'report_name': request.session['report_name']
     }
-
     return filter_query
 
 

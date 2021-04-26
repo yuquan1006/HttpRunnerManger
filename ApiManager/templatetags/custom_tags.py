@@ -49,10 +49,10 @@ def isInclude(value,id):
     else:
         return False
 
-@register.filter(name='convert_eval_url')
-def convert_eval_url(value):
+@register.filter(name='convert_eval_url_or_include')
+def convert_eval_url_or_include(value, include):
     """
-    字符串数据eval转换dict获取数据中url信息
+    字符串数据eval转换dict获取数据中url信息 如果url为空返回include长度
     :param value: # {'test': {'name': '单接口-【班次】-B端添加班次', 'variables': [{'name': 'test01'}, {'type': 'WEEKLY'}], 'validate': [{'comparator': 'equals', 'check': 'status_code', 'expected': 200}], 'extract': [{'calendarId': 'content.data.id'}], 'request': {'method': 'POST', 'url': '/web/gateway/attendance/api/schedule/calendar/add.do', 'json': {'isUpdate': True, 'workingDays': '1111100', 'weekWorkDays': [5, 6], 'typeState': 'add', 'type': '$type', 'isDefault': False, 'calendarState': True, 'monthWorkDays': [6, 13, 20, 27], 'calendarId': '', 'baseOnStatutory': True, 'name': '$name', 'updateDefault': True, 'id': '', 'error': None, 'reEnter': True}, 'headers': {'X-XSRF-TOKEN': '${getHeadersToken($cookie_token)}'}}}}
     :return: the value which had been eval
     """
@@ -61,4 +61,7 @@ def convert_eval_url(value):
         url = dicts['test']['request']['url']
     except BaseException as e:
         url = None
+    if url == "":
+        result = eval(include)
+        return len(result)
     return url

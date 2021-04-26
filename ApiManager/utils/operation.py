@@ -446,10 +446,13 @@ def add_test_reports(runner, report_name=None):
     report_name = report_name if report_name else runner.summary['time']['start_datetime']
     runner.summary['html_report_name'] = report_name
 
-    report_path = os.path.join(os.getcwd(), "reports{}{}.html".format(separator, int(runner.summary['time']['start_at'])))
+    report_path = os.path.join(os.getcwd(),
+                               "reports{}{}.html".format(separator, int(runner.summary['time']['start_at'])))
     # v2中runner没有gen_html_report方法了，改为report.gen_html_report，模板换成v2改进版（改进v2模板的不符合jinja2语法的部分）
     # runner.gen_html_report(html_report_template=os.path.join(os.getcwd(), "templates{}extent_report_template.html".format(separator)))
-    report_path = report.gen_html_report(runner.summary, report_template=os.path.join(os.getcwd(), "templates{}extent-theme-template-report.html".format(separator)))
+    report_path = report.gen_html_report(runner.summary, report_template=os.path.join(os.getcwd(),
+                                                                                      "templates{}extent-theme-template-report.html".format(
+                                                                                          separator)))
 
     with open(report_path, encoding='utf-8') as stream:
         reports = stream.read()
@@ -466,7 +469,7 @@ def add_test_reports(runner, report_name=None):
         'reports': reports
     }
     test_reports_obj = TestReports.objects.create(**test_reports)
-    return report_path,test_reports_obj.id
+    return report_path, test_reports_obj.id
 
 
 # def statistics_report_timeOut(html_doc, time_ms=300.00):
@@ -535,10 +538,14 @@ def write_htmlTable(dataList):
     tmp_str = '<table border="0.5">  <h3><font color = "red"></h3>  <th>业务场景</th><th>具体超时接口</th><th>接口Url</th><th>响应时长</th> '
     # 添加每列数据
     for data in dataList:
-        tmp_str += "<tr><td>{0}</td> <td>{1}</td><td>{2}</td><td>{3}</td>".format(data.get('name'),data.get('single_caseName'),data.get('single_url'),data.get('response_time'))
+        tmp_str += "<tr><td>{0}</td> <td>{1}</td><td>{2}</td><td>{3}</td>".format(data.get('name'),
+                                                                                  data.get('single_caseName'),
+                                                                                  data.get('single_url'),
+                                                                                  data.get('response_time'))
     return tmp_str
 
-def callDingTalkRobot(name,text):
+
+def callDingTalkRobot(name, text):
     # --- 钉钉机器人
     import requests
     url = 'https://oapi.dingtalk.com/robot/send?access_token=07633a4a9b6f5bddd87604ffe67021125e00d62d0eba6844cd793ad6fa9d3ce9'
@@ -546,12 +553,16 @@ def callDingTalkRobot(name,text):
     content = "通知内容：{}执行失败\n".format(name)
     content += text
     payload = {"msgtype": "text", "isAtAll": True, "text": {"content": content}}
-    response = requests.post(url,headers=headers,json=payload)
-    if "ok" in response.text:logger.info("钉钉机器人调用成功：{}".format(response.text))
-    else:logger.error("钉钉机器人调用失败：{}".format(response.text))
+    response = requests.post(url, headers=headers, json=payload)
+    if "ok" in response.text:
+        logger.info("钉钉机器人调用成功：{}".format(response.text))
+    else:
+        logger.error("钉钉机器人调用失败：{}".format(response.text))
+
 
 def queryZentaoBug(sql):
-    config = {'host': '192.168.1.172','port': 3306,'user': 'zentao','passwd': 'zentaodba2015','charset': 'utf8','cursorclass': pymysql.cursors.DictCursor}
+    config = {'host': '192.168.1.172', 'port': 3306, 'user': 'zentao', 'passwd': 'zentaodba2015', 'charset': 'utf8',
+              'cursorclass': pymysql.cursors.DictCursor}
     try:
         con = pymysql.connect(**config)
         con.autocommit(1)
@@ -560,13 +571,14 @@ def queryZentaoBug(sql):
         cur.execute(sql)
         result = cur.fetchall()
     except BaseException as e:
-        logger.error("程序异常:%s"%e)
+        logger.error("程序异常:%s" % e)
     finally:
         cur.close()
         con.close()
     return result
 
-def createrZentaoBug(suite,caseList,report_id=0):
+
+def createrZentaoBug(suite, caseList, report_id=0):
     """
     创建禅道bug
     :param suite: 平台套件id列表
@@ -579,7 +591,9 @@ def createrZentaoBug(suite,caseList,report_id=0):
     response = s.get("https://zentao.ihr360.com/zentao/user-login.html", verify=False)
     rand = re.findall("name='verifyRand' id='verifyRand' value='(.+?)'", response.text)[0]
     password = hashlib.md5((hashlib.md5("Admin@123".encode()).hexdigest() + rand).encode())
-    response = s.post("https://zentao.ihr360.com/zentao/user-login.html",data={"account": "api.Report", "password": password.hexdigest(), "verifyRand": rand}, headers={"Content-Type": "application/x-www-form-urlencoded"}, verify=False)
+    response = s.post("https://zentao.ihr360.com/zentao/user-login.html",
+                      data={"account": "api.Report", "password": password.hexdigest(), "verifyRand": rand},
+                      headers={"Content-Type": "application/x-www-form-urlencoded"}, verify=False)
     # 获取禅道迭代（单）接口性能优化下bug-title列表
     # caseAll =[i.get("title") for i in queryZentaoBug("select title from zt_bug where project=265 and status!='closed'")]
     # 获取套件关联项目，根据项目设置禅道指派给/模块
@@ -588,10 +602,11 @@ def createrZentaoBug(suite,caseList,report_id=0):
     project_name = project.project_name
 
     for case in caseList:
-        caseAll = [i.get("title") for i in queryZentaoBug("select title from zt_bug where project=265 and status!='closed'")]
+        caseAll = [i.get("title") for i in
+                   queryZentaoBug("select title from zt_bug where project=265 and status!='closed'")]
         case_title = case.get('single_caseName')
-        apiurl= case.get("single_url")
-        case_title += ",请求超时(大于300ms)" # 完善格式和bug对比
+        apiurl = case.get("single_url")
+        case_title += ",请求超时(大于300ms)"  # 完善格式和bug对比
         # title重复就跳过
         if case_title in caseAll:
             continue
@@ -599,22 +614,80 @@ def createrZentaoBug(suite,caseList,report_id=0):
             title = case_title
             module, assignedTo = "240", "Damon.Shi"
             if "绩效" in project_name:
-                module,assignedTo = "232","vic.zhao"
+                module, assignedTo = "232", "vic.zhao"
             elif "薪资" in project_name or "薪税通" in project_name or "福利管理" in project_name:
-                module,assignedTo = "231","richey.liu"
+                module, assignedTo = "231", "richey.liu"
             elif "组织" in project_name:
-                module,assignedTo = "465","Frank.Li"
+                module, assignedTo = "465", "Frank.Li"
             elif "人事" in project_name:
-                module,assignedTo = "229","Frank.Li"
+                module, assignedTo = "229", "Frank.Li"
             elif "考勤" in project_name:
-                module,assignedTo = "230","jerry.xiao"
+                module, assignedTo = "230", "jerry.xiao"
             elif "openAPI" in project_name:
-                module,assignedTo = "292","david.wei"
+                module, assignedTo = "292", "david.wei"
             elif "审批中心" in project_name:
-                module,assignedTo = "377","Jack.Zhao"
+                module, assignedTo = "377", "Jack.Zhao"
         # 创建禅道bug
-        params = {"product": (None, "3"), "module": (None, module), "project": (None, "265"),"assignedTo": (None, assignedTo),"deadline": (None, ""), "type": (None, "codeerror"), "os": (None, "PROD"), "browser": (None, "all"),"title": (None, title), "severity": (None, "3"), "pri": (None, "2"),"steps": (None, "<p>{}      接口平台报告地址：http://192.168.1.196/api/view_report/{}/</p><p>{}</p>".format(title,report_id,apiurl)),"story": (None, ""), "keywords": (None, "内部QA"), "uid": str(random.randint(1,100000))}
-        response = s.post("https://zentao.ihr360.com/zentao/bug-create-3-0-moduleID=0.html",files=params)
+        params = {"product": (None, "3"), "module": (None, module), "project": (None, "265"),
+                  "assignedTo": (None, assignedTo), "deadline": (None, ""), "type": (None, "codeerror"),
+                  "os": (None, "PROD"), "browser": (None, "all"), "title": (None, title), "severity": (None, "3"),
+                  "pri": (None, "2"), "steps": (None,
+                                                "<p>{}      接口平台报告地址：http://192.168.1.196/api/view_report/{}/</p><p>{}</p>".format(
+                                                    title, report_id, apiurl)), "story": (None, ""),
+                  "keywords": (None, "内部QA"), "uid": str(random.randint(1, 100000))}
+        response = s.post("https://zentao.ihr360.com/zentao/bug-create-3-0-moduleID=0.html", files=params)
         if response.status_code == 200:
-            logger.info("创建用例成功%s"%case_title)
+            logger.info("创建用例成功%s" % case_title)
 
+
+def get_project_module_nodes(request):
+    """
+    获取项目-模块节点数据
+    :return: [{'text': '120迭代', 'nodes': [{'text': '员工薪资档案'}, {'text': '审批中心'}, {'text': '人事管理-员工关系'}]}, {'text': 'irenshi', 'nodes': [{'text': '时间管理'}, {'text': '通用'}, {'text': '绩效2.0'}]]
+    """
+    # 从请求缓存中获取项目和模块
+    project_node, module_node = '', ''
+    if request.session.get('project') and request.session.get('project') != 'ALL':
+        project_node = request.session.get('project')
+    if request.session.get('module') and request.session.get('module') != '请选择':
+        module_node = request.session.get('module')
+
+    all_list = list()
+    root_dict = {'text': "全部用例"}  # 设置根节点
+    all_list.append(root_dict)
+    result = list()
+    for project in ProjectInfo.objects.values('id', 'project_name'):
+        tmp = dict()
+        tmp['text'] = project.get('project_name')
+        # 文本如果存在缓存中 那该节点设置为选中
+        if project_node == project.get('project_name'):
+            tmp['state'] = {"selected": True, "expanded": True}
+        modules = ModuleInfo.objects.filter(belong_project_id=project.get('id'))
+        if modules:
+            node_list = list()
+            for module in modules:
+                nodes_dict = dict()
+                # 文本如果存在缓存中 那该节点设置为选中
+                if module_node == module.module_name:
+                    nodes_dict['state'] = {"selected": True}
+                nodes_dict['text'] = module.module_name
+                node_list.append(nodes_dict)
+            tmp['nodes'] = node_list
+        result.append(tmp)
+    root_dict['nodes'] = result
+
+    return all_list
+
+
+def convert_eval_url(value, key='url'):
+    """
+    字符串数据eval转换dict获取数据中url信息
+    :param value: # {'test': {'name': '单接口-【班次】-B端添加班次', 'variables': [{'name': 'test01'}, {'type': 'WEEKLY'}], 'validate': [{'comparator': 'equals', 'check': 'status_code', 'expected': 200}], 'extract': [{'calendarId': 'content.data.id'}], 'request': {'method': 'POST', 'url': '/web/gateway/attendance/api/schedule/calendar/add.do', 'json': {'isUpdate': True, 'workingDays': '1111100', 'weekWorkDays': [5, 6], 'typeState': 'add', 'type': '$type', 'isDefault': False, 'calendarState': True, 'monthWorkDays': [6, 13, 20, 27], 'calendarId': '', 'baseOnStatutory': True, 'name': '$name', 'updateDefault': True, 'id': '', 'error': None, 'reEnter': True}, 'headers': {'X-XSRF-TOKEN': '${getHeadersToken($cookie_token)}'}}}}
+    :return: the value which had been eval
+    """
+    try:
+        dicts = eval(value)
+        url = dicts['test']['request'][key]
+    except BaseException as e:
+        url = None
+    return url

@@ -150,16 +150,14 @@ def get_pager_info(Model, filter_query, url, id, per_items=12):
         else:
             if belong_project != 'All':
                 obj = obj.filter(belong_project__contains=belong_project)
-            elif belong_module != '请选择':
+            if belong_module != '请选择':
                 obj = obj.filter(belong_module__module_name__contains=belong_module)
-            else:
-               # obj = obj.filter(name__contains=name) if name is not '' else obj.filter(author__contains=user)
-                if name is not '' and user is '':
-                    obj = obj.filter(name__contains=name)
-                if name is '' and user is not '':
-                    obj = obj.filter(author__contains=user)
-                if name is not '' and user is not '':
-                    obj = obj.filter(name__contains=name, author__contains=user)
+            if name is not '' and user is '':
+                obj = obj.filter(name__contains=name)
+            if name is '' and user is not '':
+                obj = obj.filter(author__contains=user)
+            if name is not '' and user is not '':
+                obj = obj.filter(name__contains=name, author__contains=user)
 
     if url != '/api/periodictask/':
         obj = obj.order_by('-update_time')

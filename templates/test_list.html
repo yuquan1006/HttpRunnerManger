@@ -1,8 +1,169 @@
-{% extends "base.html" %}
-{% block title %}用例信息{% endblock %}
-{% load staticfiles %}
-{% load custom_tags %}
-{% block content %}
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <title>用例信息</title>
+
+    {% load custom_tags %}
+    {% load staticfiles %}
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.clouddeep.cn/amazeui/1.0.1/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="{% static 'assets/css/admin.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/common.css' %}">
+    <script src="https://cdn.bootcss.com/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js" charset="utf-8"></script>
+    <script src="https://cdn.bootcss.com/amazeui/2.7.2/js/amazeui.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="{% static 'assets/js/commons.js' %}"></script>
+    {#导入bootstrap-treeview    #}
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap-treeview/1.2.0/bootstrap-treeview.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js"></script>
+
+
+{#输入框样式#}
+    <style>
+.filter-box {
+            width: 190px;
+            height: 34px;
+            background-color: #ffffff;
+            border: solid 1px #dcdcdc;
+            font-family: Roboto;
+            font-size: 10px;
+            font-weight: 10px;
+            font-style: normal;
+            font-stretch: normal;
+            letter-spacing: normal;
+            text-align: left;
+            color: #3d3d3d;
+            padding-left: 8px;
+            border-color: #dcdcdc;
+            -webkit-appearance: none;
+}
+    </style>
+
+
+{# 自己手动自定义导航栏内容 #}
+<form enctype="multipart/form-data" id="upload_project_info">
+    <div class="modal fade" id="bulk_uploadcase" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">HttpRunnerManager</h4>
+                </div>
+                <div class="modal-body">
+                    <input name="upload" id="uploadfile" type="file" class="file" multiple/>
+                    <div id="kartik-file-errors"></div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group col-md-8" style="margin-left: 15px">
+                        <div class="input-group-addon" style="color: #0a628f">所属项目</div>
+                        <select id='project' name="project" class="form-control"
+                                onchange="auto_load('#upload_project_info', '/api/get_project_info/', '#upload_belong_module_id', 'module')">
+                            <option value="请选择">请选择</option>
+                            {% for foo in project %}
+                                <option value="{{ foo.project_name }}">{{ foo.project_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group col-md-8" style="margin-left: 15px">
+                        <div class="input-group-addon" style="color: #0a628f">所属模块</div>
+                        <select id="upload_belong_module_id" name="module" class="form-control">
+                        </select>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+</form>
+
+<div class="am-modal am-modal-alert" tabindex="-1" id="my-alert">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">HttpRunnerManager</div>
+        <div class="am-modal-bd" id="my-alert_print">
+            Sorry，服务器可能开小差啦, 请重试!
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+<div class="am-cf admin-main">
+
+    <div class="nav-navicon admin-main admin-sidebar">
+
+
+        <div class="sideMenu am-icon-dashboard" style="color:#aeb2b7; margin: 10px 0 0 0;"> 欢迎您：{{ account }} &nbsp;&nbsp;<a
+                href='/api/log_out/'>注 销</a></div>
+        <div id="tv"  style="overflow-y: auto;max-height:900px " ></div> {# 设置超过最大高度就滚动条 #}
+        <!-- sideMenu End -->
+    </div>
+
+    <div class="daohang">
+        <ul>
+            <li>
+                <button type="button" class="am-btn am-btn-default am-radius am-btn-xs"
+                        onclick="location='/api/index/'">返回首页
+                    <a href="/api/index/" class="am-close am-close-spin">~</a></button>
+            </li>
+            <li>
+                <button type="button" class="am-btn am-btn-default am-radius am-btn-xs"
+                        onclick="location='/api/project_list/1/'">项目列表<a
+                        href="/api/project_list/1/" class="am-close am-close-spin">~</a>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="am-btn am-btn-default am-radius am-btn-xs"
+                        onclick="location='/api/module_list/1/'">模块列表<a
+                        href="/api/module_list/1/" class="am-close am-close-spin">~</a>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="am-btn am-btn-default am-radius am-btn-xs"
+                        onclick="location='/api/test_list/1/'">用例列表<a
+                        href="/api/test_list/1/" class="am-close am-close-spin">~</a>
+                </button>
+            </li>
+
+            <li>
+                <button type="button" class="am-btn am-btn-default am-radius am-btn-xs"
+                        onclick="location='/api/add_config/'">新增配置<a
+                        href="/api/add_config/" class="am-close am-close-spin">~</a>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="am-btn am-btn-default am-radius am-btn-xs"
+                        onclick="location='/api/config_list/1/'">配置列表<a
+                        href="/api/config_list/1/" class="am-close am-close-spin">~</a>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="am-btn am-btn-default am-radius am-btn-xs"
+                        onclick="location='/api/add_case/'">新增用例<a
+                        href="/api/add_case/" class="am-close am-close-spin">~</a>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="am-btn am-btn-default am-radius am-btn-xs"
+                        onclick="location='/api/add_suite/'">新增Suite<a
+                        href="/api/add_suite/" class="am-close am-close-spin">~</a>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="am-btn am-btn-default am-radius am-btn-xs"
+                        onclick="location='/api/add_task/'">新增任务<a
+                        href="/api/add_task/" class="am-close am-close-spin">~</a>
+                </button>
+            </li>
+
+        </ul>
+    </div>
+
 
     <div class="am-modal am-modal-prompt" tabindex="-1" id="my-copy">
         <div class="am-modal-dialog">
@@ -92,66 +253,40 @@
         </div>
 
         <div class="am-btn-toolbars am-btn-toolbar am-kg am-cf">
-            <form id="pro_filter" method="post" action="/api/test_list/1/">
                 <ul>
-                    <li style="padding-top: 5px">
-                        <select name="project" class="selectpicker show-tick form-control" data-width="190px"
-                                onchange="auto_load('#pro_filter', '/api/add_case/', '#module', 'module')">
-                            <option value="{{ info.belong_project }}"
-                                    selected>{{ info.belong_project }}</option>
-                            {% for foo in project %}
-                                {% ifnotequal info.belong_project foo.project_name %}
-                                    <option value="{{ foo.project_name }}">{{ foo.project_name }}</option>
-                                {% endifnotequal %}
-
-                            {% endfor %}
-                            {% if info.belong_project != 'All' %}
-                                <option value="All">All</option>
-                            {% endif %}
-                        </select>
-                    </li>
-
-                    <li style="padding-top: 5px">
-                        <select name="module" class="selectpicker show-tick form-control" data-width="190px" id="module">
-                        </select>
-                    </li>
-
-                    <li style="padding-top: 5px"><input value="{{ info.name }}" type="text" name="name"
-                                                        class="filter-box"
+                    <li id="testcase_search_name" style="padding-top: 5px">
+                        <input value="{{ info.name }}" type="text" name="name" class="filter-box"
                                                         placeholder="用例名称"/></li>
                     <li>
-                    <li style="padding-top: 5px"><input value="{{ info.user }}" type="text" name="user"
-                                                        class="filter-box"
+                    <li id="testcase_search_author" style="padding-top: 5px"><input value="{{ info.user }}" type="text" name="user" class="filter-box"
                                                         placeholder="创建者"/>
                     </li>
                     <li>
                         <button style="padding-top: 5px; margin-top: 9px"
-                                class="am-btn am-radius am-btn-xs am-btn-success">搜索
+                                class="am-btn am-radius am-btn-xs am-btn-success" onclick="search_testcases()">搜索
                         </button>
                     </li>
                 </ul>
-            </form>
         </div>
 
 
         <form class="am-form am-g" id='test_list' name="test_list">
-            <table width="100%" class="am-table am-table-bordered am-table-radius am-table-striped">
-                <thead>
-                <tr class="am-success">
-                    <th class="table-check"><input type="checkbox" id="select_all"/></th>
-                    <th class="table-title">序号</th>
-                    <th class="table-type">名称</th>
-                    <th class="table-type">接口请求地址</th>
-                    <th class="table-type">是否被引用</th>
-                    <th class="table-type">所属项目</th>
-                    <th class="table-type">所属模块</th>
-                    <th class="table-type">创建者</th>
-                    <th width="163px" class="table-title">操作</th>
+            <table id="testcase_table" width="100%" class="table table-striped table-bordered">
+                <thead >
+                <tr class="row mx-0 bg-primary">
+                    <th class="table-check" style="width: 22px;"><input type="checkbox" id="select_all"/></th>
+                    <th class="table-title" style="width: 50px;">序号</th>
+                    <th class="table-type" style="width: 500px;height: 50px">接口名称</th>
+                    <th style="max-width: 300px;height: 50px;overflow: hidden;text-overflow:ellipsis;white-space:nowrap">路径或步骤</th>
+                    <th style="width: 200px;">所属项目</th>
+                    <th style="width: 200px;">所属模块</th>
+                    <th style="width: 137px;">创建者</th>
+                    <th style="max-width: 300; min-width: 167px" class="table-title">操作</th>
                 </tr>
                 </thead>
                 <tbody>
                 {% for foo in test %}
-                    <tr>
+                    <tr class="row mx-0 bg-dark">
                         <td><input type="checkbox" name="testcase_{{ foo.id }}" value="{{ foo.id }}"/></td>
                         <td>{{ forloop.counter }}</td>
                         <td>
@@ -205,8 +340,7 @@
                                 </nav>
                             </div>
                         </td>
-                        <td>{{ foo.request|convert_eval_url }}</td>
-                        <td>{{ id_list|isInclude:foo.id }}</td>
+                        <td>{{ foo.request|convert_eval_url_or_include:foo.include }}</td>
                         <td>{{ foo.belong_project }}</td>
                         <td>{{ foo.belong_module.module_name }}</td>
                         <td>{{ foo.author }}</td>
@@ -246,7 +380,7 @@
                 </button>
             </div>
 
-            <ul class="am-pagination am-fr">
+            <ul class="am-pagination am-fr" id="page_list">
                 {{ page_list }}
             </ul>
 
@@ -255,6 +389,8 @@
 
         </form>
     </div>
+
+
     <script type="text/javascript">
 
         function coolspo(id) {
@@ -331,9 +467,263 @@
             $("input[name^='testcase']").prop("checked", isChecked);
         });
 
-        $().ready(function () {
-            auto_load('#pro_filter', '/api/add_case/', '#module', 'module');
-        });
+
+        // 初始化目录树
+        $(document).ready(function () {
+            var nodeData = [];
+            // 获取后台节点树数据
+            $.ajax({
+                url: '/api/getTreeNodes/',
+                type: 'post',
+                dataType: 'json',
+                async: false,
+                success: function (data) {
+                    nodeData = data;
+                }
+            })
+
+            // 初始化treeview
+            $('#tv').treeview({
+                levels:2, // 默认展开两层
+                data: nodeData, // 节点数据
+                showCheckbox: false,
+                showBorder: false,
+                backColor: 'rgb(42 53 66)',
+                color: '#aeb2b7',
+                selectedBackColor: '#4b0082',
+                onhoverColor: '#4b0082',
+                onNodeSelected: function (event, node) {
+                    var parentNode = $('#tv').treeview('getParent', node.nodeId);
+                    var node_text = node.text;
+                    if(node_text=='全部用例'){
+                        // 查询全部数据
+                        var testcase_data = {"project": "All", "module": "请选择", "user": "", "name": ""};
+                    }
+                    else{
+                        // 查询节点数据
+                        if (parentNode.text == '全部用例'){
+                            // 查询项目下数据
+                            var testcase_data = {"project": node.text, "module": "请选择"};
+                        }
+                        else {
+                            // 查询项目-模块下数据
+                            var testcase_data = {"project": parentNode.text, "module":node.text};
+                        }
+                    }
+                    get_testcase_over_table(testcase_data);
+                }
+            })
+        })
+
+        // 获取对应用例数据并重写表格和页码
+        function get_testcase_over_table(testcase_data) {
+        // 获取后台数据
+        $.ajax({
+            url: '/api/test_list/1/',
+            type: 'post',
+            dataType: 'json',
+            async: false,
+            data: JSON.stringify(testcase_data),
+            success: function (data) {
+                if (data[0] == null || data[0] == ''){
+                    var tbody = $('#testcase_table').find('tbody');
+                    var page_list = $('#page_list');
+                    page_list.empty();
+                    tbody.empty();
+                }else {
+                    page_data = data[1];
+                    data = data[0];
+                    {#var str = JSON.stringify(data[1]);#} //调试用 将object对象转化成str
+                    {#alert(str);#}
+                    {#console.log(str);#}
+                    // 动态更新表格
+                    var tbody = $('#testcase_table').find('tbody')
+                    tbody.empty();
+                    for (var i =0; i < data.length; i++){  // 根据数据确定要生成的行数
+                        var row = document.createElement('tr');  // 创建行元素
+                        // 创建第 td 单元格
+                        var checkboxcell = document.createElement('td');
+                        var checkbox_input_cell = document.createElement('input');
+                        // 给创建的单元格填充数据
+                        checkbox_input_cell.setAttribute("type","checkbox");
+                        checkbox_input_cell.setAttribute("name","testcase_"+data[i].id);
+                        checkbox_input_cell.setAttribute("value",data[i].id);
+                        // 将新建的td加入新建的tr行
+                        checkboxcell.appendChild(checkbox_input_cell);
+                        row.appendChild(checkboxcell);
+                        row.setAttribute("class", 'row mx-0 bg-dark')
+
+
+                        var numcell = document.createElement('td');
+                        numcell.innerHTML = i+1;
+                        row.appendChild(numcell);
+
+
+                        var namecell = document.createElement('td');
+                        //namecell.setAttribute('class', 'col-md-4');
+                        var name_div1 = document.createElement('div');
+                        var name_div2 = document.createElement('div');
+                        if (data[i].include != '[]'){
+                            var name_div1_a1 = document.createElement('a');
+                            name_div1_a1.setAttribute('id', 'co'+data[i].id);
+                            name_div1_a1.setAttribute('onclick', 'coolspo('+data[i].id+')');
+                            name_div1_a1.setAttribute('class', 'am-icon-plus-square-o am-icon-fw');
+                            name_div1_a1.setAttribute('style', 'display: block; cursor: pointer;');
+                            name_div1.appendChild(name_div1_a1);
+                        }
+                        var name_div1_a2 = document.createElement('a');
+                        name_div1_a2.setAttribute('id', 'cc'+data[i].id);
+                        name_div1_a2.setAttribute('onclick', 'coolspc('+data[i].id+')');
+                        name_div1_a2.setAttribute('class', 'am-icon-minus-square-o am-icon-fw');
+                        name_div1_a2.setAttribute('style', 'display: none; cursor: pointer;');
+                        name_div1.setAttribute('style', 'float: left')
+                        name_div1.appendChild(name_div1_a2);
+                        var name_div2_a1 = document.createElement('a');
+                        name_div2_a1.setAttribute('href', '/api/edit_case/'+data[i].id);
+                        name_div2_a1.innerHTML = data[i].name;
+                        name_div2.appendChild(name_div2_a1)
+                        var name_div2_nav = document.createElement('nav');
+                        var name_div2_nav_ul = document.createElement('ul');
+                        name_div2_nav_ul.setAttribute('id', 'pre_case'+data[i].id);
+                        name_div2_nav_ul.setAttribute('class', 'am-nav am-collapse');
+                        var include_data = eval(data[i].include)
+                        for (j=0;j<include_data.length ;j++){
+                            if ($.type(include_data[j]) != "array")
+                            {
+                                if (include_data[j].config[1].endsWith('已删除')==true)
+                                {
+                                    var name_div2_nav_ul_li = document.createElement('li');                                                            var name_div2_nav_ul_li_span = document.createElement('li');
+                                    var name_div2_nav_ul_li_span = document.createElement('span');
+                                    name_div2_nav_ul_li.setAttribute('id', include_data[j].config[0]);
+                                    name_div2_nav_ul_li_span.setAttribute('style', 'color: red;');
+                                    name_div2_nav_ul_li_span.innerHTML=include_data[j].config[1];
+                                    name_div2_nav_ul_li.appendChild(name_div2_nav_ul_li_span);
+                                }else
+                                {
+                                    var name_div2_nav_ul_li = document.createElement('li');                                                            var name_div2_nav_ul_li_span = document.createElement('li');
+                                    var name_div2_nav_ul_li_a = document.createElement('a');
+                                    name_div2_nav_ul_li.setAttribute('id', include_data[j].config[0]);
+                                    name_div2_nav_ul_li_a.setAttribute('href', '/api/edit_config/'+include_data[j].config[0]);
+                                    name_div2_nav_ul_li_a.setAttribute('id',include_data[j].config[0]);
+                                    name_div2_nav_ul_li_a.setAttribute('style',"color:cadetblue");
+                                    name_div2_nav_ul_li_a.innerHTML = include_data[j].config[1];
+                                    name_div2_nav_ul_li.appendChild(name_div2_nav_ul_li_a);
+
+                                }
+                            }
+                            else
+                            {
+                                  if (include_data[j][1].endsWith('已删除')==true)
+                                  {
+                                    var name_div2_nav_ul_li = document.createElement('li');                                                            var name_div2_nav_ul_li_span = document.createElement('li');
+                                    var name_div2_nav_ul_li_span = document.createElement('span');
+                                    name_div2_nav_ul_li.setAttribute('id', include_data[j][0]);
+                                    name_div2_nav_ul_li_span.setAttribute('style', 'color: red;');
+                                    name_div2_nav_ul_li_span.innerHTML=include_data[j][1];
+                                    name_div2_nav_ul_li.appendChild(name_div2_nav_ul_li_span);
+                                  }
+                                  else
+                                  {
+                                    var name_div2_nav_ul_li = document.createElement('li');                                                            var name_div2_nav_ul_li_span = document.createElement('li');
+                                    var name_div2_nav_ul_li_a = document.createElement('a');
+                                    name_div2_nav_ul_li.setAttribute('id', include_data[j][0]);
+                                    name_div2_nav_ul_li_a.setAttribute('href', '/api/edit_case/'+include_data[j][0]);
+                                    name_div2_nav_ul_li_a.setAttribute('id',include_data[j][0]);
+                                    name_div2_nav_ul_li_a.setAttribute('style',"color:rosybrown");
+                                    name_div2_nav_ul_li_a.innerHTML = include_data[j][1];
+                                    name_div2_nav_ul_li.appendChild(name_div2_nav_ul_li_a);
+                                  }
+                            }
+                            name_div2_nav_ul.appendChild(name_div2_nav_ul_li);
+                        }
+                        name_div2_nav.appendChild(name_div2_nav_ul);
+                        name_div2.appendChild(name_div2_nav);
+                        namecell.appendChild(name_div1);
+                        namecell.appendChild(name_div2);
+                        row.appendChild(namecell);
+
+
+                        var urlcell = document.createElement('td');
+                        urlcell.setAttribute('style', 'max-width: 300px;height: 50px;overflow: hidden;text-overflow:ellipsis;white-space:nowrap');
+                        if (data[i].url == ""){
+                            urlcell.innerHTML = eval(data[i].include).length;
+                            row.appendChild(urlcell);
+                        }else{
+                            urlcell.innerHTML = data[i].url;
+                            row.appendChild(urlcell);
+                        }
+
+
+                        var projectcell = document.createElement('td');
+                        //urlcell.setAttribute('class', 'col-md-1');
+                        projectcell.innerHTML = data[i].belong_project;
+                        row.appendChild(projectcell);
+
+
+                        var modulecell = document.createElement('td');
+                        //modulecell.setAttribute('class', 'col-md-1');
+                        modulecell.innerHTML = data[i].belong_module_name;
+                        row.appendChild(modulecell);
+
+
+                        var usercell = document.createElement('td');
+                        //usercell.setAttribute('class', 'col-md-1');
+                        usercell.innerHTML = data[i].author;
+                        row.appendChild(usercell);
+
+
+                        var optcell = document.createElement('td');
+                        var opt_div = document.createElement('div');
+                        opt_div.setAttribute('class', 'am-btn-toolbar');
+                        var opt_div_div = document.createElement('div');
+                        opt_div_div.setAttribute('class', 'am-btn-group am-btn-group-xs')
+                        var opt_div_div_button1 = document.createElement('button');
+                        opt_div_div_button1.setAttribute('class','am-btn am-btn-default am-btn-xs am-text-secondary am-round');
+                        opt_div_div_button1.setAttribute('onclick','run_test('+data[i].id+')');
+                        opt_div_div_button1.setAttribute('type','button');
+                        var opt_div_div_button2 = document.createElement('button');
+                        opt_div_div_button2.setAttribute('class','am-btn am-btn-default am-btn-xs am-text-danger am-round');
+                        opt_div_div_button2.setAttribute('onclick','copy(\'#copy_list\','+ '\''+ data[i].id+ '\')');
+                        opt_div_div_button2.setAttribute('type','button');
+                        var opt_div_div_button3 = document.createElement('button');
+                        opt_div_div_button3.setAttribute('class','am-btn am-btn-default am-btn-xs am-text-danger am-round');
+                        opt_div_div_button3.setAttribute('onclick','invalid(\''+ data[i].id+ '\')');
+                        opt_div_div_button3.setAttribute('type','button');
+                        var opt_div_div_button1_span = document.createElement('sapn');
+                        opt_div_div_button1_span.setAttribute('class', 'am-icon-bug')
+                        var opt_div_div_button2_span = document.createElement('sapn');
+                        opt_div_div_button2_span.setAttribute('class', 'am-icon-copy')
+                        var opt_div_div_button3_span = document.createElement('sapn');
+                        opt_div_div_button3_span.setAttribute('class', 'am-icon-trash-o');
+                        opt_div_div_button1.appendChild(opt_div_div_button1_span);
+                        opt_div_div_button2.appendChild(opt_div_div_button2_span);
+                        opt_div_div_button3.appendChild(opt_div_div_button3_span);
+                        opt_div_div.appendChild(opt_div_div_button1);
+                        opt_div_div.appendChild(opt_div_div_button2);
+                        opt_div_div.appendChild(opt_div_div_button3);
+                        opt_div.appendChild(opt_div_div);
+                        optcell.appendChild(opt_div)
+                        //optcell.setAttribute('class', 'col-md-1');
+                        row.appendChild(optcell);
+
+
+                        // 将行加入到tbody
+                        //$('#testcase_table').find('tbody').setAttribute('class',"w-50");
+                        $('#testcase_table').find('tbody').append(row);
+                    }
+                    $('#page_list').empty();
+                    $('#page_list').append(page_data);
+                }
+
+            }
+        })
+    }
+
+    function search_testcases() {
+        var search_name = $('#testcase_search_name>input').val();
+        var search_author = $('#testcase_search_author>input').val();
+        var testcase_data = {'user':search_author, 'name':search_name };
+        get_testcase_over_table(testcase_data);
+    }
 
     </script>
-{% endblock %}
