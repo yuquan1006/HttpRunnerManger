@@ -12,7 +12,7 @@ def sendEmail():
     except BaseException as e:
         print("发送邮件失败！可能出现错误的原因：%s" % e)
 
-val = os.popen('cd /home/york/HttpRunnerManger && python3 manage.py celery status').readlines()
+val = os.popen('cd HttpRunnerManger && python3 manage.py celery status').readlines()
 if not "1 node online.\n" in val:
     print("服务异常")
     sendEmail()
