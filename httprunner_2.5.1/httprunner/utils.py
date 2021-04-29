@@ -67,6 +67,8 @@ def build_url(base_url, path):
         return "https://passport.ihr360.com/ac/login"
     if path == "https://account.ihr360.com/ac/login" and base_url == "https://qa.ihr360.com":
         return "https://passport-qa.ihr360.com/ac/login"
+    if path == "https://account.ihr360.com/ac/login" and base_url == "https://uatstable.ihr360.com":
+        return "https://passport-uatstable.ihr360.com/ac/login"
     if absolute_http_url_regexp.match(path):
         return path
     elif base_url:
