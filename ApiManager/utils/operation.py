@@ -656,7 +656,7 @@ def get_project_module_nodes(request):
     root_dict = {'text': "全部用例"}  # 设置根节点
     all_list.append(root_dict)
     result = list()
-    for project in ProjectInfo.objects.values('id', 'project_name'):
+    for project in ProjectInfo.objects.values('id', 'project_name').order_by('create_time'):
         tmp = dict()
         tmp['text'] = project.get('project_name')
         # 文本如果存在缓存中 那该节点设置为选中
