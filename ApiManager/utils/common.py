@@ -456,7 +456,10 @@ def set_filter_session(request):
     :return:
     """
     # ajax 请求数据为 request.POST = [{"project":"irenshi"}] 固增加判断
-    request_data = json.loads(list(request.POST)[0]) if len(list(request.POST)) == 1 else request.POST
+    try:
+        request_data = json.loads(list(request.POST)[0]) if list(request.POST.values()) == [''] else request.POST
+    except:
+        request_data = request.POST
     if 'user' in request_data.keys():
         request.session['user'] = request_data.get('user')
     if 'name' in request_data.keys():
